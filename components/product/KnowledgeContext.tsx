@@ -1,4 +1,4 @@
-import { ArrowDown, BookOpenCheck, GitBranch, ShieldCheck, Sparkles, UserRound } from "lucide-react";
+import { BookOpenCheck, GitBranch, ShieldCheck, Sparkles, UserRound } from "lucide-react";
 
 const inputs = [
   [BookOpenCheck, "Знания компании", "условия, цены, правила"],
@@ -9,16 +9,13 @@ const inputs = [
 
 export function KnowledgeContext() {
   return (
-    <div className="mt-12 grid gap-6 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
-      <div className="grid gap-3">
-        {inputs.map(([Icon, title, copy]) => <div key={title} className="surface flex items-center gap-4 rounded-2xl p-4"><span className="grid size-11 place-items-center rounded-xl bg-[var(--cream)] text-[var(--forest)]"><Icon size={20}/></span><div><p className="font-bold">{title}</p><p className="text-sm text-[var(--muted)]">{copy}</p></div></div>)}
+    <div className="mt-12">
+      <div className="grid gap-4 sm:grid-cols-2">
+        {inputs.map(([Icon, title, copy], index) => <div key={title} className={`surface group flex min-h-40 items-start gap-5 rounded-[24px] p-5 sm:p-7 ${index === 0 || index === 3 ? "sm:bg-[var(--cream)]" : ""}`}><span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[var(--forest)] text-[var(--signal)] transition-transform duration-300 group-hover:scale-105"><Icon size={21}/></span><div><p className="text-lg font-extrabold">{title}</p><p className="mt-3 text-[var(--muted)]">{copy}</p></div></div>)}
       </div>
-      <div className="relative rounded-[30px] bg-[var(--forest)] p-6 text-white sm:p-9">
-        <div className="flex items-center gap-3 text-sm text-white/55"><ArrowDown size={16}/>Почему ответ именно такой</div>
-        <p className="mt-7 text-2xl font-semibold leading-snug">«Можно начать с одного канала и короткой базы знаний. Если вопрос выйдет за заданные рамки, я передам диалог сотруднику».</p>
-        <div className="mt-8 flex items-start gap-3 rounded-2xl border border-white/12 bg-white/[.07] p-4">
-          <UserRound className="mt-0.5 shrink-0 text-[var(--signal)]" size={20}/><div><p className="font-bold">Handoff — часть сценария, а не ошибка</p><p className="mt-1 text-sm text-white/60">Вы сами задаёте, в каких ситуациях Сейлон останавливается и подключает человека.</p></div>
-        </div>
+      <div className="mt-4 flex flex-col gap-4 rounded-[24px] bg-[var(--forest)] p-5 text-white sm:flex-row sm:items-center sm:justify-between sm:p-7">
+        <div className="flex items-start gap-4"><span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[var(--signal)] text-[var(--forest-deep)]"><UserRound size={21}/></span><div><p className="text-lg font-extrabold">Человек подключается по вашим правилам</p><p className="mt-2 text-white/62">Вы сами задаёте, в каких ситуациях Сейлон останавливается и передаёт диалог сотруднику.</p></div></div>
+        <span className="shrink-0 rounded-full border border-[var(--signal)]/25 bg-[var(--signal)]/10 px-4 py-2 text-sm font-bold text-[var(--signal)]">Контроль остаётся у вас</span>
       </div>
     </div>
   );

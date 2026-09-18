@@ -3,5 +3,5 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function DemoSection() {
-  return <section id="demo" className="section-space bg-[var(--cream)]"><div className="container-shell"><Reveal><SectionHeading eyebrow="Живая демонстрация" title="Посмотрите не отрасль, а логику разговора" copy="Переключайте сценарии: вместе с нишей меняются этап, цель, характер и следующий шаг. Именно так один продукт адаптируется под разные модели бизнеса."/></Reveal><Reveal delay={.08}><LiveDemo/></Reveal></div></section>;
+  return <section id="demo" className="section-space bg-[var(--cream)]"><div className="container-shell"><Reveal><SectionHeading eyebrow="Сценарии бизнеса" title="Один AI-продавец — разные сценарии продаж" copy="Для каждого бизнеса меняются цель, тон и следующий шаг. Сейлон может довести до брони, помочь выбрать услугу, снять сомнение или подготовить передачу менеджеру."/></Reveal><Reveal delay={.08}><LiveDemo/></Reveal></div></section>;
 }
