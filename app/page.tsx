@@ -13,6 +13,7 @@ import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { ChannelsSection } from "@/components/sections/ChannelsSection";
 import { SetupSection } from "@/components/sections/SetupSection";
 import { CustomSection } from "@/components/sections/CustomSection";
+import { TeamSection } from "@/components/sections/TeamSection";
 import { TrustSection } from "@/components/sections/TrustSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { FaqSection } from "@/components/sections/FaqSection";
@@ -45,6 +46,7 @@ export default function HomePage() {
         <ChannelsSection />
         <SetupSection />
         <CustomSection />
+        <TeamSection />
         <TrustSection />
         <PricingSection />
         <FaqSection />
