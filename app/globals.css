@@ -864,35 +864,34 @@ html[data-language="en"] .cta-hit--custom {
   z-index: 160;
   display: block;
   border: 0;
-  border-radius: 16px;
   overflow: hidden;
+  isolation: isolate;
+  contain: paint;
   background: transparent;
   cursor: pointer;
   transition: outline-color 180ms ease;
 }
-.cta-hit::after { display: none; }
+.cta-hit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(105deg, transparent 24%, rgba(255,255,255,.28) 48%, transparent 72%);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-76%);
+  transition: opacity 180ms ease, transform 620ms cubic-bezier(.22,1,.36,1);
+}
 .cta-hit:hover { background: transparent; box-shadow: none; }
+.cta-hit:hover::after { opacity: 1; transform: translateX(76%); }
 .cta-hit:active { opacity: .92; }
 .cta-hit:focus-visible { outline: 3px solid #26775e; outline-offset: 3px; }
+.cta-hit--light::after { background: linear-gradient(105deg, transparent 24%, rgba(119,214,91,.36) 48%, transparent 72%); }
 .cta-hit--light:hover { background: transparent; box-shadow: none; }
 .cta-hit--chat { border-radius: 48px; }
+.cta-hit--chat::after { display: none; }
 .cta-hit--chat:hover { background: transparent; box-shadow: none; }
 .cta-hit--chat:active { opacity: 1; }
-
-/* CTA overlays are invisible click targets. Hover feedback belongs to the
-   matching visual button, which keeps every control exactly in its place. */
-.figma-page-canvas:has(.cta-hit--hero:hover) [data-node-id="2013:11"],
-.figma-page-canvas:has(.cta-hit--pricing-green-left:hover) [data-node-id="2013:152"],
-.figma-page-canvas:has(.cta-hit--pricing-green-right:hover) [data-node-id="2136:24"] {
-  background-color: #68ca4b;
-}
-.figma-page-canvas:has(.cta-hit--pricing-light:hover) [data-node-id="2013:155"],
-.figma-page-canvas:has(.cta-hit--custom:hover) [data-node-id="2013:138"] {
-  background-color: #fff;
-}
-.figma-page-canvas:has(.cta-hit--final:hover) [data-node-id="2013:10"] {
-  background-color: #123a30;
-}
 
 /* The hero chat entry is calm and stable; hover gives only a soft colour cue. */
 .figma-page-canvas [data-node-id="2070:3"] {

@@ -101,12 +101,12 @@ const team = [
 ];
 
 const ctaAreas = [
-  { left: 1267, top: 20, width: 222, height: 50, tone: "header" },
-  { left: 210, top: 597, width: 299, height: 59, tone: "hero" },
-  { left: 242, top: 11176, width: 350, height: 48, tone: "pricing-green-left" },
-  { left: 674, top: 11165, width: 350, height: 48, tone: "pricing-light" },
-  { left: 1106, top: 11176, width: 350, height: 48, tone: "pricing-green-right" },
-  { left: 212, top: 12820, width: 290, height: 54, tone: "final" },
+  { left: 1267, top: 20, width: 222, height: 50, radius: 12, tone: "header" },
+  { left: 210, top: 597, width: 299, height: 59, radius: 12, tone: "hero" },
+  { left: 242, top: 11176, width: 350, height: 48, radius: 999, tone: "pricing-green-left" },
+  { left: 674, top: 11165, width: 350, height: 48, radius: 999, tone: "pricing-light" },
+  { left: 1106, top: 11176, width: 350, height: 48, radius: 999, tone: "pricing-green-right" },
+  { left: 212, top: 12820, width: 290, height: 54, radius: 999, tone: "final" },
 ];
 
 function setNodeText(root: HTMLElement | null, id: string, value: string) {
@@ -332,11 +332,11 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
         ))}
       </section>
 
-      {ctaAreas.map((area, index) => (
-        <button key={index} type="button" className={`cta-hit cta-hit--${area.tone}`} style={area} aria-label={language === "ru" ? "Начать бесплатный тест" : "Start free trial"} onClick={() => { setSent(false); setDialogOpen(true); }} />
+      {ctaAreas.map(({ radius, tone, ...area }, index) => (
+        <button key={index} type="button" className={`cta-hit cta-hit--${tone}`} style={{ ...area, borderRadius: radius }} aria-label={language === "ru" ? "Начать бесплатный тест" : "Start free trial"} onClick={() => { setSent(false); setDialogOpen(true); }} />
       ))}
       <button type="button" className="cta-hit cta-hit--chat" style={{ left: 541, top: 579, width: 252, height: 96 }} aria-label={t("Поразговаривать с ботом")} onMouseEnter={() => setChatHovered(true)} onMouseLeave={() => setChatHovered(false)} onFocus={() => setChatHovered(true)} onBlur={() => setChatHovered(false)} onClick={() => setBotChatOpen(true)} />
-      <a className="cta-hit cta-hit--light cta-hit--custom" style={{ left: 864, top: 9389, width: 256, height: 50 }} href="/contacts" aria-label={t("Обсудить доработку")} />
+      <a className="cta-hit cta-hit--light cta-hit--custom" style={{ left: 864, top: 9389, width: 256, height: 50, borderRadius: 999 }} href="/contacts" aria-label={t("Обсудить доработку")} />
 
       {mounted && createPortal((
         <div className={`floating-chat${botChatOpen ? " is-open" : ""}`}>
