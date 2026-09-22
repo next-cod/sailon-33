@@ -12,7 +12,7 @@ export function LiveDemo() {
   const scenario = demoScenarios[active];
   const reduced = useReducedMotion();
   return (
-    <div className="mt-12 overflow-hidden rounded-[30px] bg-[var(--forest-deep)] p-4 text-white shadow-soft sm:p-7">
+    <div className="mt-12 overflow-hidden rounded-[28px] bg-[var(--forest-deep)] p-4 text-white shadow-soft sm:p-7">
       <div className="no-scrollbar flex gap-2 overflow-x-auto pb-4" role="tablist" aria-label="Демонстрационные сценарии">
         {demoScenarios.map((item, index) => <button key={item.id} id={`demo-tab-${item.id}`} role="tab" aria-selected={active === index} aria-controls={`demo-panel-${item.id}`} tabIndex={active === index ? 0 : -1} onClick={() => { setActive(index); trackMarketingEvent("demo_scenario_switch"); }} className={`min-w-max rounded-full px-4 py-2.5 text-sm font-bold transition ${active === index ? "bg-[var(--signal)] text-[var(--forest-deep)]" : "bg-white/8 text-white/65 hover:bg-white/12"}`}>{item.label}</button>)}
       </div>
@@ -26,7 +26,7 @@ export function LiveDemo() {
             <DemoMeta icon={<CircleDot size={17}/>} label="Этап" value={scenario.stage}/>
             <DemoMeta icon={<Sparkles size={17}/>} label="Характер" value={scenario.character}/>
             <DemoMeta icon={<Goal size={17}/>} label="Цель" value={scenario.goal}/>
-            <div className="rounded-[22px] border border-[var(--signal)]/30 bg-[var(--signal)]/10 p-5 text-sm leading-relaxed text-white/75">Одна платформа — разные правила разговора. Меняется не только текст ответа, но и задача диалога.</div>
+            <div className="rounded-[22px] border border-[var(--signal)]/30 bg-[var(--leaf)] p-5 text-sm font-semibold leading-relaxed text-white">Для каждого сценария свои правила разговора. Меняются цель, характер и следующий шаг</div>
           </div>
         </motion.div>
       </AnimatePresence>

@@ -1,7 +1,6 @@
 import { KnowledgeContext } from "@/components/product/KnowledgeContext";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ControlSection() {
-  return <section id="control" className="section-space border-y border-[var(--line)] bg-[var(--paper)]"><div className="container-shell"><Reveal><SectionHeading eyebrow="Управление" title="Вы задаёте рамки. Сейлон работает внутри них." copy="База знаний определяет, что Сейлон знает. Инструкции — что он может обещать. Характер — как он разговаривает. А правила передачи — когда к диалогу подключается человек."/></Reveal><Reveal delay={.08}><KnowledgeContext/></Reveal></div></section>;
+  return <section id="control" className="section-space bg-[var(--canvas)]"><div className="container-shell"><Reveal><h2 className="section-title max-w-[900px]">Не верь AI на слово<br/>настрой, за что он отвечает</h2><p className="mt-6 max-w-[980px] text-xl leading-relaxed text-[var(--muted)]">Сейлон использует знания компании, понимает этап клиента, следует инструкции и сохраняет заданный характер. Если ситуация выходит за рамки, диалог можно передать менеджеру</p></Reveal><Reveal delay={.08}><KnowledgeContext/></Reveal></div></section>;
 }

@@ -12,21 +12,20 @@ export function CharacterSwitcher() {
   const reduced = useReducedMotion();
   return (
     <div className="mt-12 grid gap-5 lg:grid-cols-[.78fr_1.22fr]">
-      <div className="dark-panel rounded-[30px] p-6 sm:p-8">
+      <div className="dark-panel rounded-[22px] p-6 sm:p-8">
         <div className="flex items-center gap-2 text-sm text-white/55"><SlidersHorizontal size={16}/>Характер ассистента</div>
         <div className="mt-7 grid gap-2" role="tablist" aria-label="Варианты характера">
           {characters.map((character, index) => (
-            <button key={character.id} id={`character-tab-${character.id}`} role="tab" aria-selected={active === index} aria-controls={`character-panel-${character.id}`} tabIndex={active === index ? 0 : -1} onClick={() => { setActive(index); trackMarketingEvent("character_switch"); }} className={`flex min-h-14 items-center justify-between rounded-2xl px-4 text-left transition ${active === index ? "bg-white text-[var(--forest-deep)]" : "text-white/70 hover:bg-white/10"}`}>
+            <button key={character.id} id={`character-tab-${character.id}`} role="tab" aria-selected={active === index} aria-controls={`character-panel-${character.id}`} tabIndex={active === index ? 0 : -1} onClick={() => { setActive(index); trackMarketingEvent("character_switch"); }} className={`flex min-h-14 items-center justify-between rounded-xl px-4 text-left transition ${active === index ? "bg-white text-[var(--forest-deep)]" : "text-white/70 hover:bg-white/10"}`}>
               <span className="font-bold">{character.label}</span><span className="text-xs opacity-60">{character.mood}</span>
             </button>
           ))}
         </div>
       </div>
-      <div className="relative overflow-hidden rounded-[30px] border border-[var(--line)] bg-[var(--paper)] p-6 sm:p-10">
-        <span className="text-xs font-bold uppercase tracking-[.12em] text-[var(--muted)]">Один вопрос клиента</span>
-        <p className="sub-title mt-3 max-w-xl">«Хочу попробовать. С чего начать?»</p>
+      <div className="relative overflow-hidden rounded-[22px] border border-[var(--line)] bg-[var(--paper)] p-6 sm:p-10">
+        <p className="sub-title max-w-xl">«Хочу попробовать. С чего начать?»</p>
         <AnimatePresence mode="wait">
-          <motion.div key={item.id} id={`character-panel-${item.id}`} role="tabpanel" aria-labelledby={`character-tab-${item.id}`} aria-live="polite" initial={reduced ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? undefined : { opacity: 0, y: -8 }} className="mt-9 max-w-2xl rounded-[24px] rounded-bl-[7px] p-6 text-lg leading-relaxed text-white" style={{ backgroundColor: item.accent }}>
+          <motion.div key={item.id} id={`character-panel-${item.id}`} role="tabpanel" aria-labelledby={`character-tab-${item.id}`} aria-live="polite" initial={reduced ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? undefined : { opacity: 0, y: -8 }} className="mt-9 max-w-2xl rounded-[24px] rounded-bl-[7px] bg-[var(--signal)] p-6 text-lg leading-relaxed text-[var(--forest-deep)]">
             {item.answer}
           </motion.div>
         </AnimatePresence>

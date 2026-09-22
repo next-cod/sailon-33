@@ -3,11 +3,11 @@ import { siteLinks } from "@/config/links";
 
 export function Footer() {
   return (
-    <footer className="dark-panel border-t border-white/10 pb-24 pt-12 md:py-12">
+    <footer className="dark-panel border-t border-white/10 pb-24 pt-14 md:py-14">
       <div className="container-shell grid gap-10 md:grid-cols-[1.4fr_1fr] md:items-end">
         <div>
           <Logo light />
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-white/60">AI-продавец для входящих обращений, которого бизнес настраивает под собственные знания, характер и путь клиента.</p>
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/60">AI продавец для входящих обращений, настроенный под знания, правила и стиль вашего бизнеса</p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/70 md:justify-end">
           <a href={siteLinks.support}>Поддержка</a>

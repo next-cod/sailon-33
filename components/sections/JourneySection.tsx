@@ -1,7 +1,6 @@
 import { JourneyDemo } from "@/components/product/JourneyDemo";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function JourneySection() {
-  return <section className="section-space bg-[var(--cream)]"><div className="container-shell"><Reveal><SectionHeading eyebrow="Путь клиента" title="У каждого этапа — своя задача" copy="Заинтересовать, помочь сравнить, снять сомнение или довести до действия. Вы задаёте, какого результата Сейлон должен добиться в каждой точке пути клиента."/></Reveal><Reveal delay={.08}><JourneyDemo/></Reveal></div></section>;
+  return <section className="section-space bg-[var(--canvas)]"><div className="container-shell"><Reveal><h2 className="section-title max-w-5xl">На каждом этапе своя цель разговора</h2><p className="mt-6 max-w-[930px] text-xl leading-relaxed text-[var(--muted)]">Человек только заинтересовался, сравнивает варианты, сомневается или готов действовать. Для каждого состояния можно задать отдельную задачу, знания, напоминание и условие передачи сотруднику</p></Reveal><Reveal delay={.08}><JourneyDemo/></Reveal></div></section>;
 }

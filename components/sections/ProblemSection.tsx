@@ -1,25 +1,25 @@
-import { Clock3, Copy, MessageSquareWarning, Moon, UsersRound } from "lucide-react";
+import { BookOpen, MessageCircleMore, RefreshCcw, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
-const moments = [
-  [Moon, "Клиент написал вечером", "Ответ будет только утром — если он ещё не выбрал другого."],
-  [Clock3, "Сотрудник занят", "Входящее сообщение ждёт, хотя вопрос можно было разобрать сразу."],
-  [Copy, "Снова тот же вопрос", "Команда повторяет цены, условия и правила десятки раз."],
-  [MessageSquareWarning, "«Я подумаю»", "Диалог остановился, а понятного follow-up никто не поставил."],
+const items = [
+  [Sparkles, "Отвечает с характером!", "Общается с клиентами так, как принято у вас, может быть добрым, энергичным, да вообще любым"],
+  [BookOpen, "Знает ваш бизнес", "Отвечает на основе ваших услуг, условий, цен и другой информации"],
+  [MessageCircleMore, "Учитывает контекст", "Помнит, о чём шёл разговор, и не начинает каждый ответ с нуля"],
+  [RefreshCcw, "Напоминает о себе", "Если клиент пропал, бот напомнит о себе в нужный момент"],
 ] as const;
 
 export function ProblemSection() {
   return (
-    <section className="section-space border-y border-[var(--line)] bg-[var(--paper)]">
+    <section className="section-space bg-white">
       <div className="container-shell">
-        <Reveal className="grid gap-8 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
-          <div><span className="eyebrow">Цена ожидания</span><h2 className="section-title balance mt-5">Пока менеджер занят, горячий клиент продолжает искать.</h2></div>
-          <p className="muted max-w-xl text-lg lg:justify-self-end">Сейлон отвечает в момент обращения, уточняет задачу и предлагает следующий шаг. Команда подключается уже к подготовленному диалогу, а не начинает всё с нуля.</p>
-        </Reveal>
-        <div className="mt-14 grid gap-px overflow-hidden rounded-[26px] border border-[var(--line)] bg-[var(--line)] md:grid-cols-2">
-          {moments.map(([Icon, title, copy], index) => <Reveal key={title} delay={index * .05} className="bg-[var(--paper)] p-6 sm:p-8"><Icon className="text-[var(--signal-strong)]" size={22}/><h3 className="mt-7 text-xl font-bold">{title}</h3><p className="muted mt-3 max-w-md">{copy}</p></Reveal>)}
+        <div className="grid gap-8 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
+          <Reveal><h2 className="section-title max-w-[520px]">Понимает что нужно клиенту</h2></Reveal>
+          <Reveal><p className="max-w-[520px] text-[22px] leading-[1.35] text-[var(--muted)]">Отвечает не шаблонно, понимает запрос, контекст и следующий шаг в разговоре</p></Reveal>
         </div>
-        <div className="mt-5 flex items-start gap-3 rounded-2xl bg-[var(--forest)] px-5 py-4 text-sm text-white"><UsersRound className="mt-0.5 shrink-0 text-[var(--signal)]" size={19}/><p><b>Результат:</b> клиент получает ответ сразу, а менеджер — диалог с уже собранным контекстом.</p></div>
+        <div className="relative mt-14 grid gap-px overflow-hidden rounded-[26px] border border-[var(--line)] bg-[var(--line)] md:grid-cols-2">
+          {items.map(([Icon,title,copy], index)=><Reveal key={title} delay={index*.04} className="min-h-[204px] bg-white p-8"><Icon size={28} className="text-[var(--signal-strong)]"/><h3 className="mt-5 text-[26px] font-extrabold">{title}</h3><p className="mt-3 max-w-[510px] text-lg leading-relaxed text-[var(--muted)]">{copy}</p></Reveal>)}
+          <span className="absolute right-4 top-0 hidden rotate-2 rounded-xl bg-[var(--leaf)] px-8 py-5 text-xl font-extrabold text-white shadow-md lg:block">Настройте характер своего бота сами</span>
+        </div>
       </div>
     </section>
   );

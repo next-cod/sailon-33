@@ -1,20 +1,13 @@
-import { CalendarClock, CreditCard, FileStack, PlugZap } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { TrackedLink } from "@/components/ui/TrackedLink";
 import { siteLinks } from "@/config/links";
 
 export function CustomSection() {
   return (
-    <section className="section-space">
-      <div className="container-shell">
-        <Reveal className="dark-panel overflow-hidden rounded-[34px] border border-[var(--signal)]/15 p-7 shadow-[0_30px_90px_rgba(10,36,29,.2)] sm:p-12 lg:p-16">
-          <div className="grid gap-10 lg:grid-cols-[1fr_.85fr] lg:items-end">
-            <div><span className="eyebrow !text-[var(--signal)]">Сложный сценарий</span><h2 className="section-title balance mt-5">Коробки недостаточно? Обсудим нужную логику отдельно.</h2><p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/65">Для CRM, расписаний, слотов, оплаты, документов и другой нестандартной логики можно запросить индивидуальную интеграцию. Объём и условия оцениваются отдельно.</p><TrackedLink href={siteLinks.contact} event="custom_solution_click" variant="light" arrow className="mt-8">Обсудить свою задачу</TrackedLink></div>
-            <div className="grid grid-cols-2 gap-3">
-              {[[PlugZap,"CRM"],[CalendarClock,"Расписания"],[CreditCard,"Оплата"],[FileStack,"Документы"]].map(([Icon,label]) => { const I = Icon as typeof PlugZap; return <div key={label as string} className="rounded-2xl border border-white/10 bg-white/[.06] p-4"><I size={20} className="text-[var(--signal)]"/><p className="mt-6 font-bold">{label as string}</p></div>; })}
-            </div>
-          </div>
-        </Reveal>
+    <section className="section-angle-top relative -my-10 overflow-hidden bg-[var(--forest-deep)] py-32 text-white">
+      <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_12%_60%,#77d65b_0,transparent_22%),radial-gradient(circle_at_88%_30%,#26775e_0,transparent_20%)]"/>
+      <div className="container-shell relative">
+        <Reveal className="grid gap-10 lg:grid-cols-[1.05fr_.65fr] lg:items-end"><div><h2 className="section-title max-w-[850px]">Не нашли нужную функцию?<br/>Добавим под ваш бизнес</h2><p className="mt-7 max-w-[650px] text-xl leading-relaxed text-white/65">Расскажите о задаче, обсудим решение и разработаем нужный сценарий, интеграцию или отдельную функцию</p></div><TrackedLink href={siteLinks.contact} event="custom_solution_click" variant="light" arrow className="justify-self-start lg:justify-self-end">Обсудить доработку</TrackedLink></Reveal>
       </div>
     </section>
   );

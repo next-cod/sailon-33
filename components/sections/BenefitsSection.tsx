@@ -1,25 +1,21 @@
-import { Gauge, MessageSquareMore, Moon, RefreshCcw, Scale, Users } from "lucide-react";
+import { MessageCircleMore, RefreshCcw, Repeat2, Users } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const benefits = [
-  [Gauge, "Быстрее подхватывать входящие", "Клиент получает первый содержательный ответ, пока интерес ещё не остыл."],
-  [MessageSquareMore, "Снять с команды повторы", "Цены, условия, выбор и типовые вопросы не требуют ручного ответа каждый раз."],
-  [Scale, "Держать единый стандарт", "Знания, правила и характер задаются централизованно — ответ не зависит от настроения смены."],
-  [RefreshCcw, "Не забывать follow-up", "На нужном этапе можно задать повторное касание после паузы."],
-  [Moon, "Продолжать разговор вне графика", "Типовая коммуникация не останавливается вечером или в выходной."],
-  [Users, "Оставить людям сложное", "Сотрудник подключается там, где нужен опыт, ответственность или нестандартное решение."],
+  [RefreshCcw, "Возвращает клиента в разговор", "Если человек взял паузу, Сейлон вовремя напомнит о себе и продолжит диалог по заданному сценарию"],
+  [Repeat2, "Отвечает на типовые вопросы", "Все частые вопросы бот закрывает, менеджеру не приходится десятки раз писать одно и то же"],
+  [MessageCircleMore, "Собирает контекст для менеджера", "Уточняет задачу, фиксирует важные детали и передаёт сотруднику уже подготовленный диалог"],
+  [Users, "Оставляет людям сложные решения", "Менеджер подключается, когда нужны опыт, ответственность или нестандартный подход"],
 ] as const;
 
 export function BenefitsSection() {
   return (
-    <section className="section-space bg-[var(--paper)]">
+    <section className="section-space bg-white">
       <div className="container-shell">
-        <Reveal><SectionHeading eyebrow="Что получает бизнес" title="Быстрый ответ клиенту. Подготовленный диалог менеджеру."/></Reveal>
-        <div className="mt-14 grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map(([Icon, title, copy], index) => <Reveal key={title} delay={index * .04} className="border-t border-[var(--line)] pt-6"><Icon className="text-[var(--signal-strong)]" size={22}/><h3 className="mt-6 text-xl font-bold leading-tight">{title}</h3><p className="muted mt-3 leading-relaxed">{copy}</p></Reveal>)}
+        <Reveal><h2 className="section-title max-w-[1300px]">Сэйлон забирает рутину.<br/>Менеджер подключается к важному</h2></Reveal>
+        <div className="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-2">
+          {benefits.map(([Icon,title,copy],index)=><Reveal key={title} delay={index*.04} className="border-t border-[var(--line)] pt-6"><Icon size={25} className="text-[var(--signal-strong)]"/><h3 className="mt-7 text-[25px] font-extrabold leading-tight">{title}</h3><p className="mt-4 max-w-[540px] text-lg leading-relaxed text-[var(--muted)]">{copy}</p></Reveal>)}
         </div>
-        <p className="mt-12 max-w-3xl rounded-2xl bg-[var(--cream)] px-5 py-4 text-sm leading-relaxed text-[var(--muted)]"><b className="text-[var(--ink)]">Начните с одного повторяющегося сценария.</b> Проверьте качество ответов на реальных обращениях, затем постепенно расширяйте автоматизацию.</p>
       </div>
     </section>
   );

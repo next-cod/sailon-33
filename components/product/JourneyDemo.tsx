@@ -11,12 +11,11 @@ export function JourneyDemo() {
   const stage = journeyStages[active];
   const reduced = useReducedMotion();
   return (
-    <div className="mt-12 overflow-hidden rounded-[30px] border border-[var(--line)] bg-[var(--paper)] shadow-soft">
+    <div className="mt-12 overflow-hidden rounded-[22px] border border-[var(--line)] bg-[var(--paper)] shadow-soft">
       <div className="no-scrollbar flex gap-2 overflow-x-auto border-b border-[var(--line)] p-3" role="tablist" aria-label="Этапы пути клиента">
         {journeyStages.map((item, index) => (
-          <button key={item.id} id={`journey-tab-${item.id}`} role="tab" aria-selected={active === index} aria-controls={`journey-panel-${item.id}`} onClick={() => setActive(index)} className={`min-w-[132px] flex-1 rounded-2xl px-4 py-3 text-left transition ${active === index ? "bg-[var(--forest)] text-white" : "text-[var(--muted)] hover:bg-[var(--cream)]"}`}>
-            <span className="block text-[10px] uppercase tracking-[.15em] opacity-60">0{index + 1}</span>
-            <span className="mt-1 block font-bold">{item.short}</span>
+          <button key={item.id} id={`journey-tab-${item.id}`} role="tab" aria-selected={active === index} aria-controls={`journey-panel-${item.id}`} onClick={() => setActive(index)} className={`min-w-[180px] flex-1 rounded-2xl px-5 py-4 text-left transition ${active === index ? "bg-[var(--forest)] text-white" : "text-[var(--muted)] hover:bg-[var(--cream)]"}`}>
+            <span className="block text-lg font-extrabold">{item.short}</span>
           </button>
         ))}
       </div>
@@ -34,7 +33,7 @@ export function JourneyDemo() {
           </div>
           <div className="bg-[var(--cream)] p-6 sm:p-9">
             <div className="mx-auto max-w-md rounded-[24px] bg-white p-5 shadow-sm">
-              <p className="mb-5 text-xs font-bold uppercase tracking-[.12em] text-[var(--muted)]">Диалог меняет задачу вместе с этапом</p>
+              <p className="mb-5 text-sm font-extrabold text-[var(--muted)]">Диалог меняет задачу вместе с этапом</p>
               <div className="grid gap-3"><ChatBubble side="client">{stage.customer}</ChatBubble><ChatBubble side="assistant">{stage.assistant}</ChatBubble></div>
             </div>
           </div>

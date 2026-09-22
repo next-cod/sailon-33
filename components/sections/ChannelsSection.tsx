@@ -1,7 +1,6 @@
 import { ChannelInbox } from "@/components/product/ChannelInbox";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ChannelsSection() {
-  return <section className="section-space border-y border-[var(--line)]"><div className="container-shell"><Reveal><SectionHeading eyebrow="Каналы и CRM" title="Все подключённые диалоги — в одном окне" copy="Сейлон отвечает в доступных каналах, а команда видит историю и может забрать разговор вручную. CRM поддерживает работу — но не подменяет собой главную логику продукта."/></Reveal><Reveal delay={.08}><ChannelInbox/></Reveal></div></section>;
+  return <section className="section-space bg-[var(--canvas)]"><div className="container-shell"><Reveal><h2 className="section-title max-w-[1250px]">Все подключённые диалоги в одном окне</h2><p className="mt-6 max-w-[1260px] text-xl leading-relaxed text-[var(--muted)]">Все диалоги в одном окне. Сразу видно, откуда пришёл клиент, о чём он спрашивал и чем закончился разговор</p></Reveal><Reveal delay={.08}><ChannelInbox/></Reveal></div></section>;
 }

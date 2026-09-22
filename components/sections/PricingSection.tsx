@@ -1,30 +1,22 @@
-import { Check } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TrackedLink } from "@/components/ui/TrackedLink";
 import { siteLinks } from "@/config/links";
 
 const plans = [
-  { name: "Минимальный", price: "10 000 ₽", note: "Для небольшого входящего потока", featured: false },
-  { name: "Средний", price: "20 000 ₽", note: "Для растущего объёма диалогов", featured: true },
-  { name: "Премиум", price: "30 000 ₽", note: "Для высокой нагрузки", featured: false },
+  ["Новичок", "10 000 ₽", "до 20 обращений / день", "Для небольшого входящего потока"],
+  ["Среднячок", "20 000 ₽", "до 20 обращений / день", "Для растущего объёма диалогов"],
+  ["Премиум", "30 000 ₽", "50–100 обращений / день", "Для высокой нагрузки"],
 ] as const;
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="section-space bg-[var(--cream)]">
+    <section id="pricing" className="section-space bg-[var(--canvas)]">
       <div className="container-shell">
-        <Reveal><SectionHeading eyebrow="30 дней на проверку" title="Сначала проверьте на своих обращениях. Потом выбирайте тариф." copy="После регистрации аккаунт получает 10 000 тестовых кредитов. Этого достаточно, чтобы собрать базовые настройки и проверить работу Сейлона в реальных сценариях."/></Reveal>
-        <div className="mt-12 grid gap-4 lg:grid-cols-3">
-          {plans.map((plan, index) => <Reveal key={plan.name} delay={index * .06} className={`relative rounded-[28px] border p-6 sm:p-8 ${plan.featured ? "border-[var(--forest)] bg-[var(--forest)] text-white" : "border-[var(--line)] bg-[var(--paper)]"}`}>
-            {plan.featured && <span className="absolute right-5 top-5 rounded-full bg-[var(--signal)] px-3 py-1 text-[10px] font-bold uppercase tracking-[.1em] text-[var(--forest-deep)]">Средняя нагрузка</span>}
-            <p className={`text-sm font-bold ${plan.featured ? "text-white/60" : "text-[var(--muted)]"}`}>{plan.name}</p><p className="mt-8 text-4xl font-bold tracking-tight">{plan.price}</p><p className={`mt-1 text-sm ${plan.featured ? "text-white/50" : "text-[var(--muted)]"}`}>в месяц</p><p className={`mt-8 border-t pt-5 ${plan.featured ? "border-white/15 text-white/70" : "border-[var(--line)] text-[var(--muted)]"}`}>{plan.note}</p><ul className="mt-6 grid gap-3 text-sm"><li className="flex gap-2"><Check size={16}/>Знания, характер и путь клиента</li><li className="flex gap-2"><Check size={16}/>Подключение доступных каналов</li><li className="flex gap-2"><Check size={16}/>Единое окно диалогов</li></ul><TrackedLink href={siteLinks.signup} event="pricing_signup_click" variant={plan.featured ? "light" : "primary"} className="mt-8 w-full">Начать бесплатный тест</TrackedLink>
-          </Reveal>)}
+        <Reveal className="relative"><h2 className="section-title max-w-[1150px]">Сэйлон можно бесплатно проверить в работе и только потом выбрать тариф</h2><span className="mt-6 inline-block -rotate-2 rounded-xl bg-white px-7 py-4 text-center font-extrabold text-[var(--leaf)] shadow-md lg:absolute lg:right-0 lg:top-0 lg:mt-0">10 000 кредитов<br/><span className="text-sm">уже на вашем аккаунте</span></span></Reveal>
+        <div className="mt-14 grid gap-4 lg:grid-cols-3">
+          {plans.map(([name,price,volume,note],index)=><Reveal key={name} delay={index*.05} className={`relative rounded-[22px] border p-7 ${index===1?"border-[var(--forest)] bg-[var(--forest)] text-white":"border-[var(--line)] bg-white"}`}>{index===1&&<span className="absolute right-4 top-[-13px] rounded-full bg-[var(--signal)] px-4 py-2 text-[10px] font-extrabold uppercase text-[var(--forest-deep)]">Берут чаще всего</span>}<p className={`font-bold ${index===1?"text-white/65":"text-[var(--muted)]"}`}>{name}</p><div className="mt-7 flex items-end gap-2"><p className="text-4xl font-extrabold tracking-[-.04em]">{price}</p><span className={`pb-1 text-xs ${index===1?"text-white/45":"text-[var(--muted)]"}`}>в месяц</span></div><p className={`mt-6 border-t pt-5 text-sm ${index===1?"border-white/15 text-white/65":"border-[var(--line)] text-[var(--muted)]"}`}>{volume}</p><p className={`mt-5 ${index===1?"text-white/75":"text-[var(--muted)]"}`}>{note}</p><TrackedLink href={siteLinks.signup} event="pricing_signup_click" variant={index===1?"light":"primary"} className="mt-7 w-full">Начать бесплатный тест</TrackedLink></Reveal>)}
         </div>
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <div className="surface rounded-[22px] p-5"><p className="font-bold">Более 100 диалогов в день</p><p className="muted mt-2 text-sm">Индивидуальный тариф: 1 ₽ за каждый ответ Сейлона.</p></div>
-          <div className="surface rounded-[22px] p-5"><p className="font-bold">Настройка командой — 40 000 ₽</p><p className="muted mt-2 text-sm">Если не хотите собирать путь клиента самостоятельно.</p></div>
-        </div>
+        <div className="mt-4 grid gap-4 md:grid-cols-2"><div className="rounded-2xl border border-[var(--line)] bg-white p-5"><p className="font-extrabold">Более 100 диалогов в день</p><p className="mt-2 text-sm text-[var(--muted)]">Индивидуальный тариф: 1 ₽ за каждый ответ Сэйлона.</p></div><div className="rounded-2xl border border-[var(--line)] bg-white p-5"><p className="font-extrabold">Настройка бота — 40 000 ₽</p><p className="mt-2 text-sm text-[var(--muted)]">Вы можете бесплатно настроить бота сами или это можем сделать мы</p></div></div>
       </div>
     </section>
   );
