@@ -101,12 +101,12 @@ const team = [
 ];
 
 const ctaAreas = [
-  { left: 1267, top: 20, width: 222, height: 50, tone: "green" },
-  { left: 210, top: 597, width: 299, height: 59, tone: "green" },
-  { left: 242, top: 11176, width: 350, height: 48, tone: "green" },
-  { left: 674, top: 11165, width: 350, height: 48, tone: "light" },
-  { left: 1106, top: 11176, width: 350, height: 48, tone: "green" },
-  { left: 212, top: 12820, width: 290, height: 54, tone: "dark" },
+  { left: 1267, top: 20, width: 222, height: 50, tone: "header" },
+  { left: 210, top: 597, width: 299, height: 59, tone: "hero" },
+  { left: 242, top: 11176, width: 350, height: 48, tone: "pricing-green-left" },
+  { left: 674, top: 11165, width: 350, height: 48, tone: "pricing-light" },
+  { left: 1106, top: 11176, width: 350, height: 48, tone: "pricing-green-right" },
+  { left: 212, top: 12820, width: 290, height: 54, tone: "final" },
 ];
 
 function setNodeText(root: HTMLElement | null, id: string, value: string) {
@@ -313,15 +313,6 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
         { left: 474, top: 5298, width: 609, height: 90 },
       ].map((area, index) => (
         <div key={index} className="control-hover-zone" style={area} onMouseEnter={() => setControlCard(index)} onMouseLeave={() => setControlCard(null)} aria-hidden="true" />
-      ))}
-
-      {[0, 1, 2, 3].map((index) => (
-        <div
-          key={index}
-          className="feature-hover-zone"
-          style={{ left: 210 + (index % 2) * 640, top: 1382 + Math.floor(index / 2) * 204 }}
-          aria-hidden="true"
-        />
       ))}
 
       {team.map(([name, copy], index) => (

@@ -20,7 +20,7 @@ export function TrackedLink({ event, children, variant = "primary", arrow = fals
   return (
     <a
       {...props}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3 text-[15px] font-extrabold transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 ${variants[variant]} ${className}`}
+      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3 text-[15px] font-extrabold transition-colors duration-200 ${variants[variant]} ${className}`}
       onClick={(e) => {
         props.onClick?.(e);
         if (event) trackMarketingEvent(event);

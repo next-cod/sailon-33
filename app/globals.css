@@ -276,7 +276,7 @@ body {
 
 .figma-page-canvas [data-node-id="2120:5"],
 .figma-page-canvas [data-node-id="2007:47"] {
-  z-index: 76;
+  display: none;
 }
 
 .typing-indicator {
@@ -607,16 +607,16 @@ html[data-language="en"] .cta-hit--custom {
   background: transparent;
   color: transparent;
   cursor: pointer;
-  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  transition: background 180ms ease, box-shadow 180ms ease;
 }
 
-.interaction-tabs button:hover { background: rgba(255,255,255,.055); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); transform: translateY(-1px); }
+.interaction-tabs button:hover { background: rgba(255,255,255,.055); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
 .journey-tabs button { border-radius: 16px; }
 .journey-tabs button:hover { background: rgba(18,58,48,.075); box-shadow: none; }
 .character-tabs button { border-radius: 16px; }
 .character-tabs button:hover { background: rgba(255,255,255,.075); box-shadow: none; }
 .scenario-tabs button:hover { background: transparent; box-shadow: none; transform: none; }
-.interaction-tabs button:active { transform: translateY(1px) scale(.985); }
+.interaction-tabs button:active { opacity: .88; }
 
 .interaction-tabs button:focus-visible {
   outline: none;
@@ -802,21 +802,6 @@ html[data-language="en"] .cta-hit--custom {
 
 .control-card-fourth.control-card-active { transform: translate(10px, -8px); }
 
-.feature-hover-zone {
-  position: absolute;
-  z-index: 55;
-  width: 640px;
-  height: 204px;
-  border-radius: 0;
-  pointer-events: auto;
-  transition: background 240ms ease, box-shadow 240ms ease;
-}
-
-.feature-hover-zone:hover {
-  background: rgba(119, 214, 91, 0.075);
-  box-shadow: inset 0 0 0 1px rgba(95, 198, 70, 0.26);
-}
-
 .team-hover-card {
   position: absolute;
   z-index: 80;
@@ -862,8 +847,8 @@ html[data-language="en"] .cta-hit--custom {
 }
 
 .faq-live-item { border-bottom: 1px solid #dce3df; background: #f5f7f5; transition: background 220ms ease, border-radius 220ms ease; }
-.faq-live-item > button { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 68px; padding: 0 14px; border: 0; border-radius: 14px; background: transparent; color: #151917; font: 700 22px/1.2 "Tilda Sans", Arial, sans-serif; text-align: left; cursor: pointer; transition: color 180ms ease, background 180ms ease, transform 180ms ease; }
-.faq-live-item > button:hover { background: rgba(119,214,91,.09); color: #26775e; transform: translateX(3px); }
+.faq-live-item > button { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 68px; padding: 0 14px; border: 0; border-radius: 14px; background: transparent; color: #151917; font: 700 22px/1.2 "Tilda Sans", Arial, sans-serif; text-align: left; cursor: pointer; transition: color 180ms ease, background 180ms ease; }
+.faq-live-item > button:hover { background: rgba(119,214,91,.09); color: #26775e; }
 .faq-live-item > button:focus-visible { outline: 3px solid #77d65b; outline-offset: -3px; }
 .faq-plus { position: relative; flex: 0 0 auto; width: 20px; height: 20px; }
 .faq-plus::before, .faq-plus::after { content: ""; position: absolute; left: 4px; top: 9px; width: 12px; height: 2px; border-radius: 2px; background: #26775e; transition: transform 220ms ease; }
@@ -883,19 +868,31 @@ html[data-language="en"] .cta-hit--custom {
   overflow: hidden;
   background: transparent;
   cursor: pointer;
-  transition: background 180ms ease, box-shadow 220ms ease, transform 220ms cubic-bezier(.22,1,.36,1);
+  transition: outline-color 180ms ease;
 }
-.cta-hit::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(105deg, transparent 24%, rgba(255,255,255,.25) 48%, transparent 72%); opacity: 0; transform: translateX(-70%); transition: opacity 180ms ease, transform 620ms cubic-bezier(.22,1,.36,1); }
-.cta-hit:hover { background: rgba(255,255,255,.07); box-shadow: none; transform: none; }
-.cta-hit:hover::after { opacity: 1; transform: translateX(65%); }
-.cta-hit:active { transform: translateY(1px) scale(.985); }
+.cta-hit::after { display: none; }
+.cta-hit:hover { background: transparent; box-shadow: none; }
+.cta-hit:active { opacity: .92; }
 .cta-hit:focus-visible { outline: 3px solid #26775e; outline-offset: 3px; }
-.cta-hit--light::after { background: linear-gradient(105deg, transparent 24%, rgba(119,214,91,.38) 48%, transparent 72%); }
-.cta-hit--light:hover { background: rgba(119,214,91,.1); box-shadow: none; }
+.cta-hit--light:hover { background: transparent; box-shadow: none; }
 .cta-hit--chat { border-radius: 48px; }
-.cta-hit--chat::after { display: none; }
 .cta-hit--chat:hover { background: transparent; box-shadow: none; }
-.cta-hit--chat:active { transform: none; }
+.cta-hit--chat:active { opacity: 1; }
+
+/* CTA overlays are invisible click targets. Hover feedback belongs to the
+   matching visual button, which keeps every control exactly in its place. */
+.figma-page-canvas:has(.cta-hit--hero:hover) [data-node-id="2013:11"],
+.figma-page-canvas:has(.cta-hit--pricing-green-left:hover) [data-node-id="2013:152"],
+.figma-page-canvas:has(.cta-hit--pricing-green-right:hover) [data-node-id="2136:24"] {
+  background-color: #68ca4b;
+}
+.figma-page-canvas:has(.cta-hit--pricing-light:hover) [data-node-id="2013:155"],
+.figma-page-canvas:has(.cta-hit--custom:hover) [data-node-id="2013:138"] {
+  background-color: #fff;
+}
+.figma-page-canvas:has(.cta-hit--final:hover) [data-node-id="2013:10"] {
+  background-color: #123a30;
+}
 
 /* The hero chat entry is calm and stable; hover gives only a soft colour cue. */
 .figma-page-canvas [data-node-id="2070:3"] {
@@ -1273,10 +1270,10 @@ html[data-language="en"] .cta-hit--custom {
   font-weight: 800;
   text-decoration: none;
   box-shadow: 0 8px 24px rgba(10, 36, 29, 0.06);
-  transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  transition: color 180ms ease, border-color 180ms ease;
 }
 
-.legal-back:hover { color: #26775e; border-color: #77d65b; transform: translateY(-1px); }
+.legal-back:hover { color: #26775e; border-color: #77d65b; }
 
 .legal-page article {
   width: min(860px, 100%);
@@ -1490,10 +1487,10 @@ html[data-language="en"] .cta-hit--custom {
   background: #eef3ef;
   color: #0a241d;
   cursor: pointer;
-  transition: background-color 180ms ease, transform 180ms ease;
+  transition: background-color 180ms ease;
 }
 
-.savings-popup__close:hover { background: #dce9df; transform: rotate(4deg); }
+.savings-popup__close:hover { background: #dce9df; }
 .savings-popup__close:focus-visible,
 .savings-popup__cta:focus-visible,
 .savings-popup input:focus-visible { outline: 3px solid rgba(38, 119, 94, .35); outline-offset: 3px; }
@@ -1569,10 +1566,10 @@ html[data-language="en"] .cta-hit--custom {
   font-size: 19px;
   font-weight: 800;
   cursor: pointer;
-  transition: background-color 220ms ease, transform 220ms cubic-bezier(.22, 1, .36, 1);
+  transition: background-color 220ms ease;
 }
-.savings-popup__cta:hover { background: #68ca4b; transform: translateY(-2px); }
-.savings-popup__cta:active { transform: translateY(0); }
+.savings-popup__cta:hover { background: #68ca4b; }
+.savings-popup__cta:active { opacity: .92; }
 .savings-popup__note { max-width: 570px; margin: 14px auto 0; color: #8a958f; font-size: 12px; line-height: 1.42; text-align: center; }
 
 .savings-popup--promo {
