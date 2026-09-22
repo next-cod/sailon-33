@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   agentRules: false,
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 31_536_000,
+    deviceSizes: [320, 480, 640, 768, 960, 1200, 1700, 1920, 2560, 3840],
+  },
   turbopack: {
     root: process.cwd(),
   },

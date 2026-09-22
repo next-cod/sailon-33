@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 const assetPathPrefix = "/figma-exact";
 const imgIconColor0A241D = `${assetPathPrefix}/7cf98.png`;
 const imgColor77D65B = `${assetPathPrefix}/f3747.png`;
@@ -124,7 +125,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-45">
           <div className="relative size-[7.5px]" data-name="Vector">
             <div className="absolute inset-[-10%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector} />
             </div>
           </div>
         </div>
@@ -211,17 +212,17 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#edf2ee] left-[231px] rounded-[12px] size-[40px] top-[2369.63px]" data-node-id="2013:28" data-name="Background · фон" />
       <div className="absolute h-[12.667px] left-[251px] top-[2384.08px] w-0" data-node-id="2003:150" data-name="Vector">
         <div className="absolute inset-[-7.89%_-1px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector1} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector1} />
         </div>
       </div>
       <div className="absolute h-[14.25px] left-[243.08px] top-[2382.5px] w-[15.833px]" data-node-id="2003:151" data-name="Vector">
         <div className="absolute inset-[-7.02%_-6.32%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector2} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector2} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[425.39px] top-[2383.79px] w-[5.833px]" data-node-id="2003:154" data-name="Vector">
         <div className="absolute inset-[-7.14%_-14.29%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector3} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector3} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[24px] justify-center leading-[0] left-[231px] not-italic text-[#151917] text-[19px] top-[2444.03px] w-[131px]" data-node-id="2007:51">
@@ -237,7 +238,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="h-[15.837px] relative w-[7.917px]" data-name="Vector">
             <div className="absolute inset-[-6.31%_-12.63%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector4} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector4} />
             </div>
           </div>
         </div>
@@ -246,7 +247,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="h-[3.167px] relative w-[2.375px]" data-name="Vector">
             <div className="absolute inset-[-31.58%_-42.11%_-31.59%_-42.12%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector5} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector5} />
             </div>
           </div>
         </div>
@@ -255,7 +256,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="h-[1.089px] relative w-[0.315px]" data-name="Vector">
             <div className="absolute inset-[-91.87%_-317.43%_-91.88%_-317.38%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector6} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector6} />
             </div>
           </div>
         </div>
@@ -264,7 +265,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="h-[0.313px] relative w-[0.463px]" data-name="Vector">
             <div className="absolute inset-[-319.04%_-215.96%_-318.99%_-215.93%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector7} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector7} />
             </div>
           </div>
         </div>
@@ -273,7 +274,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="h-[0.409px] relative w-[1.557px]" data-name="Vector">
             <div className="absolute inset-[-244.84%_-64.22%_-244.8%_-64.23%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector8} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector8} />
             </div>
           </div>
         </div>
@@ -282,7 +283,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="h-0 relative w-[3.167px]" data-name="Vector">
             <div className="absolute inset-[-1px_-31.58%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector9} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector9} />
             </div>
           </div>
         </div>
@@ -291,7 +292,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="h-[2.375px] relative w-[6.333px]" data-name="Vector">
             <div className="absolute inset-[-42.11%_-15.79%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector10} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector10} />
             </div>
           </div>
         </div>
@@ -300,7 +301,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="h-0 relative w-[6.333px]" data-name="Vector">
             <div className="absolute inset-[-1px_-15.79%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector11} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector11} />
             </div>
           </div>
         </div>
@@ -309,7 +310,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="h-[3.958px] relative w-[1.583px]" data-name="Vector">
             <div className="absolute inset-[-25.26%_-63.16%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector12} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector12} />
             </div>
           </div>
         </div>
@@ -318,7 +319,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="relative size-[0.792px]" data-name="Vector">
             <div className="absolute inset-[-126.32%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector13} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector13} />
             </div>
           </div>
         </div>
@@ -327,7 +328,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="relative size-[0.792px]" data-name="Vector">
             <div className="absolute inset-[-126.32%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector13} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector13} />
             </div>
           </div>
         </div>
@@ -336,7 +337,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="relative size-[0.792px]" data-name="Vector">
             <div className="absolute inset-[-126.32%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector13} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector13} />
             </div>
           </div>
         </div>
@@ -345,14 +346,14 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-90">
           <div className="relative size-[0.792px]" data-name="Vector">
             <div className="absolute inset-[-126.32%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector13} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector13} />
             </div>
           </div>
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[683.8px] top-[2383.79px] w-[5.833px]" data-node-id="2003:175" data-name="Vector">
         <div className="absolute inset-[-7.14%_-14.29%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector3} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector3} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[24px] justify-center leading-[0] left-[489px] not-italic text-[#151917] text-[19px] top-[2444.03px] w-[200px]" data-node-id="2007:53">
@@ -366,12 +367,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#edf2ee] left-[747.8px] rounded-[12px] size-[40px] top-[2369.63px]" data-node-id="2013:32" data-name="Background · фон" />
       <div className="absolute left-[759.88px] size-[15.833px] top-[2381.71px]" data-node-id="2003:181" data-name="Vector">
         <div className="absolute inset-[-6.32%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector14} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector14} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[942.19px] top-[2383.79px] w-[5.833px]" data-node-id="2003:184" data-name="Vector">
         <div className="absolute inset-[-7.14%_-14.29%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector3} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector3} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[24px] justify-center leading-[0] left-[748px] not-italic text-[#151917] text-[19px] top-[2444.03px] w-[178px]" data-node-id="2007:55">
@@ -385,12 +386,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#edf2ee] left-[1006.19px] rounded-[12px] size-[40px] top-[2369.63px]" data-node-id="2013:34" data-name="Background · фон" />
       <div className="absolute h-[15.833px] left-[1019.86px] top-[2381.71px] w-[12.667px]" data-node-id="2003:190" data-name="Vector">
         <div className="absolute inset-[-6.32%_-7.89%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector15} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector15} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[1200.59px] top-[2383.79px] w-[5.833px]" data-node-id="2003:193" data-name="Vector">
         <div className="absolute inset-[-7.14%_-14.29%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector3} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector3} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[24px] justify-center leading-[0] left-[1006px] not-italic text-[#151917] text-[19px] top-[2444.03px] w-[141px]" data-node-id="2007:57">
@@ -404,17 +405,17 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#edf2ee] left-[1264.59px] rounded-[12px] size-[40px] top-[2369.63px]" data-node-id="2013:36" data-name="Background · фон" />
       <div className="absolute h-[6.334px] left-[1276.67px] top-[2390.42px] w-[10.523px]" data-node-id="2003:199" data-name="Vector">
         <div className="absolute inset-[-15.79%_-9.5%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector16} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector16} />
         </div>
       </div>
       <div className="absolute left-[1279.05px] size-[7.917px] top-[2382.5px]" data-node-id="2003:200" data-name="Vector">
         <div className="absolute inset-[-12.63%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector17} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector17} />
         </div>
       </div>
       <div className="absolute h-[3.167px] left-[1287.76px] top-[2393.58px] w-[4.75px]" data-node-id="2003:201" data-name="Vector">
         <div className="absolute inset-[-31.58%_-21.05%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector18} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector18} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[24px] justify-center leading-[0] left-[1265px] not-italic text-[#151917] text-[19px] top-[2444.03px] w-[191px]" data-node-id="2007:59">
@@ -451,7 +452,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#5fc646] left-[247px] rounded-[33554400px] size-[40px] top-[3181.17px]" data-node-id="2013:41" data-name="Overlay · фон" />
       <div className="absolute h-[15px] left-[261px] top-[3193.67px] w-[12px]" data-node-id="2003:226" data-name="Vector">
         <div className="absolute inset-[-6.67%_-8.33%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector19} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector19} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[16px] justify-center leading-[0] left-[300px] not-italic text-[#626d68] text-[14px] top-[3177.58px] w-[92.813px]" data-node-id="2007:72">
@@ -466,22 +467,22 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-white border border-[#dce3df] border-solid h-[46px] left-[247px] rounded-[12px] top-[3308.77px] w-[598.94px]" data-node-id="2013:42" data-name="Background+Border · фон" />
       <div className="absolute h-[13.455px] left-[265.42px] top-[3323.89px] w-[14.167px]" data-node-id="2003:232" data-name="Vector">
         <div className="absolute inset-[-5.26%_-5%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector20} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector20} />
         </div>
       </div>
       <div className="absolute h-0 left-[268.96px] top-[3329.56px] w-[7.083px]" data-node-id="2003:233" data-name="Vector">
         <div className="absolute inset-[-0.71px_-10%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector21} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector21} />
         </div>
       </div>
       <div className="absolute h-0 left-[268.96px] top-[3332.39px] w-[4.25px]" data-node-id="2003:234" data-name="Vector">
         <div className="absolute inset-[-0.71px_-16.67%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector22} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector22} />
         </div>
       </div>
       <div className="absolute h-0 left-[268.96px] top-[3326.72px] w-[5.667px]" data-node-id="2003:235" data-name="Vector">
         <div className="absolute inset-[-0.71px_-12.5%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector23} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector23} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[20px] justify-center leading-[0] left-[300px] not-italic text-[#151917] text-[14px] top-[3331.77px] w-[82.026px]" data-node-id="2007:75">
@@ -493,12 +494,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-white border border-[#dce3df] border-solid h-[46px] left-[247px] rounded-[12px] top-[3366.77px] w-[598.94px]" data-node-id="2013:43" data-name="Background+Border · фон" />
       <div className="absolute h-[9.917px] left-[275.33px] top-[3384.02px] w-[2.833px]" data-node-id="2003:240" data-name="Vector">
         <div className="absolute inset-[-7.14%_-25.01%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector24} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector24} />
         </div>
       </div>
       <div className="absolute h-[9.917px] left-[272.5px] top-[3384.02px] w-0" data-node-id="2003:241" data-name="Vector">
         <div className="absolute inset-[-7.14%_-0.71px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector25} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector25} />
         </div>
       </div>
       <div className="absolute flex h-[63.589px] items-center justify-center left-[832.57px] top-[3820.59px] w-[417.753px]" data-node-id="2115:2">
@@ -515,12 +516,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute h-[8.5px] left-[269.67px] top-[3385.43px] w-0" data-node-id="2003:242" data-name="Vector">
         <div className="absolute inset-[-8.33%_-0.71px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector26} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector26} />
         </div>
       </div>
       <div className="absolute h-[11.333px] left-[266.83px] top-[3382.6px] w-0" data-node-id="2003:243" data-name="Vector">
         <div className="absolute inset-[-6.25%_-0.71px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector27} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector27} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[20px] justify-center leading-[0] left-[300px] not-italic text-[#151917] text-[14px] top-[3389.77px] w-[108.888px]" data-node-id="2007:77">
@@ -532,12 +533,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-white border border-[#dce3df] border-solid h-[46px] left-[247px] rounded-[12px] top-[3424.77px] w-[598.94px]" data-node-id="2013:44" data-name="Background+Border · фон" />
       <div className="absolute h-0 left-[267.54px] top-[3446.27px] w-[9.917px]" data-node-id="2003:248" data-name="Vector">
         <div className="absolute inset-[-0.71px_-7.14%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector28} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector28} />
         </div>
       </div>
       <div className="absolute h-[9.917px] left-[272.5px] top-[3441.31px] w-[4.958px]" data-node-id="2003:249" data-name="Vector">
         <div className="absolute inset-[-7.14%_-14.29%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector29} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector29} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[20px] justify-center leading-[0] left-[300px] not-italic text-[#151917] text-[14px] top-[3447.77px] w-[66.492px]" data-node-id="2007:79">
@@ -574,47 +575,47 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#0a241d] h-[405.67px] left-[210px] rounded-[30px] top-[4004.06px] w-[491.39px]" data-node-id="2013:49" data-name="Background · фон" />
       <div className="absolute h-0 left-[244px] top-[4041.39px] w-[4.667px]" data-node-id="2003:267" data-name="Vector">
         <div className="absolute inset-[-0.67px_-14.29%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector30} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector30} />
         </div>
       </div>
       <div className="absolute h-0 left-[244px] top-[4050.73px] w-[6px]" data-node-id="2003:268" data-name="Vector">
         <div className="absolute inset-[-0.67px_-11.11%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector31} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector31} />
         </div>
       </div>
       <div className="absolute h-[2.667px] left-[251.33px] top-[4040.06px] w-0" data-node-id="2003:269" data-name="Vector">
         <div className="absolute inset-[-25%_-0.67px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector32} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector32} />
         </div>
       </div>
       <div className="absolute h-[2.667px] left-[252.67px] top-[4049.39px] w-0" data-node-id="2003:270" data-name="Vector">
         <div className="absolute inset-[-25%_-0.67px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector32} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector32} />
         </div>
       </div>
       <div className="absolute h-0 left-[250px] top-[4046.06px] w-[6px]" data-node-id="2003:271" data-name="Vector">
         <div className="absolute inset-[-0.67px_-11.11%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector31} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector31} />
         </div>
       </div>
       <div className="absolute h-0 left-[252.67px] top-[4050.73px] w-[3.333px]" data-node-id="2003:272" data-name="Vector">
         <div className="absolute inset-[-0.67px_-20%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector33} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector33} />
         </div>
       </div>
       <div className="absolute h-0 left-[251.33px] top-[4041.39px] w-[4.667px]" data-node-id="2003:273" data-name="Vector">
         <div className="absolute inset-[-0.67px_-14.29%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector30} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector30} />
         </div>
       </div>
       <div className="absolute h-[2.667px] left-[247.33px] top-[4044.73px] w-0" data-node-id="2003:274" data-name="Vector">
         <div className="absolute inset-[-25%_-0.67px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector32} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector32} />
         </div>
       </div>
       <div className="absolute h-0 left-[244px] top-[4046.06px] w-[3.333px]" data-node-id="2003:275" data-name="Vector">
         <div className="absolute inset-[-0.67px_-20%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector33} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector33} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[266px] not-italic text-[14px] text-[rgba(255,255,255,0.7)] top-[4046.06px] w-[137.436px]" data-node-id="2007:87">
@@ -665,17 +666,17 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#edf2ee] h-[50px] left-[229px] rounded-[12px] top-[5015.91px] w-[51px]" data-node-id="2013:58" data-name="Background · фон" />
       <div className="absolute h-[19px] left-[254px] top-[5034.03px] w-0" data-node-id="2003:309" data-name="Vector">
         <div className="absolute inset-[-5.26%_-1px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector34} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector34} />
         </div>
       </div>
       <div className="absolute h-[5px] left-[259px] top-[5041.03px] w-[7px]" data-node-id="2003:310" data-name="Vector">
         <div className="absolute inset-[-20%_-14.29%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector35} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector35} />
         </div>
       </div>
       <div className="absolute h-[22px] left-[242px] top-[5031.03px] w-[24px]" data-node-id="2003:311" data-name="Vector">
         <div className="absolute inset-[-4.55%_-4.17%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector36} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector36} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[29px] justify-center leading-[0] left-[298px] not-italic text-[20px] text-white top-[5029.53px] w-[178px]" data-node-id="2007:105">
@@ -690,7 +691,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-45">
           <div className="h-[16.506px] relative w-[16.194px]" data-name="Vector">
             <div className="absolute inset-[-9.09%_-9.26%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector37} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector37} />
             </div>
           </div>
         </div>
@@ -699,7 +700,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-45">
           <div className="h-[16.506px] relative w-[16.194px]" data-name="Vector">
             <div className="absolute inset-[-9.09%_-9.26%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector37} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector37} />
             </div>
           </div>
         </div>
@@ -708,7 +709,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-45">
           <div className="h-[16.506px] relative w-[16.194px]" data-name="Vector">
             <div className="absolute inset-[-9.09%_-9.26%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector37} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector37} />
             </div>
           </div>
         </div>
@@ -723,21 +724,21 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#edf2ee] h-[51px] left-[406px] rounded-[12px] top-[5215.91px] w-[50px]" data-node-id="2013:62" data-name="Background · фон" />
       <div className="absolute h-[25px] left-[421px] top-[5229.03px] w-[20px]" data-node-id="2003:325" data-name="Vector">
         <div className="absolute inset-[-4%_-5%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector38} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector38} />
         </div>
       </div>
       <div className="absolute h-[5px] left-[427px] top-[5239.03px] w-[8px]" data-node-id="2003:326" data-name="Vector">
         <div className="absolute inset-[-20%_-12.5%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector39} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector39} />
         </div>
       </div>
       <div className="absolute h-[140px] left-0 top-[9078.03px] w-[1699px]" data-node-id="2109:60">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector40} />
+        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector40} />
       </div>
       <div className="absolute flex h-[140px] items-center justify-center left-px top-[9501.03px] w-[1699px]" data-node-id="2109:61">
         <div className="flex-none rotate-180">
           <div className="h-[140px] relative w-[1699px]">
-            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector41} />
+            <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector41} />
           </div>
         </div>
       </div>
@@ -753,7 +754,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-[9.51deg]">
           <div className="relative size-[24.358px]" data-name="Vector">
             <div className="absolute inset-[-4.11%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector42} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector42} />
             </div>
           </div>
         </div>
@@ -762,7 +763,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-[0.46deg]">
           <div className="h-[4.87px] relative w-0" data-name="Vector">
             <div className="absolute inset-[-20.53%_-1px]">
-              <img alt="" className="block max-w-none size-full" src={imgVector43} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector43} />
             </div>
           </div>
         </div>
@@ -771,14 +772,14 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-[10.21deg]">
           <div className="h-0 relative w-[4.87px]" data-name="Vector">
             <div className="absolute inset-[-1px_-20.53%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector44} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector44} />
             </div>
           </div>
         </div>
       </div>
       <div className="absolute left-[507px] size-[6px] top-[5339.03px]" data-node-id="2003:335" data-name="Vector">
         <div className="absolute inset-[-16.67%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector45} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector45} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[28px] justify-center leading-[0] left-[562px] not-italic text-[20px] text-white top-[5340.03px] w-[153px]" data-node-id="2007:111">
@@ -813,7 +814,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#edf2ee] left-[768px] rounded-[33554400px] size-[32px] top-[5939.58px]" data-node-id="2013:72" data-name="Background · фон" />
       <div className="absolute h-[7.333px] left-[778.67px] top-[5951.58px] w-[10.667px]" data-node-id="2003:371" data-name="Vector">
         <div className="absolute inset-[-13.64%_-9.37%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector46} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector46} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[19.25px] justify-center leading-[0] left-[768px] not-italic text-[#151917] text-[14px] top-[6009.2px] w-[65.099px]" data-node-id="2007:126">
@@ -826,7 +827,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#edf2ee] left-[946.5px] rounded-[33554400px] size-[32px] top-[5939.58px]" data-node-id="2013:74" data-name="Background · фон" />
       <div className="absolute h-[7.333px] left-[957.17px] top-[5951.58px] w-[10.667px]" data-node-id="2003:377" data-name="Vector">
         <div className="absolute inset-[-13.64%_-9.37%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector46} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector46} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[19.25px] justify-center leading-[0] left-[946.5px] not-italic text-[#151917] text-[14px] top-[6009.2px] w-[129.41px]" data-node-id="2007:128">
@@ -839,7 +840,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#edf2ee] left-[1125px] rounded-[33554400px] size-[32px] top-[5939.58px]" data-node-id="2013:76" data-name="Background · фон" />
       <div className="absolute h-[7.333px] left-[1135.67px] top-[5951.58px] w-[10.667px]" data-node-id="2003:383" data-name="Vector">
         <div className="absolute inset-[-13.64%_-9.37%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector46} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector46} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[19.25px] justify-center leading-[0] left-[1125px] not-italic text-[#151917] text-[14px] top-[6009.2px] w-[116.71px]" data-node-id="2007:130">
@@ -852,12 +853,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#77d65b] left-[1303.5px] rounded-[33554400px] size-[32px] top-[5939.58px]" data-node-id="2013:78" data-name="Background · фон" />
       <div className="absolute left-[1316.17px] size-[6.667px] top-[5949.58px]" data-node-id="2003:389" data-name="Vector">
         <div className="absolute inset-[-13.5%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector47} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector47} />
         </div>
       </div>
       <div className="absolute h-[5.333px] left-[1314.17px] top-[5956.24px] w-[10.667px]" data-node-id="2003:390" data-name="Vector">
         <div className="absolute inset-[-16.87%_-8.44%_-16.88%_-8.44%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector48} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector48} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[35.25px] justify-center leading-[0] left-[1303.5px] not-italic text-[#151917] text-[14px] top-[6018.2px] w-[79.61px]" data-node-id="2007:132">
@@ -955,16 +956,16 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <p className="leading-[26px]">Если человек взял паузу, Сэйлон вовремя напомнит о себе и продолжит диалог по заданному сценарию</p>
       </div>
       <div className="absolute left-[1322px] opacity-40 size-[145px] top-[7919.03px]" data-node-id="2092:38" data-name="free-icon-spreadsheet-app-3884609 2">
-        <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgFreeIconSpreadsheetApp38846092} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgFreeIconSpreadsheetApp38846092} />
       </div>
       <div className="absolute left-[1325px] opacity-40 size-[145px] top-[7662.03px]" data-node-id="2092:39" data-name="free-icon-speech-bubble-3884256 2">
-        <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgFreeIconSpeechBubble38842562} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgFreeIconSpeechBubble38842562} />
       </div>
       <div className="absolute left-[675px] opacity-40 size-[145px] top-[7914.03px]" data-node-id="2092:40" data-name="free-icon-shortcut-script-app-3884465 2">
-        <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgFreeIconShortcutScriptApp38844652} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgFreeIconShortcutScriptApp38844652} />
       </div>
       <div className="absolute left-[663px] opacity-40 size-[145px] top-[7659.03px]" data-node-id="2092:41" data-name="telegram 1">
-        <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgTelegram1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgTelegram1} />
       </div>
       <div className="absolute border-[#dce3df] border-solid border-t-2 h-[245px] left-[874px] top-[7615.89px] w-[615px]" data-node-id="2013:97" data-name="HorizontalBorder · фон" />
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[38px] justify-center leading-[0] left-[874px] not-italic text-[#151917] text-[32px] top-[7696.03px] w-[521px]" data-node-id="2007:159">
@@ -997,17 +998,17 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute border-[#dce3df] border-b border-solid h-[58px] left-[210px] top-[8515.08px] w-[1280px]" data-node-id="2013:114" data-name="HorizontalBorder · фон" />
       <div className="absolute h-[15px] left-[249px] top-[8536.08px] w-[18px]" data-node-id="2003:529" data-name="Vector">
         <div className="absolute inset-[-5%_-4.17%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector49} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector49} />
         </div>
       </div>
       <div className="absolute h-0 left-[249px] top-[8541.08px] w-[18px]" data-node-id="2003:530" data-name="Vector">
         <div className="absolute inset-[-0.75px_-4.17%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector50} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector50} />
         </div>
       </div>
       <div className="absolute h-[10px] left-[255px] top-[8541.08px] w-0" data-node-id="2003:531" data-name="Vector">
         <div className="absolute inset-[-7.5%_-0.75px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector51} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector51} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[25px] justify-center leading-[0] left-[285px] not-italic text-[#151917] text-[22px] top-[8543.58px] w-[161px]" data-node-id="2007:181">
@@ -1056,10 +1057,10 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
       </div>
       <div className="absolute h-[28px] left-[1020px] top-[8668.03px] w-[297px]" data-node-id="2092:55">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle1} />
       </div>
       <div className="absolute h-[28px] left-[1020px] top-[8742.03px] w-[297px]" data-node-id="2092:58">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle1} />
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[16px] justify-center leading-[0] left-[309px] not-italic text-[#626d68] text-[16px] top-[8767.08px] w-[266px]" data-node-id="2007:193">
         <p className="leading-[20px]">Спасибо, посоветуюсь с коллегами</p>
@@ -1103,12 +1104,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#26775e] h-[58px] left-[213px] rounded-[29px] top-[8883.03px] w-[1273px]" data-node-id="2013:122" data-name="Background · фон" />
       <div className="absolute left-[263px] size-[11px] top-[8903.08px]" data-node-id="2003:575" data-name="Vector">
         <div className="absolute inset-[-9.09%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector52} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector52} />
         </div>
       </div>
       <div className="absolute h-[8px] left-[260px] top-[8914.08px] w-[17px]" data-node-id="2003:576" data-name="Vector">
         <div className="absolute inset-[-12.5%_-5.88%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector53} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector53} />
         </div>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[16px] justify-center leading-[0] left-[310px] not-italic text-[0px] text-white top-[8912.08px] w-[865px]" data-node-id="2007:199">
@@ -1134,7 +1135,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="flex-none rotate-45">
           <div className="relative size-[7.5px]" data-name="Vector">
             <div className="absolute inset-[-10%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector54} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector54} />
             </div>
           </div>
         </div>
@@ -1271,12 +1272,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute h-0 left-[1473.67px] top-[11722.03px] w-[11.667px]" data-node-id="2003:830" data-name="Vector">
         <div className="absolute inset-[-0.83px_-7.14%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector55} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector55} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[1479.5px] top-[11716.2px] w-0" data-node-id="2003:831" data-name="Vector">
         <div className="absolute inset-[-7.14%_-0.83px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector56} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector56} />
         </div>
       </div>
       <div className="absolute border-[#dce3df] border-b border-solid h-[77px] left-[688.69px] top-[11761.03px] w-[800.81px]" data-node-id="2013:164" data-name="Details · фон" />
@@ -1285,12 +1286,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute h-0 left-[1473.67px] top-[11799.03px] w-[11.667px]" data-node-id="2003:836" data-name="Vector">
         <div className="absolute inset-[-0.83px_-7.14%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector55} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector55} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[1479.5px] top-[11793.2px] w-0" data-node-id="2003:837" data-name="Vector">
         <div className="absolute inset-[-7.14%_-0.83px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector56} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector56} />
         </div>
       </div>
       <div className="absolute border-[#dce3df] border-b border-solid h-[77px] left-[688.69px] top-[11838.03px] w-[800.81px]" data-node-id="2013:165" data-name="Details · фон" />
@@ -1299,12 +1300,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute h-0 left-[1473.67px] top-[11876.03px] w-[11.667px]" data-node-id="2003:842" data-name="Vector">
         <div className="absolute inset-[-0.83px_-7.14%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector55} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector55} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[1479.5px] top-[11870.2px] w-0" data-node-id="2003:843" data-name="Vector">
         <div className="absolute inset-[-7.14%_-0.83px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector56} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector56} />
         </div>
       </div>
       <div className="absolute border-[#dce3df] border-b border-solid h-[77px] left-[688.69px] top-[11915.03px] w-[800.81px]" data-node-id="2013:166" data-name="Details · фон" />
@@ -1313,12 +1314,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute h-0 left-[1473.67px] top-[11953.03px] w-[11.667px]" data-node-id="2003:848" data-name="Vector">
         <div className="absolute inset-[-0.83px_-7.14%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector55} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector55} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[1479.5px] top-[11947.2px] w-0" data-node-id="2003:849" data-name="Vector">
         <div className="absolute inset-[-7.14%_-0.83px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector56} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector56} />
         </div>
       </div>
       <div className="absolute border-[#dce3df] border-b border-solid h-[77px] left-[688.69px] top-[11992.03px] w-[800.81px]" data-node-id="2013:167" data-name="Details · фон" />
@@ -1327,12 +1328,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute h-0 left-[1473.67px] top-[12030.03px] w-[11.667px]" data-node-id="2003:854" data-name="Vector">
         <div className="absolute inset-[-0.83px_-7.14%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector55} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector55} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[1479.5px] top-[12024.2px] w-0" data-node-id="2003:855" data-name="Vector">
         <div className="absolute inset-[-7.14%_-0.83px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector56} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector56} />
         </div>
       </div>
       <div className="absolute border-[#dce3df] border-b border-solid h-[77px] left-[688.69px] top-[12069.03px] w-[800.81px]" data-node-id="2013:168" data-name="Details · фон" />
@@ -1341,12 +1342,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute h-0 left-[1473.67px] top-[12107.03px] w-[11.667px]" data-node-id="2003:860" data-name="Vector">
         <div className="absolute inset-[-0.83px_-7.14%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector55} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector55} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[1479.5px] top-[12101.2px] w-0" data-node-id="2003:861" data-name="Vector">
         <div className="absolute inset-[-7.14%_-0.83px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector56} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector56} />
         </div>
       </div>
       <div className="absolute border-[#dce3df] border-b border-solid h-[77px] left-[688.69px] top-[12146.03px] w-[800.81px]" data-node-id="2013:169" data-name="Details · фон" />
@@ -1356,12 +1357,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute bg-[#0a241d] border-[rgba(255,255,255,0.1)] border-solid border-t h-[508px] left-0 top-[12803px] w-[1700px]" data-node-id="2013:171" data-name="Footer · фон" />
       <div className="absolute h-0 left-[1473.67px] top-[12184.03px] w-[11.667px]" data-node-id="2003:866" data-name="Vector">
         <div className="absolute inset-[-0.83px_-7.14%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector55} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector55} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[1479.5px] top-[12178.2px] w-0" data-node-id="2003:867" data-name="Vector">
         <div className="absolute inset-[-7.14%_-0.83px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector56} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector56} />
         </div>
       </div>
       <div className="absolute border-[#dce3df] border-b border-solid h-[77px] left-[688.69px] top-[12223.03px] w-[800.81px]" data-node-id="2013:170" data-name="Details · фон" />
@@ -1370,12 +1371,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute h-0 left-[1473.67px] top-[12261.03px] w-[11.667px]" data-node-id="2003:872" data-name="Vector">
         <div className="absolute inset-[-0.83px_-7.14%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector55} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector55} />
         </div>
       </div>
       <div className="absolute h-[11.667px] left-[1479.5px] top-[12255.2px] w-0" data-node-id="2003:873" data-name="Vector">
         <div className="absolute inset-[-7.14%_-0.83px]">
-          <img alt="" className="block max-w-none size-full" src={imgVector56} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector56} />
         </div>
       </div>
       <div className="absolute bg-[#77d65b] drop-shadow-[0px_24px_35px_rgba(95,198,70,0.24)] h-[482px] left-0 rounded-[78px] top-[12452px] w-[1700px]" data-node-id="2003:874" data-name="Section">
@@ -1393,12 +1394,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
         <div className="absolute h-[12px] left-[469px] top-[389px] w-[6px]" data-node-id="2003:883" data-name="Vector">
           <div className="absolute inset-[-6.25%_-12.5%]">
-            <img alt="" className="block max-w-none size-full" src={imgVector57} />
+            <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector57} />
           </div>
         </div>
         <div className="absolute h-[9px] left-[529px] top-[390px] w-[12px]" data-node-id="2003:885" data-name="Vector">
           <div className="absolute inset-[-11.11%_-8.33%]">
-            <img alt="" className="block max-w-none size-full" src={imgVector58} />
+            <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector58} />
           </div>
         </div>
         <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[22px] justify-center leading-[0] left-[553px] not-italic text-[#0a241d] text-[18px] top-[395px] w-[279px]" data-node-id="2007:289">
@@ -1407,7 +1408,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="absolute flex items-center justify-center left-[1323px] size-[319.604px] top-[137.97px]" data-node-id="2147:58">
           <div className="flex-none rotate-[4.92deg]">
             <div className="opacity-25 relative size-[295.361px]" data-name="ChatGPT Image 19 сент. 2026 г., 19_15_28 2">
-              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgChatGptImage1920261915282} />
+              <Image alt="" fill sizes="296px" className="object-cover pointer-events-none" src={imgChatGptImage1920261915282} />
             </div>
           </div>
         </div>
@@ -1471,13 +1472,13 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="absolute h-[19px] left-[264px] right-[25px] top-[414px]" data-node-id="2016:996" data-name="SVG">
           <div className="absolute inset-[29.17%]" data-node-id="2016:998" data-name="Vector">
             <div className="absolute inset-[-10%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector59} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector59} />
             </div>
           </div>
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1000" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[116.38%] left-0 max-w-none top-[-8.19%] w-full" src={imgBackground} />
+            <Image alt="" fill sizes="306px" className="object-cover" src={imgBackground} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1002" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[196px]" data-node-id="2016:1003" data-name="Overlay+Border+OverlayBlur">
@@ -1494,13 +1495,13 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="absolute h-[19px] left-[264px] right-[25px] top-[414px]" data-node-id="2016:1007" data-name="SVG">
           <div className="absolute inset-[29.17%]" data-node-id="2016:1009" data-name="Vector">
             <div className="absolute inset-[-10%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector59} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector59} />
             </div>
           </div>
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1011" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[116.38%] left-0 max-w-none top-[-8.19%] w-full" src={imgBackground1} />
+            <Image alt="" fill sizes="306px" className="object-cover" src={imgBackground1} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1013" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[191px]" data-node-id="2016:1014" data-name="Overlay+Border+OverlayBlur">
@@ -1517,13 +1518,13 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="absolute h-[19px] left-[264px] right-[25px] top-[414px]" data-node-id="2016:1018" data-name="SVG">
           <div className="absolute inset-[29.17%]" data-node-id="2016:1020" data-name="Vector">
             <div className="absolute inset-[-10%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector59} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector59} />
             </div>
           </div>
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1022" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[116.5%] left-0 max-w-none top-[-8.25%] w-full" src={imgBackground2} />
+            <Image alt="" fill sizes="306px" className="object-cover" src={imgBackground2} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1024" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[127px]" data-node-id="2016:1025" data-name="Overlay+Border+OverlayBlur">
@@ -1540,13 +1541,13 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <div className="absolute h-[19px] left-[264px] right-[25px] top-[414px]" data-node-id="2016:1029" data-name="SVG">
           <div className="absolute inset-[29.17%]" data-node-id="2016:1031" data-name="Vector">
             <div className="absolute inset-[-10%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector59} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector59} />
             </div>
           </div>
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1033" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[116.38%] left-0 max-w-none top-[-8.19%] w-full" src={imgBackground3} />
+            <Image alt="" fill sizes="306px" className="object-cover" src={imgBackground3} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1035" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[212px]" data-node-id="2016:1036" data-name="Overlay+Border+OverlayBlur">
@@ -1564,7 +1565,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <p className="leading-[20px]">К</p>
       </div>
       <div className="absolute h-[287.5px] left-0 top-[850px] w-[1700px]" data-node-id="2143:45">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle3} />
+        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle3} />
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[20px] justify-center leading-[0] left-[1053px] not-italic text-[#151917] text-[16px] top-[229px] w-[106px]" data-node-id="2007:21">
         <p className="leading-[20px]">Клиент</p>
@@ -1611,7 +1612,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute h-[26px] left-[1137px] top-[695px] w-[21px]" data-node-id="2070:2">
         <div className="absolute inset-[-0.91%_-0.3%_-3.85%_-4.76%]">
-          <img alt="" className="block max-w-none size-full" src={imgVector60} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector60} />
         </div>
       </div>
       <div className="absolute bg-[#77d65b] left-[1030px] rounded-[33554400px] size-[8px] top-[246.97px]" data-node-id="2003:33" data-name="Background" />
@@ -1621,42 +1622,42 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute h-[140px] left-px top-[1000px] w-[1699px]" data-node-id="2070:21">
         <div className="absolute inset-[-0.78%_0_-0.71%_0]">
-          <img alt="" className="block max-w-none size-full" src={imgVector61} />
+          <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector61} />
         </div>
       </div>
       <div className="absolute h-[140px] left-0 top-[741px] w-[1699px]" data-node-id="2143:42">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector62} />
+        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector62} />
       </div>
       <div className="absolute h-[140px] left-px top-[3568.03px] w-[1699px]" data-node-id="2076:26">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector63} />
+        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector63} />
       </div>
       <div className="absolute flex h-[140px] items-center justify-center left-px top-[6192.03px] w-[1699px]" data-node-id="2083:9">
         <div className="flex-none rotate-180">
           <div className="h-[140px] relative w-[1699px]">
-            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector64} />
+            <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector64} />
           </div>
         </div>
       </div>
       <div className="absolute h-[140px] left-0 top-[8141.03px] w-[1699px]" data-node-id="2092:42">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector65} />
+        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector65} />
       </div>
       <div className="absolute flex h-[140px] items-center justify-center left-px top-[1923.03px] w-[1698px]" data-node-id="2074:3">
         <div className="flex-none rotate-180">
           <div className="h-[140px] relative w-[1698px]">
             <div className="absolute inset-[-0.78%_0_-0.71%_0]">
-              <img alt="" className="block max-w-none size-full" src={imgVector66} />
+              <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector66} />
             </div>
           </div>
         </div>
       </div>
       <div className="absolute left-[764px] size-[2px] top-[2389.03px]" data-node-id="2075:8">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse1} />
       </div>
       <div className="absolute left-[767px] size-[2px] top-[2389.03px]" data-node-id="2075:9">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse1} />
       </div>
       <div className="absolute left-[770px] size-[2px] top-[2389.03px]" data-node-id="2075:10">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse1} />
       </div>
       <div className="-translate-y-1/2 absolute flex h-[117.199px] items-center justify-center left-[231.07px] top-[905.5px] w-[594.857px]" data-node-id="2143:46">
         <div className="flex-none rotate-[4.11deg]">
@@ -1669,10 +1670,10 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <p className="leading-[32px]">После регистрации вы получите бесплатные 10 000 кредитов на 14 дней для проверки AI-бота на реальных обращениях</p>
       </div>
       <div className="absolute left-[211px] size-[52px] top-[17px]" data-node-id="2147:55" data-name="ChatGPT Image 19 сент. 2026 г., 19_15_28 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgChatGptImage1920261915281} />
+        <Image alt="" fill sizes="52px" className="object-cover pointer-events-none" src={imgChatGptImage1920261915281} />
       </div>
       <div className="absolute left-[203px] size-[66px] top-[13043px]" data-node-id="2147:57" data-name="ChatGPT Image 19 сент. 2026 г., 19_15_28 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgChatGptImage1920261915282} />
+        <Image alt="" fill sizes="66px" className="object-cover pointer-events-none" src={imgChatGptImage1920261915282} />
       </div>
       <div className="absolute contents h-[70.687px] left-[515.46px] top-[850.2px] w-[269.53px]" data-node-id="2158:5">
         <div className="absolute flex h-[70.455px] items-center justify-center left-[523.85px] top-[850.38px] w-[260.882px]" data-node-id="2158:2">
@@ -1691,7 +1692,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
           <div className="flex-none rotate-[49.39deg]">
             <div className="relative size-[7.5px]" data-name="Vector">
               <div className="absolute inset-[-10%]">
-                <img alt="" className="block max-w-none size-full" src={imgVector67} />
+                <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src={imgVector67} />
               </div>
             </div>
           </div>

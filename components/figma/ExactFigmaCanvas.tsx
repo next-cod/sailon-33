@@ -1,13 +1,16 @@
 "use client";
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import ExactFigmaPage from "./ExactFigmaPage";
 import { InteractiveFooter } from "./InteractiveFooter";
 import { FunctionalLayer } from "./FunctionalLayer";
-import { SavingsCalculatorPopup } from "@/components/marketing/SavingsCalculatorPopup";
-import { useDocumentTitle, useSiteLanguage } from "@/lib/use-site-language";
-import { translateText } from "@/lib/site-copy";
+
+const SavingsCalculatorPopup = dynamic(
+  () => import("@/components/marketing/SavingsCalculatorPopup").then((module) => module.SavingsCalculatorPopup),
+  { ssr: false },
+);
 
 const DESIGN_WIDTH = 1700;
 const DESIGN_HEIGHT = 13584;
@@ -53,52 +56,49 @@ const revealNodeIds = [
   "2016:992", "2016:994", "2016:1005", "2016:1016", "2016:1027", "2007:244", "2013:143", "2007:276", "2013:162",
 ];
 
-const translations: Record<string, string[]> = {
-  "2007:37": ["Understands what the customer needs"],
-  "2007:38": ["Responds naturally, understands the request, context, and the next step in the conversation"],
-  "2007:39": ["Responds with personality"],
-  "2007:41": ["Knows your business"],
-  "2007:43": ["Keeps the context"],
-  "2007:45": ["Follows up at the right time"],
-  "2007:49": ["From the first message", "to a clear next step"],
-  "2007:62": ["A different conversation goal at every stage"],
-  "2007:85": ["Let AI speak the way your business does"],
-  "2007:103": ["Do not take AI on trust", "Control what it is responsible for"],
-  "2007:118": ["Decide how much of the conversation to automate"],
-  "2007:135": ["Conversation logic changes with the business goal"],
-  "2007:156": ["Saleon handles the routine", "A manager joins when it matters"],
-  "2016:992": ["Four areas", "One system that moves the customer forward"],
-  "2007:244": ["Test Saleon in real conversations before choosing a plan"],
-  "2007:276": ["What is worth clarifying before the trial"],
-  "2007:286": ["See how Saleon will work with your customers"],
-  "2007:298": ["Saleon"],
-  "2007:299": ["How it responds"],
-  "2007:300": ["Business setup"],
-  "2007:301": ["Scenarios"],
-  "2007:302": ["Pricing"],
-  "2007:303": ["Questions"],
-  "2007:304": ["Try for free"],
-};
-
 export function ExactFigmaCanvas() {
   const [scale, setScale] = useState(1);
-  const { language } = useSiteLanguage();
-  useDocumentTitle(language === "ru" ? "Сэйлон — AI-продавец с характером" : "Saleon — AI sales assistant with personality");
+  const language = "ru" as const;
   const [headerCompact, setHeaderCompact] = useState(false);
+  const [marketingReady, setMarketingReady] = useState(false);
   const canvasRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    const updateScale = () => setScale(document.documentElement.clientWidth / DESIGN_WIDTH);
+    let frame = 0;
+    const updateScale = () => {
+      frame = 0;
+      const nextScale = document.documentElement.clientWidth / DESIGN_WIDTH;
+      setScale((currentScale) => currentScale === nextScale ? currentScale : nextScale);
+    };
+    const scheduleScaleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateScale);
+    };
     updateScale();
-    window.addEventListener("resize", updateScale);
-    return () => window.removeEventListener("resize", updateScale);
+    window.addEventListener("resize", scheduleScaleUpdate, { passive: true });
+    return () => {
+      window.removeEventListener("resize", scheduleScaleUpdate);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
-    const updateHeader = () => setHeaderCompact(window.scrollY > 36);
+    const updateHeader = () => setHeaderCompact((current) => {
+      const compact = window.scrollY > 36;
+      return current === compact ? current : compact;
+    });
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
     return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
+
+  useEffect(() => {
+    const enableMarketing = () => setMarketingReady(true);
+    const idleId = window.requestIdleCallback?.(enableMarketing, { timeout: 1200 });
+    const timeoutId = idleId === undefined ? window.setTimeout(enableMarketing, 650) : undefined;
+    return () => {
+      if (idleId !== undefined) window.cancelIdleCallback?.(idleId);
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+    };
   }, []);
 
   const navigateTo = useCallback((href: string) => {
@@ -138,32 +138,6 @@ export function ExactFigmaCanvas() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const root = canvasRef.current;
-    if (!root) return;
-    document.documentElement.lang = language;
-    root.querySelectorAll<HTMLParagraphElement>("p").forEach((paragraph) => {
-      if (paragraph.children.length > 0) return;
-      if (!paragraph.dataset.ruText) paragraph.dataset.ruText = paragraph.textContent ?? "";
-      paragraph.textContent = language === "en"
-        ? translateText(language, paragraph.dataset.ruText)
-        : paragraph.dataset.ruText;
-    });
-    for (const [id, values] of Object.entries(translations)) {
-      const node = root.querySelector<HTMLElement>(`[data-node-id="${id}"]`);
-      if (!node) continue;
-      const paragraphs = Array.from(node.querySelectorAll<HTMLParagraphElement>("p"));
-      paragraphs.forEach((paragraph, index) => {
-        if (!paragraph.dataset.ruText) paragraph.dataset.ruText = paragraph.textContent ?? "";
-        paragraph.textContent = language === "en" ? values[index] ?? "" : paragraph.dataset.ruText;
-      });
-    }
-    const languageLabel = root.querySelector<HTMLElement>('[data-node-id="2132:13"] p');
-    if (languageLabel) languageLabel.textContent = language.toUpperCase();
-    const brandLabel = root.querySelector<HTMLElement>('[data-node-id="2007:298"] p');
-    if (brandLabel) brandLabel.textContent = language === "ru" ? "Сэйлон" : "Saleon";
-  }, [language]);
-
   const setInteracting = (targetId: string | undefined, active: boolean) => {
     if (!targetId) return;
     canvasRef.current?.querySelector<HTMLElement>(`[data-node-id="${targetId}"]`)?.classList.toggle("is-interacting", active);
@@ -192,7 +166,7 @@ export function ExactFigmaCanvas() {
           </div>
         </div>
       </header>
-      <SavingsCalculatorPopup onCreateBot={() => navigateTo("#pricing")} />
+      {marketingReady && <SavingsCalculatorPopup onCreateBot={() => navigateTo("#pricing")} />}
       <div
         ref={canvasRef}
         className="figma-page-canvas"
@@ -207,7 +181,7 @@ export function ExactFigmaCanvas() {
           <a
             key={`${link.label}-${index}`}
             href={link.href}
-            aria-label={translateText(language, link.label)}
+            aria-label={link.label}
             className="absolute z-[100] block rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#26775e]"
             style={{ left: link.x, top: link.y, width: link.w, height: link.h }}
             onClick={(event) => { event.preventDefault(); navigateTo(link.href); }}

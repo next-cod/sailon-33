@@ -4,7 +4,6 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { ArrowUp } from "lucide-react";
-import { translateText } from "@/lib/site-copy";
 
 type Language = "ru" | "en";
 type BotChatMessage = { author: "bot" | "visitor"; text: string };
@@ -119,7 +118,7 @@ function setNodeText(root: HTMLElement | null, id: string, value: string) {
 }
 
 export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObject<HTMLDivElement | null>; language: Language }) {
-  const t = (value: string) => translateText(language, value);
+  const t = (value: string) => value;
   const [journey, setJourney] = useState(0);
   const [character, setCharacter] = useState(0);
   const [scenario, setScenario] = useState(0);
@@ -127,6 +126,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
   const [dialogOpen, setDialogOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [chatPhase, setChatPhase] = useState(0);
+  const [heroLive, setHeroLive] = useState(false);
   const [controlCard, setControlCard] = useState<number | null>(null);
   const [chatHovered, setChatHovered] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -136,6 +136,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
     { author: "bot", text: "Привет! Я Сэйлон — AI-продавец для входящих обращений. Могу рассказать, как помогаю бизнесу." },
   ]);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const heroLiveRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => setMounted(true));
@@ -143,6 +144,22 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
   }, []);
 
   useEffect(() => {
+    const hero = heroLiveRef.current;
+    if (!hero) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeroLive(entry.isIntersecting),
+      { threshold: 0.15 },
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    rootRef.current?.classList.toggle("hero-live-visible", heroLive);
+  }, [heroLive, rootRef]);
+
+  useEffect(() => {
+    if (!heroLive) return;
     const times = [0, 1800, 3300, 5100, 7200, 9000, 10500, 12300];
     let timers: ReturnType<typeof setTimeout>[] = [];
     const play = () => {
@@ -152,7 +169,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
     };
     play();
     return () => timers.forEach(clearTimeout);
-  }, []);
+  }, [heroLive]);
 
   useEffect(() => {
     const groups = [
@@ -193,7 +210,6 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
     setNodeText(root, "2007:80", t(item.action));
     setNodeText(root, "2007:82", t(item.client));
     setNodeText(root, "2007:83", t(item.answer));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [journey, language, rootRef]);
 
   useEffect(() => {
@@ -208,7 +224,6 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
       if (tone) tone.style.color = color;
     }
     setNodeText(root, "2007:98", t(characters[character].answer));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [character, language, rootRef]);
 
   useEffect(() => {
@@ -255,7 +270,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
 
   return (
     <>
-      <section className="hero-chat-live" aria-label={t("Пример диалога с AI-ботом")}>
+      <section ref={heroLiveRef} className="hero-chat-live" aria-label={t("Пример диалога с AI-ботом")}>
         <div className="chat-live-stack">
           {chatPhase === 0 && <div className="chat-live-typing client"><i /><i /><i /></div>}
           {chatPhase >= 1 && <div className="chat-live-message client">{t("Хочу попробовать, но немного переживаю — вдруг бот будет отвечать клиентам как-то не так")} <small>12:42</small></div>}

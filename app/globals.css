@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
   background: var(--figma-background);
 }
 
@@ -255,6 +256,7 @@ body {
 .figma-reveal.is-visible {
   opacity: 1;
   filter: none;
+  will-change: auto;
 }
 
 .figma-page-canvas [data-node-id].is-interacting {
@@ -595,6 +597,11 @@ html[data-language="en"] .cta-hit--custom {
 .chat-live-typing.client i { background: #626d68; }
 .chat-live-typing i:nth-child(2) { animation-delay: 110ms; }
 .chat-live-typing i:nth-child(3) { animation-delay: 220ms; }
+
+/* The scripted chat is useful only in the first viewport; pause its compositor work off-screen. */
+.figma-page-canvas:not(.hero-live-visible) .chat-live-typing i {
+  animation-play-state: paused;
+}
 
 .interaction-tabs {
   position: absolute;
@@ -1430,16 +1437,7 @@ html[data-language="en"] .cta-hit--custom {
 
   .bot-chat-popover { animation: none; }
   .floating-chat-nudge { opacity: 1; transform: none; pointer-events: auto; }
-  .floating-chat-button { animation: floatingChatButtonPulse 2.8s ease-in-out infinite !important; }
-  .control-card-motion { transition: transform 480ms cubic-bezier(.22, 1, .36, 1) !important; }
-  .floating-chat:hover .floating-chat-button,
-  .floating-chat:focus-within .floating-chat-button,
-  .floating-chat.is-open .floating-chat-button {
-    animation-play-state: paused !important;
-  }
-  .figma-page-canvas [data-node-id="2070:3"] {
-    transition: background-color 420ms cubic-bezier(.22,1,.36,1), border-color 420ms cubic-bezier(.22,1,.36,1) !important;
-  }
+  .control-card-motion { transition: none !important; }
 }
 
 @media (max-width: 1200px) {
