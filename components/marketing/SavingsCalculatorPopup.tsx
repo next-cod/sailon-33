@@ -122,7 +122,10 @@ export function SavingsCalculatorPopup({ onCreateBot }: SavingsCalculatorPopupPr
   useEffect(() => {
     if (!activePopup) return;
     const previousOverflow = document.body.style.overflow;
+    const previousScrollBehavior = document.documentElement.style.scrollBehavior;
     const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
     document.body.style.overflow = "hidden";
     closeRef.current?.focus();
 
@@ -146,7 +149,13 @@ export function SavingsCalculatorPopup({ onCreateBot }: SavingsCalculatorPopupPr
     return () => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleKeyDown);
-      previousFocus?.focus();
+      // A popup can appear while the visitor is reading any part of the page.
+      // Returning focus must never pull that person to the element that had focus
+      // before the popup appeared (for example, a header navigation item).
+      previousFocus?.focus({ preventScroll: true });
+      document.documentElement.style.scrollBehavior = "auto";
+      window.scrollTo(scrollX, scrollY);
+      document.documentElement.style.scrollBehavior = previousScrollBehavior;
     };
   }, [activePopup, close]);
 
