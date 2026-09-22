@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { useDocumentTitle, useSiteLanguage } from "@/lib/use-site-language";
 
 type LocalizedDocument = {
@@ -17,7 +18,9 @@ export function LocalizedLegalPage({ document }: { document: LocalizedDocument }
   return (
     <main className="legal-page">
       <div className="legal-toolbar">
-        <Link className="legal-back" href="/">{language === "ru" ? "Сэйлон" : "Saleon"}</Link>
+        <Link className="legal-back" href="/" aria-label={language === "ru" ? "Вернуться на сайт" : "Back to site"} title={language === "ru" ? "Вернуться на сайт" : "Back to site"}>
+          <ArrowLeft size={21} strokeWidth={2.25} aria-hidden="true" />
+        </Link>
       </div>
       <article>
         <h1>{copy.title}</h1>

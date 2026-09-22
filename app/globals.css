@@ -1259,9 +1259,11 @@ html[data-language="en"] .cta-hit--custom {
 .legal-back {
   display: inline-flex;
   align-items: center;
-  min-height: 46px;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
   margin-bottom: 44px;
-  padding: 0 18px;
+  padding: 0;
   border: 1px solid #dce3df;
   border-radius: 999px;
   background: #fff;
@@ -1273,7 +1275,7 @@ html[data-language="en"] .cta-hit--custom {
   transition: color 180ms ease, border-color 180ms ease;
 }
 
-.legal-back:hover { color: #26775e; border-color: #77d65b; }
+.legal-back:hover { border-color: #77d65b; background: #f1faee; color: #26775e; }
 
 .legal-page article {
   width: min(860px, 100%);
