@@ -847,8 +847,8 @@ html[data-language="en"] .cta-hit--custom {
 }
 
 .faq-live-item { border-bottom: 1px solid #dce3df; background: #f5f7f5; transition: background 220ms ease, border-radius 220ms ease; }
-.faq-live-item > button { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 68px; padding: 0 14px; border: 0; border-radius: 14px; background: transparent; color: #151917; font: 700 22px/1.2 "Tilda Sans", Arial, sans-serif; text-align: left; cursor: pointer; transition: color 180ms ease, background 180ms ease; }
-.faq-live-item > button:hover { background: rgba(119,214,91,.09); color: #26775e; }
+.faq-live-item > button { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 68px; padding: 0 14px; border: 0; border-radius: 14px; background: transparent; color: #151917; font: 700 22px/1.2 "Tilda Sans", Arial, sans-serif; text-align: left; cursor: pointer; transition: transform 180ms ease; }
+.faq-live-item > button:hover { background: transparent; color: #151917; transform: translateX(3px); }
 .faq-live-item > button:focus-visible { outline: 3px solid #77d65b; outline-offset: -3px; }
 .faq-plus { position: relative; flex: 0 0 auto; width: 20px; height: 20px; }
 .faq-plus::before, .faq-plus::after { content: ""; position: absolute; left: 4px; top: 9px; width: 12px; height: 2px; border-radius: 2px; background: #26775e; transition: transform 220ms ease; }
