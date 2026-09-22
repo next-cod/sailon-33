@@ -821,7 +821,7 @@ html[data-language="en"] .cta-hit--custom {
      vertical centring) and animate the whole card layer via `transform`. */
   transform: translate(0, 0);
   will-change: transform;
-  transition: transform 480ms cubic-bezier(.22, 1, .36, 1) !important;
+  transition: transform 620ms cubic-bezier(.22, 1, .36, 1) !important;
 }
 
 .control-card-fourth { transform: translate(0, -8px); }

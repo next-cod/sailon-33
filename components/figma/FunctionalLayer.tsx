@@ -58,6 +58,13 @@ const characters = [
   { name: "Агентство недвижимости", tone: "сдержанный / тактичный", answer: "Подскажите район, бюджет и цель покупки. Отберу подходящие варианты и уточню важные условия до просмотра" },
 ];
 
+const controlCardGroups = [
+  ["2013:57", "2013:58", "2003:309", "2003:310", "2003:311", "2007:105", "2007:106"],
+  ["2013:59", "2013:60", "2003:317", "2090:7", "2090:8", "2007:107", "2007:108"],
+  ["2013:61", "2013:62", "2003:325", "2003:326", "2007:109", "2007:110"],
+  ["2013:63", "2013:64", "2003:332", "2003:333", "2003:334", "2003:335", "2007:111", "2007:112"],
+] as const;
+
 const scenarios = [
   {
     name: "Компьютерный клуб", stage: "Выбор времени", tone: "быстрый / свой человек", goal: "Довести до брони",
@@ -172,21 +179,19 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
   }, [heroLive]);
 
   useEffect(() => {
-    const groups = [
-      ["2013:57", "2013:58", "2003:309", "2003:310", "2003:311", "2007:105", "2007:106"],
-      ["2013:59", "2013:60", "2003:317", "2090:7", "2090:8", "2007:107", "2007:108"],
-      ["2013:61", "2013:62", "2003:325", "2003:326", "2007:109", "2007:110"],
-      ["2013:63", "2013:64", "2003:332", "2003:333", "2003:334", "2003:335", "2007:111", "2007:112"],
-    ];
-    groups.forEach((group, groupIndex) => group.forEach((id) => {
+    controlCardGroups.forEach((group, groupIndex) => group.forEach((id) => {
       const node = rootRef.current?.querySelector<HTMLElement>(`[data-node-id="${id}"]`);
       node?.classList.add("control-card-motion");
       node?.classList.toggle("control-card-fourth", groupIndex === 3);
-      node?.classList.remove("control-card-active");
     }));
-    if (controlCard !== null) {
-      groups[controlCard].forEach((id) => rootRef.current?.querySelector<HTMLElement>(`[data-node-id="${id}"]`)?.classList.add("control-card-active"));
-    }
+  }, [rootRef]);
+
+  useEffect(() => {
+    controlCardGroups.forEach((group, groupIndex) => group.forEach((id) => {
+      rootRef.current
+        ?.querySelector<HTMLElement>(`[data-node-id="${id}"]`)
+        ?.classList.toggle("control-card-active", controlCard === groupIndex);
+    }));
   }, [controlCard, rootRef]);
 
   useEffect(() => {
