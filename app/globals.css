@@ -1437,7 +1437,8 @@ html[data-language="en"] .cta-hit--custom {
 
   .bot-chat-popover { animation: none; }
   .floating-chat-nudge { opacity: 1; transform: none; pointer-events: auto; }
-  .control-card-motion { transition: none !important; }
+  /* This is a short, user-triggered hover cue rather than ambient motion. */
+  .control-card-motion { transition: transform 620ms cubic-bezier(.22, 1, .36, 1) !important; }
 }
 
 @media (max-width: 1200px) {
