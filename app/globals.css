@@ -603,18 +603,32 @@ html[data-language="en"] .cta-hit--custom {
 }
 
 .interaction-tabs button {
+  position: relative;
   border: 0;
   background: transparent;
   color: transparent;
   cursor: pointer;
-  transition: background-color 460ms cubic-bezier(.22, 1, .36, 1), box-shadow 460ms cubic-bezier(.22, 1, .36, 1);
+  overflow: hidden;
+  isolation: isolate;
+  transition: box-shadow 320ms cubic-bezier(.22, 1, .36, 1);
 }
 
-.interaction-tabs button:hover { background: rgba(255,255,255,.055); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.interaction-tabs button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 340ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.interaction-tabs button:hover::before { opacity: 1; }
+.interaction-tabs button:hover { background: transparent; box-shadow: none; }
 .journey-tabs button { border-radius: 16px; }
-.journey-tabs button:hover { background: rgba(18,58,48,.075); box-shadow: none; }
+.journey-tabs button::before { background: rgba(18,58,48,.075); }
 .character-tabs button { border-radius: 16px; }
-.character-tabs button:hover { background: rgba(255,255,255,.075); box-shadow: none; }
+.character-tabs button::before { background: rgba(255,255,255,.075); }
 .scenario-tabs button:hover { background: transparent; box-shadow: none; transform: none; }
 .interaction-tabs button:active { opacity: .88; }
 
