@@ -38,7 +38,7 @@ const anchors = [
   { id: "custom", y: 9140 },
 ];
 
-const anchorPositions = Object.fromEntries(anchors.map(({ id, y }) => [`#${id}`, y]));
+const anchorPositions: Record<string, number> = { "#top": 0, ...Object.fromEntries(anchors.map(({ id, y }) => [`#${id}`, y])) };
 
 const headerLinks = [
   { ru: "Как отвечает", en: "How it responds", href: "#how" },
@@ -81,6 +81,14 @@ export function ExactFigmaCanvas() {
     };
   }, []);
 
+  useLayoutEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+    if (window.location.hash) window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    return () => { window.history.scrollRestoration = previousScrollRestoration; };
+  }, []);
+
   useEffect(() => {
     const updateHeader = () => setHeaderCompact((current) => {
       const compact = window.scrollY > 36;
@@ -105,20 +113,8 @@ export function ExactFigmaCanvas() {
     const target = anchorPositions[href];
     if (target === undefined) return;
     const currentScale = document.documentElement.clientWidth / DESIGN_WIDTH;
-    window.history.replaceState(null, "", href);
     window.scrollTo({ top: Math.max(0, target * currentScale - 68), behavior: "smooth" });
   }, []);
-
-  useEffect(() => {
-    const alignWithHash = () => {
-      const href = window.location.hash;
-      if (anchorPositions[href] === undefined) return;
-      window.requestAnimationFrame(() => navigateTo(href));
-    };
-    alignWithHash();
-    window.addEventListener("hashchange", alignWithHash);
-    return () => window.removeEventListener("hashchange", alignWithHash);
-  }, [navigateTo, scale]);
 
   useEffect(() => {
     const root = canvasRef.current;

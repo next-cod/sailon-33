@@ -62,10 +62,10 @@ export function InteractiveFooter({ language, onNavigate }: { language: Language
   return (
     <footer className="interactive-footer" aria-label={language === "ru" ? "Подвал сайта" : "Website footer"}>
       <div className="footer-brand">
-        <div className="footer-brand-row">
+        <button type="button" className="footer-brand-row" onClick={() => onNavigate("#top")} aria-label={language === "ru" ? "Сэйлон — наверх" : "Saleon — back to top"}>
           <Image src="/icon.png" alt="" width={52} height={52} />
           <strong>{language === "ru" ? "Сэйлон" : "Saleon"}</strong>
-        </div>
+        </button>
         <p>{copy.description}</p>
       </div>
       <nav className="footer-column" aria-label={copy.product}>

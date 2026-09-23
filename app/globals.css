@@ -1197,7 +1197,15 @@ html[data-language="en"] .cta-hit--custom {
   display: flex;
   align-items: center;
   gap: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
 }
+
+.footer-brand-row:focus-visible { outline: 2px solid #77d65b; outline-offset: 8px; border-radius: 8px; }
 
 .footer-brand-row img {
   width: 52px;
