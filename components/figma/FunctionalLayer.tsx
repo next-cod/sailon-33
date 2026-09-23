@@ -346,7 +346,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
 
       {team.map(([name, copy], index) => (
         <div key={name} className="team-hover-card" style={{ left: 217 + index * 324 }} tabIndex={0} aria-label={`${t(name)}. ${t(copy)}`} onMouseEnter={() => setTeamHover(index)} onMouseLeave={() => setTeamHover(null)} onFocus={() => setTeamHover(index)} onBlur={() => setTeamHover(null)}>
-          <div><strong>{t(name)}</strong><span>{t(copy)}</span></div>
+          <div className="team-hover-clip"><div className="team-hover-surface"><strong>{t(name)}</strong><span>{t(copy)}</span></div></div>
         </div>
       ))}
 

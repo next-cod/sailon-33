@@ -843,10 +843,15 @@ html[data-language="en"] .cta-hit--custom {
   cursor: default;
 }
 
-.team-hover-card > div {
+.team-hover-clip {
   position: absolute;
   inset: 0 0 auto;
-  height: 383px;
+  height: 382.5px;
+  overflow: hidden;
+}
+
+.team-hover-surface {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -855,14 +860,14 @@ html[data-language="en"] .cta-hit--custom {
   background: linear-gradient(180deg, rgba(10,36,29,0.05) 20%, rgba(10,36,29,0.9) 100%);
   color: #fff;
   opacity: 0;
-  /* Enter from inside the image area so the transition never crosses the
-     fixed green name bar below the portrait. */
-  transform: translateY(-8px);
+  /* The surface rises from below, but its parent clips it exactly at the
+     portrait edge, so it can never enter the fixed green name bar. */
+  transform: translateY(10px);
   transition: opacity 280ms ease, transform 320ms cubic-bezier(.22,1,.36,1), background 280ms ease;
 }
 
-.team-hover-card:hover > div,
-.team-hover-card:focus-visible > div { opacity: 1; transform: translateY(0); }
+.team-hover-card:hover .team-hover-surface,
+.team-hover-card:focus-visible .team-hover-surface { opacity: 1; transform: translateY(0); }
 .team-hover-card strong { color: #77d65b; font-size: 22px; }
 .team-hover-card span { max-width: 245px; font-size: 16px; line-height: 1.35; }
 .team-hover-card:focus-visible { outline: 3px solid #77d65b; outline-offset: 4px; }
