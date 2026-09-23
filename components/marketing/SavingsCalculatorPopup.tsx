@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { ArrowRight, Check, Sparkles, X } from "lucide-react";
 
@@ -14,6 +15,10 @@ const WORK_MINUTES_PER_MONTH = 160 * 60;
 type PopupKind = "calculator" | "trial" | "start";
 
 const money = new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 0 });
+
+function rangeStyle(value: number, min: number, max: number): CSSProperties {
+  return { "--slider-progress": `${((value - min) / (max - min)) * 100}%` } as CSSProperties;
+}
 
 function getPlan(monthlyRequests: number) {
   if (monthlyRequests <= 600) return { name: "Новичок", price: 10_000 };
@@ -213,17 +218,17 @@ export function SavingsCalculatorPopup({ onCreateBot }: SavingsCalculatorPopupPr
             <div className="savings-popup__controls">
               <label className="savings-popup__control">
                 <span><b>Обращений в месяц</b><output>{money.format(monthlyRequests)}</output></span>
-                <input type="range" min="100" max="3000" step="50" value={monthlyRequests} onChange={(event) => setMonthlyRequests(Number(event.target.value))} />
+                <input type="range" min="100" max="3000" step="50" value={monthlyRequests} style={rangeStyle(monthlyRequests, 100, 3000)} onChange={(event) => setMonthlyRequests(Number(event.target.value))} />
                 <small>Входящие сообщения, заявки и чаты</small>
               </label>
               <label className="savings-popup__control">
                 <span><b>Минут менеджера на обращение</b><output>{minutesPerRequest} мин</output></span>
-                <input type="range" min="3" max="30" step="1" value={minutesPerRequest} onChange={(event) => setMinutesPerRequest(Number(event.target.value))} />
+                <input type="range" min="3" max="30" step="1" value={minutesPerRequest} style={rangeStyle(minutesPerRequest, 3, 30)} onChange={(event) => setMinutesPerRequest(Number(event.target.value))} />
                 <small>Среднее время на чтение, ответ и уточнения</small>
               </label>
               <label className="savings-popup__control">
                 <span><b>Зарплата менеджера в месяц</b><output>{money.format(managerSalary)} ₽</output></span>
-                <input type="range" min="35000" max="150000" step="5000" value={managerSalary} onChange={(event) => setManagerSalary(Number(event.target.value))} />
+                <input type="range" min="35000" max="150000" step="5000" value={managerSalary} style={rangeStyle(managerSalary, 35000, 150000)} onChange={(event) => setManagerSalary(Number(event.target.value))} />
                 <small>Оклад с бонусами, до налогов</small>
               </label>
             </div>
