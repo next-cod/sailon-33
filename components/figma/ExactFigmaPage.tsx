@@ -14,7 +14,7 @@ const imgChatGptImage1920261915282 = `${assetPathPrefix}/907ac.png`;
 const imgBackground = `${assetPathPrefix}/d47ea.png`;
 const imgBackground1 = `${assetPathPrefix}/48634.png`;
 const imgBackground2 = `${assetPathPrefix}/0f3a8.png`;
-const imgBackground3 = `${assetPathPrefix}/3fd73.png`;
+const imgArina = `${assetPathPrefix}/arina.png`;
 const imgChatGptImage1920261915281 = `${assetPathPrefix}/98994.png`;
 const imgVector = `${assetPathPrefix}/86179.svg`;
 const imgVector1 = `${assetPathPrefix}/446b7.svg`;
@@ -1547,7 +1547,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1033" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Image alt="" fill sizes="306px" className="object-cover" src={imgBackground3} />
+            <Image alt="Арина" fill sizes="306px" className="object-cover object-[50%_62%] scale-[1.18]" src={imgArina} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1035" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[212px]" data-node-id="2016:1036" data-name="Overlay+Border+OverlayBlur">
