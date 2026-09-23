@@ -11,9 +11,9 @@ const imgFreeIconSpeechBubble38842562 = `${assetPathPrefix}/44b75.png`;
 const imgFreeIconShortcutScriptApp38844652 = `${assetPathPrefix}/84b60.png`;
 const imgTelegram1 = `${assetPathPrefix}/34359.png`;
 const imgChatGptImage1920261915282 = `${assetPathPrefix}/907ac.png`;
-const imgBackground = `${assetPathPrefix}/d47ea.png`;
+const imgTatyana = `${assetPathPrefix}/tatyana.png`;
 const imgBackground1 = `${assetPathPrefix}/48634.png`;
-const imgBackground2 = `${assetPathPrefix}/0f3a8.png`;
+const imgDima = `${assetPathPrefix}/dima.png`;
 const imgArina = `${assetPathPrefix}/arina.png`;
 const imgChatGptImage1920261915281 = `${assetPathPrefix}/98994.png`;
 const imgVector = `${assetPathPrefix}/86179.svg`;
@@ -1478,7 +1478,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1000" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Image alt="" fill sizes="306px" className="object-cover" src={imgBackground} />
+            <Image alt="Татьяна" fill sizes="306px" className="object-cover object-[50%_34%]" src={imgTatyana} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1002" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[196px]" data-node-id="2016:1003" data-name="Overlay+Border+OverlayBlur">
@@ -1524,7 +1524,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1022" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Image alt="" fill sizes="306px" className="object-cover" src={imgBackground2} />
+            <Image alt="Дима" fill sizes="306px" className="object-cover object-[50%_58%] scale-[1.1]" src={imgDima} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1024" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[127px]" data-node-id="2016:1025" data-name="Overlay+Border+OverlayBlur">
