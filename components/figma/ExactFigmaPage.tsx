@@ -12,7 +12,7 @@ const imgFreeIconShortcutScriptApp38844652 = `${assetPathPrefix}/84b60.png`;
 const imgTelegram1 = `${assetPathPrefix}/34359.png`;
 const imgChatGptImage1920261915282 = `${assetPathPrefix}/907ac.png`;
 const imgTatyana = `${assetPathPrefix}/tatyana.png`;
-const imgBackground1 = `${assetPathPrefix}/48634.png`;
+const imgIgor = `${assetPathPrefix}/igor.jpg`;
 const imgDima = `${assetPathPrefix}/dima.png`;
 const imgArina = `${assetPathPrefix}/arina.png`;
 const imgChannelVk = `${assetPathPrefix}/channel-vk.png`;
@@ -1505,7 +1505,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1011" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Image alt="Игорь" fill quality={92} sizes="(min-width: 3000px) 768px, (min-width: 1700px) 480px, 360px" className="object-cover" src={imgBackground1} />
+            <Image alt="Игорь" fill quality={92} sizes="(min-width: 3000px) 768px, (min-width: 1700px) 480px, 360px" className="object-cover object-[50%_38%]" src={imgIgor} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1013" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[191px]" data-node-id="2016:1014" data-name="Overlay+Border+OverlayBlur">
