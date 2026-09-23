@@ -44,5 +44,5 @@ export function JourneyDemo() {
 }
 
 function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
-  return <div className="grid grid-cols-[28px_110px_1fr] items-start gap-2 rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-sm"><span className="text-[var(--leaf)]">{icon}</span><span className="font-bold">{label}</span><span className="text-[var(--muted)]">{value}</span></div>;
+  return <div className="journey-info-row grid grid-cols-[28px_110px_1fr] items-start gap-2 rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-sm"><span className="text-[var(--leaf)]">{icon}</span><span className="font-bold">{label}</span><span className="text-[var(--muted)]">{value}</span></div>;
 }

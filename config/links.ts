@@ -1,15 +1,15 @@
 export const siteLinks = {
-  signup: "#signup-placeholder",
-  login: "#login-placeholder",
-  contact: "mailto:hello@example.com",
-  support: "mailto:support@example.com",
-  privacy: "#privacy-placeholder",
-  terms: "#terms-placeholder",
+  signup: "#pricing",
+  login: "#pricing",
+  contact: "/contacts",
+  support: "/support",
+  privacy: "/legal/privacy",
+  terms: "/legal/terms",
 } as const;
 
 export const siteConfig = {
   name: "Сэйлон",
-  canonicalUrl: "https://example.com",
+  canonicalUrl: "https://sailon-33.vercel.app",
   description:
     "Управляемый AI-продавец для входящих обращений. Задайте знания, характер и путь клиента — Сэйлон продолжит диалог и подключит человека там, где это нужно.",
 } as const;

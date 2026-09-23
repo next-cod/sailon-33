@@ -1705,21 +1705,21 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="absolute grid grid-cols-2 gap-[10px] left-[848px] pointer-events-none top-[260px] z-10" aria-label="Каналы, куда можно подключить AI-бота" data-name="Каналы подключения">
         <div className="flex size-[30px] items-center justify-center rounded-full bg-[#3273f5] shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
           <div className="relative size-[24px] overflow-hidden rounded-full">
-            <Image alt="ВКонтакте" fill priority quality={90} sizes="24px" className="object-cover" src={imgChannelVk} />
+            <Image alt="ВКонтакте" fill quality={90} sizes="24px" className="object-cover" src={imgChannelVk} />
           </div>
         </div>
         <div className="flex size-[30px] items-center justify-center rounded-full bg-[#27a7e8] shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
           <div className="relative size-[24px] overflow-hidden rounded-full">
-            <Image alt="Telegram" fill priority quality={90} sizes="24px" className="object-cover" src={imgChannelTelegram} />
+            <Image alt="Telegram" fill quality={90} sizes="24px" className="object-cover" src={imgChannelTelegram} />
           </div>
         </div>
         <div className="flex size-[30px] items-center justify-center rounded-full bg-[#1cd740] shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
           <div className="relative size-[24px] overflow-hidden rounded-full">
-            <Image alt="WhatsApp" fill priority quality={90} sizes="24px" className="object-cover" src={imgChannelWhatsapp} />
+            <Image alt="WhatsApp" fill quality={90} sizes="24px" className="object-cover" src={imgChannelWhatsapp} />
           </div>
         </div>
         <div className="relative size-[30px] overflow-hidden rounded-full bg-[#dce3df] shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
-          <Image alt="Сайт" fill priority sizes="30px" className="object-contain p-[7px]" src={imgChannelSite} />
+          <Image alt="Сайт" fill sizes="30px" className="object-contain p-[7px]" src={imgChannelSite} />
         </div>
       </div>
     </div>

@@ -23,6 +23,11 @@ export function TrackedLink({ event, children, variant = "primary", arrow = fals
       className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3 text-[15px] font-extrabold transition-colors duration-200 ${variants[variant]} ${className}`}
       onClick={(e) => {
         props.onClick?.(e);
+        if (!e.defaultPrevented && typeof props.href === "string" && props.href.startsWith("#")) {
+          e.preventDefault();
+          document.querySelector<HTMLElement>(`.responsive-landing ${props.href}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+          window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+        }
         if (event) trackMarketingEvent(event);
       }}
     >

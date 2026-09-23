@@ -14,6 +14,11 @@ const SavingsCalculatorPopup = dynamic(
 
 const DESIGN_WIDTH = 1700;
 const DESIGN_HEIGHT = 13584;
+const DESKTOP_QUERY = "(min-width: 1360px)";
+
+function getCanvasScale() {
+  return Math.min(document.documentElement.clientWidth / DESIGN_WIDTH, 1.25);
+}
 
 const links = [
   { label: "Как отвечает", href: "#how", x: 496, y: 17, w: 146, h: 56 },
@@ -61,13 +66,14 @@ export function ExactFigmaCanvas() {
   const language = "ru" as const;
   const [headerCompact, setHeaderCompact] = useState(false);
   const [marketingReady, setMarketingReady] = useState(false);
+  const [desktopActive, setDesktopActive] = useState(false);
   const canvasRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     let frame = 0;
     const updateScale = () => {
       frame = 0;
-      const nextScale = document.documentElement.clientWidth / DESIGN_WIDTH;
+      const nextScale = getCanvasScale();
       setScale((currentScale) => currentScale === nextScale ? currentScale : nextScale);
     };
     const scheduleScaleUpdate = () => {
@@ -79,6 +85,14 @@ export function ExactFigmaCanvas() {
       window.removeEventListener("resize", scheduleScaleUpdate);
       if (frame) window.cancelAnimationFrame(frame);
     };
+  }, []);
+
+  useEffect(() => {
+    const query = window.matchMedia(DESKTOP_QUERY);
+    const update = () => setDesktopActive(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
   }, []);
 
   useLayoutEffect(() => {
@@ -112,7 +126,7 @@ export function ExactFigmaCanvas() {
   const navigateTo = useCallback((href: string) => {
     const target = anchorPositions[href];
     if (target === undefined) return;
-    const currentScale = document.documentElement.clientWidth / DESIGN_WIDTH;
+    const currentScale = getCanvasScale();
     window.scrollTo({ top: Math.max(0, target * currentScale - 68), behavior: "smooth" });
   }, []);
 
@@ -141,7 +155,7 @@ export function ExactFigmaCanvas() {
 
   return (
     <main
-        className="figma-page-shell"
+        className="figma-page-shell desktop-landing"
         style={{ width: DESIGN_WIDTH * scale, height: DESIGN_HEIGHT * scale }}
       >
       <header className={`sticky-site-header${headerCompact ? " is-compact" : ""}`}>
@@ -162,18 +176,18 @@ export function ExactFigmaCanvas() {
           </div>
         </div>
       </header>
-      {marketingReady && <SavingsCalculatorPopup onCreateBot={() => navigateTo("#pricing")} />}
+      {marketingReady && desktopActive && <SavingsCalculatorPopup onCreateBot={() => navigateTo("#pricing")} />}
       <div
         ref={canvasRef}
         className="figma-page-canvas"
         style={{ width: DESIGN_WIDTH, height: DESIGN_HEIGHT, transform: `scale(${scale})` }}
       >
-        <ExactFigmaPage language={language} />
-        <FunctionalLayer rootRef={canvasRef} language={language} />
-        {anchors.map((anchor) => (
+        {desktopActive && <ExactFigmaPage language={language} />}
+        {desktopActive && <FunctionalLayer rootRef={canvasRef} language={language} />}
+        {desktopActive && anchors.map((anchor) => (
           <span key={anchor.id} id={anchor.id} className="site-anchor absolute left-0" style={{ top: anchor.y }} />
         ))}
-        {links.slice(6).map((link, index) => (
+        {desktopActive && links.slice(6).map((link, index) => (
           <button
             key={`${link.label}-${index}`}
             type="button"
@@ -187,7 +201,7 @@ export function ExactFigmaCanvas() {
             onBlur={() => setInteracting(link.targetId, false)}
           />
         ))}
-        <InteractiveFooter language={language} onNavigate={navigateTo} />
+        {desktopActive && <InteractiveFooter language={language} onNavigate={navigateTo} />}
       </div>
     </main>
   );
