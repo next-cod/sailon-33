@@ -1702,15 +1702,21 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
           </div>
         </div>
       </div>
-      <div className="absolute grid grid-cols-2 gap-[10px] left-[876px] pointer-events-none top-[228px] z-10" aria-label="Каналы, куда можно подключить AI-бота" data-name="Каналы подключения">
-        <div className="relative size-[30px] overflow-hidden rounded-full shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
-          <Image alt="ВКонтакте" fill priority quality={90} sizes="30px" className="object-cover" src={imgChannelVk} />
+      <div className="absolute grid grid-cols-2 gap-[10px] left-[848px] pointer-events-none top-[246px] z-10" aria-label="Каналы, куда можно подключить AI-бота" data-name="Каналы подключения">
+        <div className="flex size-[30px] items-center justify-center rounded-full bg-[#3273f5] shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
+          <div className="relative size-[20px] overflow-hidden rounded-full">
+            <Image alt="ВКонтакте" fill priority quality={90} sizes="20px" className="object-cover" src={imgChannelVk} />
+          </div>
         </div>
-        <div className="relative size-[30px] overflow-hidden rounded-full shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
-          <Image alt="Telegram" fill priority quality={90} sizes="30px" className="object-cover" src={imgChannelTelegram} />
+        <div className="flex size-[30px] items-center justify-center rounded-full bg-[#27a7e8] shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
+          <div className="relative size-[20px] overflow-hidden rounded-full">
+            <Image alt="Telegram" fill priority quality={90} sizes="20px" className="object-cover" src={imgChannelTelegram} />
+          </div>
         </div>
-        <div className="relative size-[30px] overflow-hidden rounded-full shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
-          <Image alt="WhatsApp" fill priority quality={90} sizes="30px" className="object-cover" src={imgChannelWhatsapp} />
+        <div className="flex size-[30px] items-center justify-center rounded-full bg-[#1cd740] shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
+          <div className="relative size-[20px] overflow-hidden rounded-full">
+            <Image alt="WhatsApp" fill priority quality={90} sizes="20px" className="object-cover" src={imgChannelWhatsapp} />
+          </div>
         </div>
         <div className="relative size-[30px] overflow-hidden rounded-full bg-[#dce3df] shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
           <Image alt="Сайт" fill priority sizes="30px" className="object-contain p-[7px]" src={imgChannelSite} />
