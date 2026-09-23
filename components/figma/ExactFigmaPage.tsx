@@ -1478,7 +1478,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1000" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Image alt="Татьяна" fill sizes="306px" className="object-cover object-[50%_34%]" src={imgTatyana} />
+            <Image alt="Татьяна" fill quality={92} sizes="(min-width: 3000px) 768px, (min-width: 1700px) 480px, 360px" className="object-cover object-[50%_34%]" src={imgTatyana} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1002" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[196px]" data-node-id="2016:1003" data-name="Overlay+Border+OverlayBlur">
@@ -1501,7 +1501,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1011" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Image alt="" fill sizes="306px" className="object-cover" src={imgBackground1} />
+            <Image alt="Игорь" fill quality={92} sizes="(min-width: 3000px) 768px, (min-width: 1700px) 480px, 360px" className="object-cover" src={imgBackground1} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1013" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[191px]" data-node-id="2016:1014" data-name="Overlay+Border+OverlayBlur">
@@ -1524,7 +1524,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1022" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Image alt="Дима" fill sizes="306px" className="object-cover object-[50%_58%] scale-[1.1]" src={imgDima} />
+            <Image alt="Дима" fill quality={92} sizes="(min-width: 3000px) 768px, (min-width: 1700px) 480px, 360px" className="object-cover object-[50%_58%] scale-[1.1]" src={imgDima} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1024" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[127px]" data-node-id="2016:1025" data-name="Overlay+Border+OverlayBlur">
@@ -1547,7 +1547,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
         <div className="absolute aspect-[306/382.5] bg-[#123a30] left-px overflow-clip right-px rounded-tl-[16px] rounded-tr-[16px] top-px" data-node-id="2016:1033" data-name="Background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Image alt="Арина" fill sizes="306px" className="object-cover object-[50%_62%] scale-[1.18]" src={imgArina} />
+            <Image alt="Арина" fill quality={92} sizes="(min-width: 3000px) 768px, (min-width: 1700px) 480px, 360px" className="object-cover object-[50%_62%] scale-[1.18]" src={imgArina} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1035" data-name="Gradient" />
           <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[212px]" data-node-id="2016:1036" data-name="Overlay+Border+OverlayBlur">
