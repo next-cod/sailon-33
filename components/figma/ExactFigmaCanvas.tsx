@@ -152,9 +152,9 @@ export function ExactFigmaCanvas() {
           </button>
           <nav className="sticky-site-header__nav" aria-label={language === "ru" ? "Основная навигация" : "Main navigation"}>
             {headerLinks.map((item) => (
-              <a key={item.href} href={item.href} onClick={(event) => { event.preventDefault(); navigateTo(item.href); }}>
+              <button key={item.href} type="button" onClick={() => navigateTo(item.href)}>
                 {language === "ru" ? item.ru : item.en}
-              </a>
+              </button>
             ))}
           </nav>
           <div className="sticky-site-header__actions">
@@ -174,13 +174,13 @@ export function ExactFigmaCanvas() {
           <span key={anchor.id} id={anchor.id} className="site-anchor absolute left-0" style={{ top: anchor.y }} />
         ))}
         {links.slice(6).map((link, index) => (
-          <a
+          <button
             key={`${link.label}-${index}`}
-            href={link.href}
+            type="button"
             aria-label={link.label}
-            className="absolute z-[100] block rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#26775e]"
+            className="absolute z-[100] block rounded-[8px] border-0 bg-transparent p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#26775e]"
             style={{ left: link.x, top: link.y, width: link.w, height: link.h }}
-            onClick={(event) => { event.preventDefault(); navigateTo(link.href); }}
+            onClick={() => navigateTo(link.href)}
             onMouseEnter={() => setInteracting(link.targetId, true)}
             onMouseLeave={() => setInteracting(link.targetId, false)}
             onFocus={() => setInteracting(link.targetId, true)}

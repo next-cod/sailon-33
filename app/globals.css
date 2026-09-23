@@ -137,21 +137,24 @@ body {
   gap: clamp(26px, 2.4vw, 42px);
 }
 
-.sticky-site-header__nav a {
+.sticky-site-header__nav button {
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: #151917;
   font-size: 18px;
   font-weight: 600;
   line-height: 1;
-  text-decoration: none;
+  cursor: pointer;
   transition: color 360ms cubic-bezier(.22,1,.36,1);
 }
 
-.sticky-site-header__nav a:hover,
-.sticky-site-header__nav a:focus-visible {
+.sticky-site-header__nav button:hover,
+.sticky-site-header__nav button:focus-visible {
   color: #77d65b;
 }
 
-.sticky-site-header__nav a:focus-visible,
+.sticky-site-header__nav button:focus-visible,
 .sticky-site-header__brand:focus-visible,
 .sticky-site-header__language:focus-visible,
 .sticky-site-header__cta:focus-visible {
@@ -1464,7 +1467,7 @@ html[data-language="en"] .cta-hit--custom {
   .sticky-site-header__inner { width: calc(100vw - 32px); gap: 18px; }
   .sticky-site-header__brand strong { display: none; }
   .sticky-site-header__nav { gap: 18px; }
-  .sticky-site-header__nav a { font-size: 15px; }
+  .sticky-site-header__nav button { font-size: 15px; }
   .sticky-site-header__actions { gap: 10px; }
   .sticky-site-header__cta { min-width: 176px; padding-inline: 16px; font-size: 14px; }
 }
