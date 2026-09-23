@@ -1485,7 +1485,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
             <Image alt="Татьяна" fill quality={92} sizes="(min-width: 3000px) 768px, (min-width: 1700px) 480px, 360px" className="object-cover object-[50%_34%]" src={imgTatyana} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1002" data-name="Gradient" />
-          <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[196px]" data-node-id="2016:1003" data-name="Overlay+Border+OverlayBlur">
+          <div className="team-role-chip absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[196px]" data-node-id="2016:1003" data-name="Overlay+Border+OverlayBlur">
             <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[14px] justify-center leading-[0] left-[25px] not-italic text-[#77d65b] text-[14px] top-[18px] w-[166px]" data-node-id="2016:1004">
               <p className="leading-[16px]">Стратегия и маркетинг</p>
             </div>
@@ -1508,7 +1508,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
             <Image alt="Игорь" fill quality={92} sizes="(min-width: 3000px) 768px, (min-width: 1700px) 480px, 360px" className="object-cover object-[50%_38%]" src={imgIgor} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1013" data-name="Gradient" />
-          <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[191px]" data-node-id="2016:1014" data-name="Overlay+Border+OverlayBlur">
+          <div className="team-role-chip absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[191px]" data-node-id="2016:1014" data-name="Overlay+Border+OverlayBlur">
             <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[14px] justify-center leading-[0] left-[24px] not-italic text-[#77d65b] text-[14px] top-[19px] w-[160px]" data-node-id="2016:1015">
               <p className="leading-[16px]">Продукт и разработка</p>
             </div>
@@ -1531,7 +1531,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
             <Image alt="Дима" fill quality={92} sizes="(min-width: 3000px) 768px, (min-width: 1700px) 480px, 360px" className="object-cover object-[50%_58%] scale-[1.1]" src={imgDima} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1024" data-name="Gradient" />
-          <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[127px]" data-node-id="2016:1025" data-name="Overlay+Border+OverlayBlur">
+          <div className="team-role-chip absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[127px]" data-node-id="2016:1025" data-name="Overlay+Border+OverlayBlur">
             <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[14px] justify-center leading-[0] left-[19px] not-italic text-[#77d65b] text-[14px] top-[18px] w-[96px]" data-node-id="2016:1026">
               <p className="leading-[16px]">Дизайн и веб</p>
             </div>
@@ -1554,7 +1554,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
             <Image alt="Арина" fill quality={92} sizes="(min-width: 3000px) 768px, (min-width: 1700px) 480px, 360px" className="object-cover object-[50%_62%] scale-[1.18]" src={imgArina} />
           </div>
           <div className="absolute bg-gradient-to-t from-[rgba(10,36,29,0.65)] inset-[66.67%_0_0_0] to-[rgba(10,36,29,0)]" data-node-id="2016:1035" data-name="Gradient" />
-          <div className="absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[212px]" data-node-id="2016:1036" data-name="Overlay+Border+OverlayBlur">
+          <div className="team-role-chip absolute bg-[rgba(10,36,29,0.7)] bottom-[15.5px] h-[37px] left-[16px] rounded-[5px] shadow-[0px_4px_9.9px_0px_rgba(0,0,0,0.08)] w-[212px]" data-node-id="2016:1036" data-name="Overlay+Border+OverlayBlur">
             <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[14px] justify-center leading-[0] left-[25px] not-italic text-[#77d65b] text-[14px] top-[18px] w-[182px]" data-node-id="2016:1037">
               <p className="leading-[16px]">Контент и коммуникации</p>
             </div>

@@ -855,7 +855,9 @@ html[data-language="en"] .cta-hit--custom {
   background: linear-gradient(180deg, rgba(10,36,29,0.05) 20%, rgba(10,36,29,0.9) 100%);
   color: #fff;
   opacity: 0;
-  transform: translateY(10px);
+  /* Enter from inside the image area so the transition never crosses the
+     fixed green name bar below the portrait. */
+  transform: translateY(-8px);
   transition: opacity 280ms ease, transform 320ms cubic-bezier(.22,1,.36,1), background 280ms ease;
 }
 
@@ -864,6 +866,10 @@ html[data-language="en"] .cta-hit--custom {
 .team-hover-card strong { color: #77d65b; font-size: 22px; }
 .team-hover-card span { max-width: 245px; font-size: 16px; line-height: 1.35; }
 .team-hover-card:focus-visible { outline: 3px solid #77d65b; outline-offset: 4px; }
+
+/* The compact role chip is only hidden while its expanded hover layer is
+   active; otherwise the resting card keeps its original appearance. */
+.team-role-chip-hidden { opacity: 0 !important; }
 
 .faq-live {
   position: absolute;

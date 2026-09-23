@@ -135,6 +135,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
   const [chatPhase, setChatPhase] = useState(0);
   const [heroLive, setHeroLive] = useState(false);
   const [controlCard, setControlCard] = useState<number | null>(null);
+  const [teamHover, setTeamHover] = useState<number | null>(null);
   const [chatHovered, setChatHovered] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [botChatOpen, setBotChatOpen] = useState(false);
@@ -198,6 +199,14 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
     const root = rootRef.current;
     ["2070:3", "2079:4"].forEach((id) => root?.querySelector<HTMLElement>(`[data-node-id="${id}"]`)?.classList.toggle("talk-hit-active", chatHovered));
   }, [chatHovered, rootRef]);
+
+  useEffect(() => {
+    ["2016:1003", "2016:1014", "2016:1025", "2016:1036"].forEach((id, index) => {
+      rootRef.current
+        ?.querySelector<HTMLElement>(`[data-node-id="${id}"]`)
+        ?.classList.toggle("team-role-chip-hidden", teamHover === index);
+    });
+  }, [rootRef, teamHover]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -336,7 +345,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
       ))}
 
       {team.map(([name, copy], index) => (
-        <div key={name} className="team-hover-card" style={{ left: 217 + index * 324 }} tabIndex={0} aria-label={`${t(name)}. ${t(copy)}`}>
+        <div key={name} className="team-hover-card" style={{ left: 217 + index * 324 }} tabIndex={0} aria-label={`${t(name)}. ${t(copy)}`} onMouseEnter={() => setTeamHover(index)} onMouseLeave={() => setTeamHover(null)} onFocus={() => setTeamHover(index)} onBlur={() => setTeamHover(null)}>
           <div><strong>{t(name)}</strong><span>{t(copy)}</span></div>
         </div>
       ))}
