@@ -31,9 +31,6 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <head>
-        <link rel="preload" href="/fonts/tilda/TildaSans-VF_TTF_Web/TildaSans-VF.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-      </head>
       <body>
         {children}
       </body>

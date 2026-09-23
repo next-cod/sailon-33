@@ -99,6 +99,18 @@ function ResponsiveChat() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => event.key === "Escape" && setOpen(false);
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
+
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const text = value.trim();
@@ -113,10 +125,11 @@ function ResponsiveChat() {
 
   return (
     <>
-      {(visible || open) && <button type="button" className="responsive-chat-trigger is-visible" aria-label="Поразговаривать с ботом" onClick={() => setOpen(true)}>
+      {visible && !open && <button type="button" className="responsive-chat-trigger is-visible" aria-label="Поразговаривать с ботом" onClick={() => setOpen(true)}>
         <MessageCircle size={22} aria-hidden="true" />
       </button>}
       {open && (
+        <><div className="responsive-chat-backdrop" aria-hidden="true" onMouseDown={() => setOpen(false)} />
         <aside className="responsive-chat-panel" role="dialog" aria-modal="true" aria-labelledby="responsive-chat-title">
           <header>
             <div><Image src="/figma/logo-header.png" alt="" width={34} height={34} /><span><strong id="responsive-chat-title">Сэйлон</strong><small>AI-продавец онлайн</small></span></div>
@@ -129,7 +142,7 @@ function ResponsiveChat() {
             <input value={value} onChange={(event) => setValue(event.target.value)} placeholder="Напишите вопрос" aria-label="Сообщение для Сэйлона" />
             <button type="submit" aria-label="Отправить сообщение"><ArrowUp size={19} /></button>
           </form>
-        </aside>
+        </aside></>
       )}
     </>
   );
