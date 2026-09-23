@@ -15,6 +15,10 @@ const imgTatyana = `${assetPathPrefix}/tatyana.png`;
 const imgBackground1 = `${assetPathPrefix}/48634.png`;
 const imgDima = `${assetPathPrefix}/dima.png`;
 const imgArina = `${assetPathPrefix}/arina.png`;
+const imgChannelVk = `${assetPathPrefix}/channel-vk.png`;
+const imgChannelTelegram = `${assetPathPrefix}/channel-telegram.png`;
+const imgChannelWhatsapp = `${assetPathPrefix}/channel-whatsapp.png`;
+const imgChannelSite = `${assetPathPrefix}/channel-site.png`;
 const imgChatGptImage1920261915281 = `${assetPathPrefix}/98994.png`;
 const imgVector = `${assetPathPrefix}/86179.svg`;
 const imgVector1 = `${assetPathPrefix}/446b7.svg`;
@@ -1696,6 +1700,20 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="absolute grid grid-cols-2 gap-[10px] left-[876px] pointer-events-none top-[228px] z-10" aria-label="Каналы, куда можно подключить AI-бота" data-name="Каналы подключения">
+        <div className="relative size-[30px] overflow-hidden rounded-full shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
+          <Image alt="ВКонтакте" fill priority quality={90} sizes="30px" className="object-cover" src={imgChannelVk} />
+        </div>
+        <div className="relative size-[30px] overflow-hidden rounded-full shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
+          <Image alt="Telegram" fill priority quality={90} sizes="30px" className="object-cover" src={imgChannelTelegram} />
+        </div>
+        <div className="relative size-[30px] overflow-hidden rounded-full shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
+          <Image alt="WhatsApp" fill priority quality={90} sizes="30px" className="object-cover" src={imgChannelWhatsapp} />
+        </div>
+        <div className="relative size-[30px] overflow-hidden rounded-full bg-[#dce3df] shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
+          <Image alt="Сайт" fill priority sizes="30px" className="object-contain p-[7px]" src={imgChannelSite} />
         </div>
       </div>
     </div>
