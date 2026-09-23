@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
+import { Globe2 } from "lucide-react";
 const assetPathPrefix = "/figma-exact";
 const imgIconColor0A241D = `${assetPathPrefix}/7cf98.png`;
 const imgColor77D65B = `${assetPathPrefix}/f3747.png`;
@@ -18,7 +19,6 @@ const imgArina = `${assetPathPrefix}/arina.png`;
 const imgChannelVk = `${assetPathPrefix}/channel-vk.png`;
 const imgChannelTelegram = `${assetPathPrefix}/channel-telegram.png`;
 const imgChannelWhatsapp = `${assetPathPrefix}/channel-whatsapp.png`;
-const imgChannelSite = `${assetPathPrefix}/channel-site.png`;
 const imgChatGptImage1920261915281 = `${assetPathPrefix}/98994.png`;
 const imgVector = `${assetPathPrefix}/86179.svg`;
 const imgVector1 = `${assetPathPrefix}/446b7.svg`;
@@ -1718,8 +1718,8 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
             <Image alt="WhatsApp" fill quality={90} sizes="24px" className="object-cover" src={imgChannelWhatsapp} />
           </div>
         </div>
-        <div className="relative size-[30px] overflow-hidden rounded-full bg-[#dce3df] shadow-[0_1px_2px_rgba(10,36,29,0.08)]">
-          <Image alt="Сайт" fill sizes="30px" className="object-contain p-[7px]" src={imgChannelSite} />
+        <div className="flex size-[30px] items-center justify-center overflow-hidden rounded-full bg-[#dce3df] text-[#123a30] shadow-[0_1px_2px_rgba(10,36,29,0.08)]" role="img" aria-label="Сайт">
+          <Globe2 aria-hidden="true" className="size-[16px]" strokeWidth={1.9} />
         </div>
       </div>
     </div>

@@ -83,8 +83,13 @@ button { font: inherit; }
 .responsive-brand strong { font-size: 22px; letter-spacing: -.04em; }
 .responsive-header nav button { border: 0; background: transparent; color: inherit; cursor: pointer; }
 .responsive-channel-grid { display: grid; grid-template-columns: repeat(2, 42px); gap: 8px; width: max-content; margin: 0 14px 14px auto; }
-.responsive-channel-grid span { display: grid; width: 42px; height: 42px; place-items: center; overflow: hidden; border-radius: 50%; box-shadow: 0 8px 22px rgba(10,36,29,.1); }
-.responsive-channel-grid img { width: 42px; height: 42px; object-fit: cover; border-radius: 50%; }
+.responsive-channel-grid span { display: grid; width: 42px; height: 42px; padding: 4px; place-items: center; overflow: hidden; border-radius: 50%; box-shadow: 0 8px 22px rgba(10,36,29,.1); }
+.responsive-channel-grid span:nth-child(1) { background: #3273f5; }
+.responsive-channel-grid span:nth-child(2) { background: #27a7e8; }
+.responsive-channel-grid span:nth-child(3) { background: #1cd740; }
+.responsive-channel-grid span:nth-child(4) { padding: 6px; background: #dce3df; }
+.responsive-channel-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.responsive-channel-grid span:nth-child(4) svg { width: 100%; height: 100%; color: var(--forest); stroke-width: 1.9; }
 .responsive-footer-brand img { width: 46px; height: 46px; object-fit: contain; }
 .responsive-footer-brand strong { font-size: 25px; }
 .responsive-footer-column { display: flex; flex-direction: column; align-items: flex-start; gap: 13px; font-size: 14px; color: rgba(255,255,255,.72); }
@@ -1891,8 +1896,7 @@ html[data-language="en"] .cta-hit--custom {
   .responsive-brand strong { font-size: 20px; }
   .responsive-header .container-shell { width: calc(100% - 24px); }
   .responsive-channel-grid { grid-template-columns: repeat(4, 38px); gap: 7px; margin: 0 0 14px; }
-  .responsive-channel-grid span,
-  .responsive-channel-grid img { width: 38px; height: 38px; }
+  .responsive-channel-grid span { width: 38px; height: 38px; }
   .responsive-footer-bottom { display: grid; }
   .responsive-footer-bottom a { margin-left: 0; }
   .responsive-footer-column a,

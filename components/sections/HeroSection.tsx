@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, Globe2, MessageCircle } from "lucide-react";
 import { HeroConsole } from "@/components/product/HeroConsole";
 import { TrackedLink } from "@/components/ui/TrackedLink";
 import { siteLinks } from "@/config/links";
@@ -10,7 +10,7 @@ const channels = [
   ["VK", "/figma-exact/channel-vk.png"],
   ["Telegram", "/figma-exact/channel-telegram.png"],
   ["WhatsApp", "/figma-exact/channel-whatsapp.png"],
-  ["Сайт", "/figma-exact/channel-site.png"],
+  ["Сайт", null],
 ] as const;
 
 export function HeroSection() {
@@ -33,7 +33,13 @@ export function HeroSection() {
         </div>
         <div className="relative">
           <div className="responsive-channel-grid" aria-label="Каналы подключения">
-            {channels.map(([label, src]) => <span key={label} title={label}><Image src={src} alt={label} width={42} height={42} sizes="42px" /></span>)}
+            {channels.map(([label, src]) => (
+              <span key={label} title={label}>
+                {src
+                  ? <Image src={src} alt={label} width={42} height={42} sizes="42px" />
+                  : <Globe2 aria-label={label} role="img" />}
+              </span>
+            ))}
           </div>
           <HeroConsole />
         </div>
