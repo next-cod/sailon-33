@@ -4,8 +4,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowRight, Check, Sparkles, X } from "lucide-react";
 
-const CALCULATOR_AFTER_MS = 90 * 1000;
-const START_AFTER_MS = 4 * 60 * 1000;
+const CALCULATOR_AFTER_MS = 60 * 1000;
+const START_AFTER_MS = 5 * 60 * 1000;
 const CALCULATOR_SESSION_KEY = "saleon-marketing-calculator-shown-v3";
 const TRIAL_SESSION_KEY = "saleon-marketing-trial-shown-v2";
 const START_SESSION_KEY = "saleon-marketing-start-shown-v2";
