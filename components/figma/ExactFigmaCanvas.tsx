@@ -3,9 +3,16 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import ExactFigmaPage from "./ExactFigmaPage";
-import { InteractiveFooter } from "./InteractiveFooter";
-import { FunctionalLayer } from "./FunctionalLayer";
+
+const ExactFigmaPage = dynamic(() => import("./ExactFigmaPage"), { ssr: false });
+const InteractiveFooter = dynamic(
+  () => import("./InteractiveFooter").then((module) => module.InteractiveFooter),
+  { ssr: false },
+);
+const FunctionalLayer = dynamic(
+  () => import("./FunctionalLayer").then((module) => module.FunctionalLayer),
+  { ssr: false },
+);
 
 const SavingsCalculatorPopup = dynamic(
   () => import("@/components/marketing/SavingsCalculatorPopup").then((module) => module.SavingsCalculatorPopup),

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { SlidersHorizontal } from "lucide-react";
 import { characters } from "@/content/site-content";
 import { trackMarketingEvent } from "@/lib/analytics";
@@ -9,7 +8,6 @@ import { trackMarketingEvent } from "@/lib/analytics";
 export function CharacterSwitcher() {
   const [active, setActive] = useState(0);
   const item = characters[active];
-  const reduced = useReducedMotion();
   return (
     <div className="mt-12 grid gap-5 lg:grid-cols-[.78fr_1.22fr]">
       <div className="dark-panel rounded-[22px] p-6 sm:p-8">
@@ -24,11 +22,9 @@ export function CharacterSwitcher() {
       </div>
       <div className="relative overflow-hidden rounded-[22px] border border-[var(--line)] bg-[var(--paper)] p-6 sm:p-10">
         <p className="sub-title max-w-xl">«Хочу попробовать. С чего начать?»</p>
-        <AnimatePresence mode="wait">
-          <motion.div key={item.id} id={`character-panel-${item.id}`} role="tabpanel" aria-labelledby={`character-tab-${item.id}`} aria-live="polite" initial={reduced ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? undefined : { opacity: 0, y: -8 }} className="mt-9 max-w-2xl rounded-[24px] rounded-bl-[7px] bg-[var(--signal)] p-6 text-lg leading-relaxed text-[var(--forest-deep)]">
+        <div key={item.id} id={`character-panel-${item.id}`} role="tabpanel" aria-labelledby={`character-tab-${item.id}`} aria-live="polite" className="content-swap mt-9 max-w-2xl rounded-[24px] rounded-bl-[7px] bg-[var(--signal)] p-6 text-lg leading-relaxed text-[var(--forest-deep)]">
             {item.answer}
-          </motion.div>
-        </AnimatePresence>
+        </div>
         <div className="mt-7 flex flex-wrap gap-2">
           {item.mood.split(" · ").map((tag) => <span key={tag} className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold">{tag}</span>)}
           <span className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold">без канцелярита</span>

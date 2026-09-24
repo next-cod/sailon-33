@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, Clock3, Flag, Library, MessageSquareText } from "lucide-react";
 import { journeyStages } from "@/content/site-content";
 import { ChatBubble } from "./ChatBubble";
@@ -9,7 +8,6 @@ import { ChatBubble } from "./ChatBubble";
 export function JourneyDemo() {
   const [active, setActive] = useState(0);
   const stage = journeyStages[active];
-  const reduced = useReducedMotion();
   return (
     <div className="mt-12 overflow-hidden rounded-[22px] border border-[var(--line)] bg-[var(--paper)] shadow-soft">
       <div className="no-scrollbar flex gap-2 overflow-x-auto border-b border-[var(--line)] p-3" role="tablist" aria-label="Этапы пути клиента">
@@ -19,8 +17,7 @@ export function JourneyDemo() {
           </button>
         ))}
       </div>
-      <AnimatePresence mode="wait">
-        <motion.div key={stage.id} id={`journey-panel-${stage.id}`} role="tabpanel" aria-labelledby={`journey-tab-${stage.id}`} initial={reduced ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? undefined : { opacity: 0, y: -8 }} transition={{ duration: .25 }} className="grid lg:grid-cols-[1.05fr_.95fr]">
+      <div key={stage.id} id={`journey-panel-${stage.id}`} role="tabpanel" aria-labelledby={`journey-tab-${stage.id}`} className="content-swap grid lg:grid-cols-[1.05fr_.95fr]">
           <div className="p-6 sm:p-9">
             <div className="flex items-center gap-3"><span className="grid size-10 place-items-center rounded-full bg-[var(--signal)]/20 text-[var(--signal-strong)]"><Flag size={18}/></span><div><p className="text-xs font-bold uppercase tracking-[.12em] text-[var(--muted)]">Цель этапа</p><h3 className="sub-title mt-1">{stage.title}</h3></div></div>
             <p className="muted mt-5 max-w-xl text-lg">{stage.goal}</p>
@@ -37,8 +34,7 @@ export function JourneyDemo() {
               <div className="grid gap-3"><ChatBubble side="client">{stage.customer}</ChatBubble><ChatBubble side="assistant">{stage.assistant}</ChatBubble></div>
             </div>
           </div>
-        </motion.div>
-      </AnimatePresence>
+      </div>
     </div>
   );
 }

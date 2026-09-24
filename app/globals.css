@@ -67,6 +67,13 @@ button { font: inherit; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .status-pulse { animation: statusPulse 2.2s ease-in-out infinite; }
 @keyframes statusPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(119,214,91,.4); } 50% { box-shadow: 0 0 0 8px rgba(119,214,91,0); } }
+.reveal-lite { transform: translate3d(0, 10px, 0); transition: transform 500ms cubic-bezier(.22,1,.36,1) var(--reveal-delay, 0s); }
+.reveal-lite.is-visible { transform: translate3d(0, 0, 0); }
+.hero-console-float { animation: heroConsoleFloat 6s ease-in-out infinite; }
+.content-swap { animation: contentSwapIn 260ms cubic-bezier(.22,1,.36,1) both; }
+.scenario-message-lite { animation: contentSwapIn 300ms cubic-bezier(.22,1,.36,1) both; }
+@keyframes heroConsoleFloat { 0%,100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(0,-5px,0); } }
+@keyframes contentSwapIn { from { opacity: 0; transform: translate3d(0,10px,0); } to { opacity: 1; transform: translate3d(0,0,0); } }
 
 .responsive-brand,
 .responsive-footer-brand {
@@ -1563,6 +1570,14 @@ html[data-language="en"] .cta-hit--custom {
 
   .bot-chat-popover { animation: none; }
   .floating-chat-nudge { opacity: 1; transform: none; pointer-events: auto; }
+  .reveal-lite,
+  .hero-console-float,
+  .content-swap,
+  .scenario-message-lite {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
   /* This is a short, user-triggered hover cue rather than ambient motion. */
   .control-card-motion { transition: transform 620ms cubic-bezier(.22, 1, .36, 1) !important; }
 }

@@ -36,7 +36,7 @@ export function HeroSection() {
             {channels.map(([label, src]) => (
               <span key={label} title={label}>
                 {src
-                  ? <Image src={src} alt={label} width={42} height={42} sizes="42px" />
+                  ? <Image src={src} alt={label} width={42} height={42} sizes="42px" quality={90} loading="eager" />
                   : <Globe2 aria-label={label} role="img" />}
               </span>
             ))}
