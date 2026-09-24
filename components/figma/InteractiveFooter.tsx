@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { legalDetails, legalRegistrationLine } from "@/config/legal-details";
 
 type Language = "ru" | "en";
 
@@ -19,8 +20,8 @@ const footerCopy = {
       "Политика использования файлов cookie",
     ],
     legal: "© 2026 Сэйлон",
-    entity: "ИП или ООО «Название»",
-    registration: "ИНН 0000000000 · ОГРН или ОГРНИП 0000000000000",
+    entity: legalDetails.shortName,
+    registration: legalRegistrationLine,
   },
   en: {
     description: "An AI sales assistant for inbound requests, configured around your business knowledge, rules, and tone of voice.",
@@ -31,8 +32,8 @@ const footerCopy = {
     companyLinks: ["Team", "Discuss a custom feature", "Support", "Contacts"],
     documentLinks: ["Public offer", "Terms of use", "Personal data policy", "Personal data consent", "Cookie policy"],
     legal: "© 2026 Saleon",
-    entity: "Sole proprietor or LLC “Company name”",
-    registration: "Tax ID 0000000000 · Registration No. 0000000000000",
+    entity: legalDetails.shortName,
+    registration: legalRegistrationLine,
   },
 } as const;
 
@@ -86,7 +87,7 @@ export function InteractiveFooter({ language, onNavigate }: { language: Language
           <span>{copy.entity}</span>
           <span>{copy.registration}</span>
         </div>
-        <Link href="/contacts">{language === "ru" ? "support@ваш-домен.ru" : "support@your-domain.com"}</Link>
+        <a href={legalDetails.emailHref}>{legalDetails.email}</a>
       </div>
     </footer>
   );

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { legalDetails, legalRegistrationLine } from "@/config/legal-details";
 import { useDocumentTitle, useSiteLanguage } from "@/lib/use-site-language";
 
 export default function ContactsPage() {
@@ -14,8 +15,9 @@ export default function ContactsPage() {
       <article>
         <h1>{en ? "Contacts" : "Контакты"}</h1>
         <p className="legal-intro">{en ? "Contact us about the product, implementation, or partnerships." : "Связаться по вопросам продукта, внедрения и сотрудничества."}</p>
-        <section><h2>{en ? "Email" : "Электронная почта"}</h2><p>{en ? "support@your-domain.com" : "support@ваш-домен.ru"}</p></section>
-        <section><h2>{en ? "Company details" : "Реквизиты"}</h2><p>{en ? "Sole proprietor or LLC “Company name”" : "ИП или ООО «Название»"}<br />{en ? "Tax ID 0000000000 · Registration No. 0000000000000" : "ИНН 0000000000 · ОГРН или ОГРНИП 0000000000000"}</p></section>
+        <section><h2>{en ? "Contact us" : "Как связаться"}</h2><p><a href={legalDetails.emailHref}>{legalDetails.email}</a><br /><a href={legalDetails.phoneHref}>{legalDetails.phone}</a></p></section>
+        <section><h2>{en ? "Company details" : "Реквизиты"}</h2><p>{legalDetails.fullName}<br />{legalRegistrationLine}</p></section>
+        <section><h2>{en ? "Addresses" : "Адреса"}</h2><p>{en ? "Registered address" : "Адрес регистрации"}: {legalDetails.registrationAddress}<br />{en ? "Postal address" : "Почтовый адрес"}: {legalDetails.postalAddress}</p></section>
       </article>
     </main>
   );

@@ -179,11 +179,11 @@ export function ExactFigmaCanvas() {
             ))}
           </nav>
           <div className="sticky-site-header__actions">
-            <button type="button" className="sticky-site-header__cta" onClick={() => navigateTo("#pricing")}>{language === "ru" ? "Попробовать бесплатно" : "Try for free"}</button>
+            <button type="button" className="sticky-site-header__cta" onClick={() => window.dispatchEvent(new Event("saleon:open-trial"))}>{language === "ru" ? "Попробовать бесплатно" : "Try for free"}</button>
           </div>
         </div>
       </header>
-      {marketingReady && desktopActive && <SavingsCalculatorPopup onCreateBot={() => navigateTo("#pricing")} />}
+      {marketingReady && desktopActive && <SavingsCalculatorPopup onCreateBot={() => window.dispatchEvent(new Event("saleon:open-trial"))} />}
       <div
         ref={canvasRef}
         className="figma-page-canvas"

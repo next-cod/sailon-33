@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { legalDetails } from "@/config/legal-details";
 import { useDocumentTitle, useSiteLanguage } from "@/lib/use-site-language";
 
 export default function SupportPage() {
@@ -14,8 +15,8 @@ export default function SupportPage() {
       <article>
         <h1>{en ? "Support" : "Поддержка"}</h1>
         <p className="legal-intro">{en ? "We can help with connection, setup, and using your AI sales assistant." : "Поможем с подключением, настройками и работой AI-продавца."}</p>
-        <div className="legal-notice">{en ? "The support address will go live after the company email is connected." : "Рабочий адрес поддержки будет добавлен после подключения корпоративной почты."}</div>
-        <section><h2>{en ? "Contact support" : "Как обратиться"}</h2><p>{en ? "support@your-domain.com" : "support@ваш-домен.ru"}</p></section>
+        <section><h2>{en ? "Contact support" : "Как обратиться"}</h2><p><a href={legalDetails.emailHref}>{legalDetails.email}</a><br /><a href={legalDetails.phoneHref}>{legalDetails.phone}</a></p></section>
+        <section><h2>{en ? "What to include" : "Что указать в обращении"}</h2><p>{en ? "Please include the account contact, a short description of the issue, and screenshots if they help reproduce it." : "Укажите контакт, использованный в аккаунте, кратко опишите проблему и приложите скриншоты, если они помогут её воспроизвести."}</p></section>
       </article>
     </main>
   );

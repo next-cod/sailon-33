@@ -1162,11 +1162,11 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[40px] justify-center leading-[0] left-[1106px] not-italic text-[#151917] text-[54px] top-[11042.03px] tracking-[-3px] w-[224px]" data-node-id="2136:19">
         <p className="leading-[40px]">30 000 ₽</p>
       </div>
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[431px] not-italic text-[#626d68] text-[16px] top-[11056.03px] w-[81px]" data-node-id="2007:248">
-        <p className="leading-[20px]">в месяц</p>
+      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[431px] not-italic text-[#626d68] text-[14px] top-[11056.03px] w-[164px]" data-node-id="2007:248">
+        <p className="leading-[20px]">в месяц · без НДС</p>
       </div>
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[1305px] not-italic text-[#626d68] text-[16px] top-[11056.03px] w-[81px]" data-node-id="2136:20">
-        <p className="leading-[20px]">в месяц</p>
+      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[1305px] not-italic text-[#626d68] text-[14px] top-[11056.03px] w-[164px]" data-node-id="2136:20">
+        <p className="leading-[20px]">в месяц · без НДС</p>
       </div>
       <div className="absolute border-[#dce3df] border-solid border-t h-[45.8px] left-[243px] top-[11121.03px] w-[350px]" data-node-id="2013:151" data-name="HorizontalBorder · фон" />
       <div className="absolute border-[#dce3df] border-solid border-t h-[45.8px] left-[1107px] top-[11121.03px] w-[350px]" data-node-id="2136:21" data-name="HorizontalBorder · фон" />
@@ -1197,12 +1197,15 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[40px] justify-center leading-[0] left-[674px] not-italic text-[54px] text-white top-[11012.03px] tracking-[-3px] w-[237px]" data-node-id="2007:255">
         <p className="leading-[40px]">20 000 ₽</p>
       </div>
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[873px] not-italic text-[14px] text-[rgba(255,255,255,0.5)] top-[11026.03px] w-[51.697px]" data-node-id="2007:256">
-        <p className="leading-[20px]">в месяц</p>
+      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[873px] not-italic text-[13px] text-[rgba(255,255,255,0.5)] top-[11026.03px] w-[150px]" data-node-id="2007:256">
+        <p className="leading-[20px]">в месяц · без НДС</p>
       </div>
       <div className="absolute bg-[#f8f5ed] h-[48px] left-[674px] rounded-[33554400px] top-[11165.03px] w-[350px]" data-node-id="2013:155" data-name="Link · фон" />
       <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[17px] justify-center leading-[0] left-[849px] not-italic text-[#0d2c27] text-[17px] text-center top-[11188.44px] w-[290px]" data-node-id="2007:261">
         <p className="leading-[23.25px]">Начать бесплатный тест</p>
+      </div>
+      <div className="absolute left-[400px] top-[11246px] w-[900px] text-center font-figma text-[14px] leading-[20px] text-[#626d68]">
+        Оплата на сайте не принимается · условия и документы отправим после заявки
       </div>
       <div className="absolute bg-[#77d65b] h-[39px] left-[863px] rounded-[33554400px] shadow-[0px_4px_5.9px_0px_rgba(0,0,0,0.09)] top-[10887px] w-[194px]" data-node-id="2013:156" data-name="Background · фон" />
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[16px] justify-center leading-[0] left-[885px] not-italic text-[16px] text-white top-[10907px] w-[164px]" data-node-id="2007:262">
@@ -1233,11 +1236,11 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <p className="leading-[24.8px]">Более 100 диалогов в день</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[240px] not-italic text-[#626d68] text-[18px] top-[11346.03px] w-[459px]" data-node-id="2007:272">
-        <p className="leading-[20px]">Индивидуальный тариф: 1 ₽ за каждый ответ Сэйлона.</p>
+        <p className="leading-[20px]">Индивидуальный тариф: 1 ₽ за ответ Сэйлона, без НДС.</p>
       </div>
       <div className="absolute bg-[rgba(255,255,255,0.9)] h-[103px] left-[857px] rounded-[22px] top-[11276.03px] w-[632px]" data-node-id="2013:161" data-name="Paragraph+Overlay+Border · фон" />
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[25px] justify-center leading-[0] left-[888px] not-italic text-[#151917] text-[22px] top-[11315.53px] w-[330px]" data-node-id="2007:273">
-        <p className="leading-[24.8px]">Настройка бота - 40 000 ₽</p>
+      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[25px] justify-center leading-[0] left-[888px] not-italic text-[#151917] text-[22px] top-[11315.53px] w-[520px]" data-node-id="2007:273">
+        <p className="leading-[24.8px]">Настройка бота - 40 000 ₽, без НДС</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[888px] not-italic text-[#626d68] text-[18px] top-[11346.03px] w-[635px]" data-node-id="2007:274">
         <p className="leading-[20px]">Вы можете бесплатно настроить бота сами или это можем сделать мы</p>

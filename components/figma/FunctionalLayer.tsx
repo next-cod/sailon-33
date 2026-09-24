@@ -3,7 +3,9 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUp } from "lucide-react";
+import { legalDetails } from "@/config/legal-details";
 
 type Language = "ru" | "en";
 type BotChatMessage = { author: "bot" | "visitor"; text: string };
@@ -152,6 +154,15 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
   }, []);
 
   useEffect(() => {
+    const openTrialDialog = () => {
+      setSent(false);
+      setDialogOpen(true);
+    };
+    window.addEventListener("saleon:open-trial", openTrialDialog);
+    return () => window.removeEventListener("saleon:open-trial", openTrialDialog);
+  }, []);
+
+  useEffect(() => {
     const hero = heroLiveRef.current;
     if (!hero) return;
     const observer = new IntersectionObserver(
@@ -265,6 +276,14 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get("name") ?? "").trim();
+    const contact = String(data.get("contact") ?? "").trim();
+    const subject = language === "ru" ? "Заявка на бесплатный тест Сэйлона" : "Saleon free trial request";
+    const body = language === "ru"
+      ? `Здравствуйте!\n\nХочу начать бесплатный тест Сэйлона.\nИмя: ${name}\nКонтакт: ${contact}`
+      : `Hello!\n\nI would like to start a Saleon free trial.\nName: ${name}\nContact: ${contact}`;
+    window.open(`${legalDetails.emailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, "_self");
     setSent(true);
   };
 
@@ -397,7 +416,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
           <div className="trial-dialog" role="dialog" aria-modal="true" aria-labelledby="trial-title" ref={dialogRef}>
             <button className="trial-close" type="button" aria-label={t("Закрыть")} onClick={() => setDialogOpen(false)}>×</button>
             {sent ? (
-              <div className="trial-success"><span>✓</span><h2 id="trial-title">{t("Заявка принята")}</h2><p>{t("Мы свяжемся с вами и поможем запустить бесплатный тест.")}</p><button type="button" onClick={() => setDialogOpen(false)}>{t("Готово")}</button></div>
+              <div className="trial-success"><span>✓</span><h2 id="trial-title">{language === "ru" ? "Письмо подготовлено" : "Email prepared"}</h2><p>{language === "ru" ? `Отправьте подготовленное письмо на ${legalDetails.email} — мы ответим и поможем запустить тест.` : `Send the prepared email to ${legalDetails.email}, and we will help you start the trial.`}</p><button type="button" onClick={() => setDialogOpen(false)}>{t("Готово")}</button></div>
             ) : (
               <form onSubmit={submit}>
                 <span className="trial-kicker">{t("14 дней бесплатно")}</span>
@@ -405,8 +424,12 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
                 <p>{t("Оставьте контакты — поможем подключить первый канал и настроить тест.")}</p>
                 <label>{t("Ваше имя")}<input required name="name" autoComplete="name" /></label>
                 <label>{t("Телефон или почта")}<input required name="contact" autoComplete="email" /></label>
+                <label className="trial-consent">
+                  <input required type="checkbox" name="personal-data-consent" />
+                  <span>{language === "ru" ? "Согласен на " : "I agree to the "}<Link href="/legal/consent" target="_blank">{language === "ru" ? "обработку персональных данных" : "processing of personal data"}</Link></span>
+                </label>
                 <button type="submit">{t("Начать бесплатный тест")}</button>
-                <small>{t("Нажимая кнопку, вы соглашаетесь на обработку персональных данных.")}</small>
+                <small>{language === "ru" ? "Условия использования данных приведены в политике и отдельном согласии." : "Data-use terms are described in the policy and separate consent."}</small>
               </form>
             )}
           </div>

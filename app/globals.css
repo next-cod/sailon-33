@@ -1296,6 +1296,9 @@ html[data-language="en"] .cta-hit--custom {
 .trial-dialog label { display: grid; gap: 8px; margin-top: 16px; color: #151917; font-size: 14px; font-weight: 700; }
 .trial-dialog input { width: 100%; height: 52px; padding: 0 16px; border: 1px solid #dce3df; border-radius: 12px; background: #f9fffa; color: #151917; font: 500 17px/1 "Tilda Sans", Arial, sans-serif; outline: none; }
 .trial-dialog input:focus { border-color: #26775e; box-shadow: 0 0 0 3px rgba(119,214,91,.25); }
+.trial-dialog .trial-consent { display: flex; align-items: flex-start; gap: 10px; color: #626d68; font-weight: 500; line-height: 1.4; }
+.trial-dialog .trial-consent input { width: 18px; height: 18px; flex: 0 0 auto; margin: 1px 0 0; padding: 0; accent-color: #26775e; box-shadow: none; }
+.trial-dialog .trial-consent a { color: #26775e; text-decoration: underline; text-underline-offset: 3px; }
 .trial-dialog form > button, .trial-success button { width: 100%; height: 54px; margin-top: 22px; border: 0; border-radius: 12px; background: #77d65b; color: #0a241d; font: 800 17px/1 "Tilda Sans", Arial, sans-serif; cursor: pointer; }
 .trial-dialog form > button:hover, .trial-success button:hover { background: #69cc4d; }
 .trial-dialog small { display: block; margin-top: 14px; color: #87908c; font-size: 12px; line-height: 1.35; }
@@ -1477,6 +1480,13 @@ html[data-language="en"] .cta-hit--custom {
   line-height: 1.45;
 }
 
+.legal-updated {
+  margin: 28px 0 44px;
+  color: #87908c;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
 .legal-notice {
   margin: 36px 0 48px;
   padding: 20px 22px;
@@ -1502,6 +1512,25 @@ html[data-language="en"] .cta-hit--custom {
   margin: 0;
   color: #626d68;
   line-height: 1.55;
+}
+
+.legal-page section p + p { margin-top: 12px; }
+
+.legal-page section ul {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding-left: 22px;
+  color: #626d68;
+  line-height: 1.55;
+}
+
+.legal-page section a,
+.legal-page article > footer a {
+  color: #26775e;
+  text-decoration: underline;
+  text-decoration-color: rgba(38, 119, 94, .3);
+  text-underline-offset: 3px;
 }
 
 .legal-page article > footer {

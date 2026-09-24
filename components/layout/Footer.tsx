@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { legalDetails, legalRegistrationLine } from "@/config/legal-details";
 import { siteLinks } from "@/config/links";
 
 export function Footer() {
@@ -16,7 +17,7 @@ export function Footer() {
         <FooterColumn title="Продукт" items={[["Как отвечает", "how"], ["Настройка", "control"], ["Сценарии", "demo"], ["Тарифы", "pricing"], ["Вопросы", "faq"]]} onNavigate={navigateTo} />
         <FooterColumn title="Компания" items={[["Команда", "team"]]} onNavigate={navigateTo} links={[["Обсудить доработку", "/contacts"], ["Поддержка", siteLinks.support], ["Контакты", "/contacts"]]} />
         <div className="responsive-footer-column"><strong>Документы</strong><Link href="/legal/offer">Публичная оферта</Link><Link href={siteLinks.terms}>Пользовательское соглашение</Link><Link href={siteLinks.privacy}>Политика обработки персональных данных</Link><Link href="/legal/consent">Согласие на обработку данных</Link><Link href="/legal/cookies">Политика файлов cookie</Link></div>
-        <div className="responsive-footer-bottom"><span>© 2026 Сэйлон</span><span>ИП или ООО «Название»</span><Link href="/contacts">support@ваш-домен.ru</Link></div>
+        <div className="responsive-footer-bottom"><span>© 2026 Сэйлон</span><span>{legalDetails.shortName}</span><span>{legalRegistrationLine}</span><a href={legalDetails.emailHref}>{legalDetails.email}</a></div>
       </div>
     </footer>
   );

@@ -1,5 +1,9 @@
+import { legalDetails } from "@/config/legal-details";
+
+const trialEmailSubject = encodeURIComponent("Заявка на бесплатный тест Сэйлона");
+
 export const siteLinks = {
-  signup: "#pricing",
+  signup: `${legalDetails.emailHref}?subject=${trialEmailSubject}`,
   login: "#pricing",
   contact: "/contacts",
   support: "/support",

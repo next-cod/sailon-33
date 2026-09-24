@@ -2,11 +2,18 @@
 
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { legalDetails, legalRegistrationLine } from "@/config/legal-details";
 import { useDocumentTitle, useSiteLanguage } from "@/lib/use-site-language";
 
-type LocalizedDocument = {
-  ru: { title: string; intro: string; sections: readonly string[] };
-  en: { title: string; intro: string; sections: readonly string[] };
+type LegalSection = {
+  title: string;
+  paragraphs: readonly string[];
+  items?: readonly string[];
+};
+
+export type LocalizedDocument = {
+  ru: { title: string; intro: string; sections: readonly LegalSection[] };
+  en: { title: string; intro: string; sections: readonly LegalSection[] };
 };
 
 export function LocalizedLegalPage({ document }: { document: LocalizedDocument }) {
@@ -25,21 +32,19 @@ export function LocalizedLegalPage({ document }: { document: LocalizedDocument }
       <article>
         <h1>{copy.title}</h1>
         <p className="legal-intro">{copy.intro}</p>
-        <div className="legal-notice">{language === "ru"
-          ? "Черновик структуры. Перед публикацией необходимо заменить реквизиты и утвердить текст с юристом с учётом фактической схемы работы сервиса."
-          : "Draft structure. Before publication, replace the company details and have the text reviewed by legal counsel to reflect how the service actually operates."}</div>
+        <p className="legal-updated">{language === "ru" ? "Дата редакции" : "Effective date"}: {legalDetails.effectiveDate}</p>
         {copy.sections.map((section, index) => (
-          <section key={section}>
-            <h2>{index + 1}. {section}</h2>
-            <p>{language === "ru"
-              ? "Раздел будет заполнен после утверждения юридических реквизитов, условий оказания услуг и фактического порядка обработки данных."
-              : "This section will be completed after the legal details, service terms, and actual data-processing procedures have been approved."}</p>
+          <section key={section.title}>
+            <h2>{index + 1}. {section.title}</h2>
+            {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            {section.items && <ul>{section.items.map((item) => <li key={item}>{item}</li>)}</ul>}
           </section>
         ))}
         <footer>
-          <p>{language === "ru" ? "ИП или ООО «Название»" : "Sole proprietor or LLC “Company name”"}</p>
-          <p>{language === "ru" ? "ИНН 0000000000 · ОГРН или ОГРНИП 0000000000000" : "Tax ID 0000000000 · Registration No. 0000000000000"}</p>
-          <p>{language === "ru" ? "support@ваш-домен.ru" : "support@your-domain.com"}</p>
+          <p>{legalDetails.fullName}</p>
+          <p>{legalRegistrationLine}</p>
+          <p>{language === "ru" ? "Адрес регистрации" : "Registered address"}: {legalDetails.registrationAddress}</p>
+          <p><a href={legalDetails.emailHref}>{legalDetails.email}</a> · <a href={legalDetails.phoneHref}>{legalDetails.phone}</a></p>
         </footer>
       </article>
     </main>
