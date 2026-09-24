@@ -12,12 +12,13 @@ export default function HomePage() {
     description: siteConfig.description,
     offers: { "@type": "AggregateOffer", lowPrice: "10000", highPrice: "30000", priceCurrency: "RUB" },
   };
+  const serializedJsonLd = JSON.stringify(jsonLd).replace(/</g, "\\u003c");
 
   return (
     <>
       <ResponsiveLanding />
       <ExactFigmaCanvas />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializedJsonLd }} />
     </>
   );
 }

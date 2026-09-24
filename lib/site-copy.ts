@@ -166,6 +166,7 @@ const en: Record<string, string> = {
   "Среднячок": "Growth",
   "Премиум": "Premium",
   "до 20 обращений / день": "up to 20 requests / day",
+  "20–50 обращений / день": "20–50 requests / day",
   "50-100 обращений / день": "50–100 requests / day",
   "Более 100 диалогов в день": "Over 100 conversations per day",
   "Для небольшого входящего потока": "For a small inbound volume",

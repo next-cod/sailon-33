@@ -95,13 +95,13 @@ const imgVector67 = `${assetPathPrefix}/ee2a4.svg`;
 export default function Component1920WLight({ language = "ru" }: { language?: "ru" | "en" }) {
   return (
     <div className="relative size-full" data-node-id="2003:2" style={{ backgroundImage: "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 1700 13277' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%' width='100%' fill='url(%23grad)' opacity='1'/><defs><radialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(1329.3 0 0 1308.9 1445 265.54)'><stop stop-color='rgba(119,214,91,0.14)' offset='0'/><stop stop-color='rgba(119,214,91,0)' offset='0.031972'/></radialGradient></defs></svg>\"), linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 3.9925%), linear-gradient(90deg, rgb(245, 247, 245) 0%, rgb(245, 247, 245) 100%), linear-gradient(90deg, rgb(245, 247, 245) 0%, rgb(245, 247, 245) 100%)" }} data-name="1920w light">
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[250px] justify-center leading-[0] left-[206px] not-italic text-[#151917] text-[0px] top-[362px] tracking-[-3px] w-[795px]" data-node-id="2007:3">
-        <p className="leading-[64px] mb-0 text-[76px]">{language === "ru" ? "AI-бот для продаж," : "An AI sales bot,"}</p>
-        <p className="text-[76px]">
+      <h1 className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[250px] justify-center leading-[0] left-[206px] not-italic text-[#151917] text-[0px] top-[362px] tracking-[-3px] w-[795px]" data-node-id="2007:3">
+        <span className="block leading-[64px] mb-0 text-[76px]">{language === "ru" ? "AI-бот для продаж, " : "An AI sales bot, "}</span>
+        <span className="block text-[76px]">
           <span className="leading-[64px]">{language === "ru" ? "от первого сообщения до " : "from the first message "}</span>
           <span className="leading-[64px] text-[#26775e] tracking-[-3px]">{language === "ru" ? "заявки" : "to a qualified lead"}</span>
-        </p>
-      </div>
+        </span>
+      </h1>
       <div className="absolute flex h-[70.548px] items-center justify-center left-[368px] top-[231.08px] w-[197.217px]" data-node-id="2070:23">
         <div className="flex-none rotate-[-5.89deg]">
           <div className="bg-white h-[51px] relative rounded-[12px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.12)] w-[193px]" data-name="Link · фон" />
@@ -1219,7 +1219,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <p className="leading-[24.8px]">Для растущего объёма диалогов</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[17px] justify-center leading-[0] left-[672px] not-italic text-[16px] text-white top-[11054.53px] w-[324px]" data-node-id="2136:36">
-        <p className="leading-[24.8px]">до 20 обращений / день</p>
+        <p className="leading-[24.8px]">20–50 обращений / день</p>
       </div>
       <div className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[158.306px] items-center justify-center left-[1221.34px] top-[10810.18px] w-[476.676px]" data-node-id="2132:12">
         <div className="flex-none rotate-[1.74deg]">
