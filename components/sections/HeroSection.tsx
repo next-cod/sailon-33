@@ -20,7 +20,7 @@ export function HeroSection() {
       <div className="container-shell relative grid items-center gap-14 lg:grid-cols-[.64fr_.46fr] lg:gap-20">
         <div>
           <h1 className="display max-w-[780px]">
-            <span className="block">AI-бот для продаж,</span>
+            <span className="block">AI-бот для продаж, </span>
             <span>от первого сообщения до </span>
             <span className="text-[var(--leaf)]">заявки</span>
           </h1>

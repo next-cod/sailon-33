@@ -12,7 +12,7 @@ export function BenefitsSection() {
   return (
     <section className="section-space bg-white">
       <div className="container-shell">
-        <Reveal><h2 className="section-title max-w-[1300px]">Сэйлон забирает рутину.<br/>Менеджер подключается к важному</h2></Reveal>
+        <Reveal><h2 className="section-title max-w-[1300px]">Сэйлон забирает рутину.<br />{" "}Менеджер подключается к важному</h2></Reveal>
         <div className="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-2">
           {benefits.map(([Icon,title,copy],index)=><Reveal key={title} delay={index*.04} className="border-t border-[var(--line)] pt-6"><Icon size={25} className="text-[var(--signal-strong)]"/><h3 className="mt-7 text-[25px] font-extrabold leading-tight">{title}</h3><p className="mt-4 max-w-[540px] text-lg leading-relaxed text-[var(--muted)]">{copy}</p></Reveal>)}
         </div>

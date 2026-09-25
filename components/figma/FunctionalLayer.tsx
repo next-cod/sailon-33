@@ -156,11 +156,48 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
   useEffect(() => {
     const openTrialDialog = () => {
       setSent(false);
+      setBotChatOpen(false);
       setDialogOpen(true);
     };
     window.addEventListener("saleon:open-trial", openTrialDialog);
     return () => window.removeEventListener("saleon:open-trial", openTrialDialog);
   }, []);
+
+  useEffect(() => {
+    if (!dialogOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const dialog = dialogRef.current;
+    const focusable = () => Array.from(dialog?.querySelectorAll<HTMLElement>("button, input, a[href]") ?? []);
+    document.body.style.overflow = "hidden";
+    window.requestAnimationFrame(() => focusable()[0]?.focus());
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setDialogOpen(false);
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const elements = focusable();
+      if (!elements.length) return;
+      const first = elements[0];
+      const last = elements[elements.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+      previousFocus?.focus({ preventScroll: true });
+    };
+  }, [dialogOpen]);
 
   useEffect(() => {
     const hero = heroLiveRef.current;
@@ -426,7 +463,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
                 <label>{t("Телефон или почта")}<input required name="contact" autoComplete="email" /></label>
                 <label className="trial-consent">
                   <input required type="checkbox" name="personal-data-consent" />
-                  <span>{language === "ru" ? "Согласен на " : "I agree to the "}<Link href="/legal/consent" target="_blank">{language === "ru" ? "обработку персональных данных" : "processing of personal data"}</Link></span>
+                  <span>{language === "ru" ? "Согласен на " : "I agree to the "}<Link href="/legal/consent" target="_blank" rel="noopener noreferrer">{language === "ru" ? "обработку персональных данных" : "processing of personal data"}</Link></span>
                 </label>
                 <button type="submit">{t("Начать бесплатный тест")}</button>
                 <small>{language === "ru" ? "Условия использования данных приведены в политике и отдельном согласии." : "Data-use terms are described in the policy and separate consent."}</small>

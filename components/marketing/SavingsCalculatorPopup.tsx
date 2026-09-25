@@ -110,7 +110,7 @@ export function SavingsCalculatorPopup({ onCreateBot }: SavingsCalculatorPopupPr
     if (process.env.NODE_ENV === "development" && (params.has("popup") || params.get("calculator") === "1")) return;
     if (window.sessionStorage.getItem(TRIAL_SESSION_KEY) === "1") return;
 
-    const sectionHeading = document.querySelector('[data-node-id="2007:118"]');
+    const sectionHeading = document.querySelector('[data-node-id="2007:118"], .responsive-landing #pricing');
     if (!sectionHeading) return;
 
     const observer = new IntersectionObserver((entries) => {

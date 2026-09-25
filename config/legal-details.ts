@@ -11,7 +11,7 @@ export const legalDetails = {
   email: "ulanova-ts@yandex.ru",
   emailHref: "mailto:ulanova-ts@yandex.ru",
   taxNotice: "Без НДС",
-  effectiveDate: "24 сентября 2026 г.",
+  effectiveDate: "25 сентября 2026 г.",
 } as const;
 
 export const legalRegistrationLine = `ИНН ${legalDetails.inn} · ОГРНИП ${legalDetails.ogrnip}`;
