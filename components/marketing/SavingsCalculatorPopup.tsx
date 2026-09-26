@@ -21,9 +21,9 @@ function rangeStyle(value: number, min: number, max: number): CSSProperties {
 }
 
 function getPlan(monthlyRequests: number) {
-  if (monthlyRequests <= 600) return { name: "Новичок", price: 10_000 };
-  if (monthlyRequests < 1_500) return { name: "Среднячок", price: 20_000 };
-  return { name: "Премиум", price: 30_000 };
+  if (monthlyRequests <= 300) return { name: "Старт", price: 5_900 };
+  if (monthlyRequests <= 800) return { name: "Продажи", price: 11_900 };
+  return { name: "Команда", price: 24_900 };
 }
 
 type SavingsCalculatorPopupProps = { onCreateBot: () => void };
@@ -187,17 +187,17 @@ export function SavingsCalculatorPopup({ onCreateBot }: SavingsCalculatorPopupPr
   const isCalculator = activePopup === "calculator";
   const promo = activePopup === "trial"
     ? {
-        badge: "14 дней бесплатно",
+        badge: "Месяц бесплатно",
         title: "Проверьте Сэйлон на реальных диалогах",
         text: "Подключите первый канал и посмотрите, как AI-бот отвечает вашим клиентам.",
-        facts: ["10 000 кредитов уже на аккаунте"],
-        cta: "Начать бесплатный тест",
+        facts: ["Без автоматических списаний"],
+        cta: "Попробовать месяц бесплатно",
       }
     : {
         badge: "Можно запускаться",
         title: "Настройте своего AI-бота",
         text: "Добавьте знания, выберите характер и первый сценарий — Сэйлон возьмёт входящие обращения в работу.",
-        facts: ["14 дней бесплатно", "Настройка без кода"],
+        facts: ["Месяц бесплатно", "Настройка без кода"],
         cta: "Создать AI-бота",
       };
 
