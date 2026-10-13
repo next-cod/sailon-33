@@ -91,8 +91,6 @@ button { font: inherit; }
 .responsive-header nav button { border: 0; background: transparent; color: inherit; cursor: pointer; }
 .hero-chat-hint {
   max-width: 290px;
-  padding-left: 16px;
-  border-left: 2px solid var(--leaf);
   color: var(--forest-deep);
   font-family: "Tilda Sans", Arial, sans-serif;
   font-size: 18px;
