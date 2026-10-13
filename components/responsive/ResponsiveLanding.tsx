@@ -24,6 +24,7 @@ import { TrustSection } from "@/components/sections/TrustSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
+import { siteLinks } from "@/config/links";
 
 const SavingsCalculatorPopup = dynamic(
   () => import("@/components/marketing/SavingsCalculatorPopup").then((module) => module.SavingsCalculatorPopup),
@@ -42,10 +43,6 @@ export function ResponsiveLanding() {
     query.addEventListener("change", update);
     return () => query.removeEventListener("change", update);
   }, []);
-
-  const goToPricing = () => {
-    document.querySelector<HTMLElement>(".responsive-landing #pricing")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
 
   if (!compactMode) return null;
 
@@ -74,7 +71,7 @@ export function ResponsiveLanding() {
       <Footer />
       <MobileCta />
       <ResponsiveChat />
-      <SavingsCalculatorPopup onCreateBot={goToPricing} />
+      <SavingsCalculatorPopup onCreateBot={() => window.location.assign(siteLinks.signup)} />
     </div>
   );
 }

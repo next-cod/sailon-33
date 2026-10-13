@@ -87,7 +87,7 @@ export function InteractiveFooter({ language, onNavigate }: { language: Language
           <span>{copy.entity}</span>
           <span>{copy.registration}</span>
         </div>
-        <a href={legalDetails.emailHref}>{legalDetails.email}</a>
+        <div className="footer-contact-links"><a href={legalDetails.emailHref}>{legalDetails.email}</a><a href={legalDetails.telegramHref} target="_blank" rel="noopener noreferrer">Telegram: {legalDetails.telegram}</a></div>
       </div>
     </footer>
   );

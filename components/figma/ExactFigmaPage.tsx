@@ -1463,7 +1463,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute bg-[#77d65b] h-[50px] left-[1267px] rounded-[12px] top-[19.97px] w-[222px]" data-node-id="2013:175" data-name="Link · фон" />
       <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[17px] justify-center leading-[0] left-[1378.12px] not-italic text-[16px] text-center text-white top-[44.85px] w-[182.451px]" data-node-id="2007:304">
-        <p className="leading-[23.25px]">Попробовать бесплатно</p>
+        <p className="leading-[23.25px]">Связаться</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[76px] justify-center leading-[0] left-[calc(50%-633px)] not-italic text-[#26775e] text-[96px] top-[9765.03px] tracking-[-2.88px] w-[1065px]" data-node-id="2016:992">
         <p className="leading-[84px] mb-0">Кто стоит</p>

@@ -17,7 +17,7 @@ export function Footer() {
         <FooterColumn title="Продукт" items={[["Как отвечает", "how"], ["Настройка", "control"], ["Сценарии", "demo"], ["Тарифы", "pricing"], ["Вопросы", "faq"]]} onNavigate={navigateTo} />
         <FooterColumn title="Компания" items={[["Команда", "team"]]} onNavigate={navigateTo} links={[["Обсудить доработку", "/contacts"], ["Поддержка", siteLinks.support], ["Контакты", "/contacts"]]} />
         <div className="responsive-footer-column"><strong>Документы</strong><Link href="/legal/offer">Публичная оферта</Link><Link href={siteLinks.terms}>Пользовательское соглашение</Link><Link href={siteLinks.privacy}>Политика обработки персональных данных</Link><Link href="/legal/consent">Согласие на обработку данных</Link><Link href="/legal/cookies">Политика файлов cookie</Link></div>
-        <div className="responsive-footer-bottom"><span>© 2026 Сэйлон</span><span>{legalDetails.shortName}</span><span>{legalRegistrationLine}</span><a href={legalDetails.emailHref}>{legalDetails.email}</a></div>
+        <div className="responsive-footer-bottom"><span>© 2026 Сэйлон</span><span>{legalDetails.shortName}</span><span>{legalRegistrationLine}</span><div className="responsive-footer-contacts"><a href={legalDetails.emailHref}>{legalDetails.email}</a><a href={legalDetails.telegramHref} target="_blank" rel="noopener noreferrer">Telegram: {legalDetails.telegram}</a></div></div>
       </div>
     </footer>
   );

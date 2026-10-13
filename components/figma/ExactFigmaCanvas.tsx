@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { ContactPopover } from "@/components/layout/ContactPopover";
+import { siteLinks } from "@/config/links";
 
 const ExactFigmaPage = dynamic(() => import("./ExactFigmaPage"), { ssr: false });
 const InteractiveFooter = dynamic(
@@ -33,11 +35,11 @@ const links = [
   { label: "Сценарии", href: "#demo", x: 780, y: 17, w: 86, h: 56 },
   { label: "Тарифы", href: "#pricing", x: 900, y: 17, w: 100, h: 56 },
   { label: "Вопросы", href: "#faq", x: 1007, y: 17, w: 74, h: 56 },
-  { label: "Попробовать бесплатно", href: "#pricing", x: 1267, y: 20, w: 222, h: 50, targetId: "2013:175" },
-  { label: "Попробовать бесплатно", href: "#pricing", x: 210, y: 597, w: 299, h: 59, targetId: "2013:11" },
+  { label: "Попробовать бесплатно", href: siteLinks.signup, x: 1267, y: 20, w: 222, h: 50, targetId: "2013:175" },
+  { label: "Попробовать бесплатно", href: siteLinks.signup, x: 210, y: 597, w: 299, h: 59, targetId: "2013:11" },
   { label: "Поразговаривать с ботом", href: "#demo", x: 551, y: 589, w: 248, h: 77, targetId: "2070:3" },
-  { label: "Попробовать бесплатно", href: "#pricing", x: 516, y: 850, w: 273, h: 73, targetId: "2158:2" },
-  { label: "Попробовать бесплатно", href: "#pricing", x: 212, y: 12820, w: 290, h: 54, targetId: "2013:10" },
+  { label: "Попробовать бесплатно", href: siteLinks.signup, x: 516, y: 850, w: 273, h: 73, targetId: "2158:2" },
+  { label: "Попробовать бесплатно", href: siteLinks.signup, x: 212, y: 12820, w: 290, h: 54, targetId: "2013:10" },
 ];
 
 const anchors = [
@@ -179,11 +181,11 @@ export function ExactFigmaCanvas() {
             ))}
           </nav>
           <div className="sticky-site-header__actions">
-            <button type="button" className="sticky-site-header__cta" onClick={() => window.dispatchEvent(new Event("saleon:open-trial"))}>{language === "ru" ? "Попробовать бесплатно" : "Try for free"}</button>
+            <ContactPopover variant="desktop" />
           </div>
         </div>
       </header>
-      {marketingReady && desktopActive && <SavingsCalculatorPopup onCreateBot={() => window.dispatchEvent(new Event("saleon:open-trial"))} />}
+      {marketingReady && desktopActive && <SavingsCalculatorPopup onCreateBot={() => window.location.assign(siteLinks.signup)} />}
       <div
         ref={canvasRef}
         className="figma-page-canvas"
@@ -194,7 +196,19 @@ export function ExactFigmaCanvas() {
         {desktopActive && anchors.map((anchor) => (
           <span key={anchor.id} id={anchor.id} className="site-anchor absolute left-0" style={{ top: anchor.y }} />
         ))}
-        {desktopActive && links.slice(6).map((link, index) => (
+        {desktopActive && links.slice(6).map((link, index) => link.href.startsWith("https://") ? (
+          <a
+            key={`${link.label}-${index}`}
+            href={link.href}
+            aria-label={link.label}
+            className="absolute z-[100] block rounded-[8px] border-0 bg-transparent p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#26775e]"
+            style={{ left: link.x, top: link.y, width: link.w, height: link.h }}
+            onMouseEnter={() => setInteracting(link.targetId, true)}
+            onMouseLeave={() => setInteracting(link.targetId, false)}
+            onFocus={() => setInteracting(link.targetId, true)}
+            onBlur={() => setInteracting(link.targetId, false)}
+          />
+        ) : (
           <button
             key={`${link.label}-${index}`}
             type="button"

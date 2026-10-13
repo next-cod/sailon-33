@@ -3,9 +3,8 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowUp } from "lucide-react";
-import { legalDetails } from "@/config/legal-details";
+import { siteLinks } from "@/config/links";
 
 type Language = "ru" | "en";
 type BotChatMessage = { author: "bot" | "visitor"; text: string };
@@ -109,7 +108,6 @@ const team = [
 ];
 
 const ctaAreas = [
-  { left: 1267, top: 20, width: 222, height: 50, radius: 12, tone: "header" },
   { left: 210, top: 597, width: 299, height: 59, radius: 12, tone: "hero" },
   { left: 242, top: 11176, width: 350, height: 48, radius: 999, tone: "pricing-green-left" },
   { left: 674, top: 11165, width: 350, height: 48, radius: 999, tone: "pricing-light" },
@@ -132,8 +130,6 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
   const [character, setCharacter] = useState(0);
   const [scenario, setScenario] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [sent, setSent] = useState(false);
   const [chatPhase, setChatPhase] = useState(0);
   const [heroLive, setHeroLive] = useState(false);
   const [controlCard, setControlCard] = useState<number | null>(null);
@@ -145,59 +141,12 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
   const [botChatMessages, setBotChatMessages] = useState<BotChatMessage[]>([
     { author: "bot", text: "Привет! Я Сэйлон — AI-продавец для входящих обращений. Могу рассказать, как помогаю бизнесу." },
   ]);
-  const dialogRef = useRef<HTMLDivElement>(null);
   const heroLiveRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => setMounted(true));
     return () => window.cancelAnimationFrame(frame);
   }, []);
-
-  useEffect(() => {
-    const openTrialDialog = () => {
-      setSent(false);
-      setBotChatOpen(false);
-      setDialogOpen(true);
-    };
-    window.addEventListener("saleon:open-trial", openTrialDialog);
-    return () => window.removeEventListener("saleon:open-trial", openTrialDialog);
-  }, []);
-
-  useEffect(() => {
-    if (!dialogOpen) return;
-    const previousOverflow = document.body.style.overflow;
-    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-    const dialog = dialogRef.current;
-    const focusable = () => Array.from(dialog?.querySelectorAll<HTMLElement>("button, input, a[href]") ?? []);
-    document.body.style.overflow = "hidden";
-    window.requestAnimationFrame(() => focusable()[0]?.focus());
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setDialogOpen(false);
-        return;
-      }
-      if (event.key !== "Tab") return;
-      const elements = focusable();
-      if (!elements.length) return;
-      const first = elements[0];
-      const last = elements[elements.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      document.removeEventListener("keydown", handleKeyDown);
-      previousFocus?.focus({ preventScroll: true });
-    };
-  }, [dialogOpen]);
 
   useEffect(() => {
     const hero = heroLiveRef.current;
@@ -326,19 +275,6 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
     });
   }, [scenario, rootRef]);
 
-  const submit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const name = String(data.get("name") ?? "").trim();
-    const contact = String(data.get("contact") ?? "").trim();
-    const subject = language === "ru" ? "Заявка на бесплатный тест Сэйлона" : "Saleon free trial request";
-    const body = language === "ru"
-      ? `Здравствуйте!\n\nХочу начать бесплатный тест Сэйлона.\nИмя: ${name}\nКонтакт: ${contact}`
-      : `Hello!\n\nI would like to start a Saleon free trial.\nName: ${name}\nContact: ${contact}`;
-    window.open(`${legalDetails.emailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, "_self");
-    setSent(true);
-  };
-
   const submitBotChat = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const message = botChatInput.trim();
@@ -433,7 +369,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
       </section>
 
       {ctaAreas.map(({ radius, tone, ...area }, index) => (
-        <button key={index} type="button" className={`cta-hit cta-hit--${tone}`} style={{ ...area, borderRadius: radius }} aria-label={language === "ru" ? "Начать бесплатный тест" : "Start free trial"} onClick={() => { setSent(false); setDialogOpen(true); }} />
+        <a key={index} href={siteLinks.signup} className={`cta-hit cta-hit--${tone}`} style={{ ...area, borderRadius: radius }} aria-label={tone === "hero" || tone === "final" ? "Попробовать бесплатно" : "Начать бесплатный тест"} />
       ))}
       <button type="button" className="cta-hit cta-hit--chat" style={{ left: 541, top: 579, width: 252, height: 96 }} aria-label={t("Поразговаривать с ботом")} onMouseEnter={() => setChatHovered(true)} onMouseLeave={() => setChatHovered(false)} onFocus={() => setChatHovered(true)} onBlur={() => setChatHovered(false)} onClick={() => setBotChatOpen(true)} />
       <a className="cta-hit cta-hit--light cta-hit--custom" style={{ left: 864, top: 9389, width: 256, height: 50, borderRadius: 999 }} href="/contacts" aria-label={t("Обсудить доработку")} />
@@ -463,30 +399,6 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
         </aside>
       ), document.body)}
 
-      {dialogOpen && mounted && createPortal((
-        <div className="trial-dialog-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setDialogOpen(false)}>
-          <div className="trial-dialog" role="dialog" aria-modal="true" aria-labelledby="trial-title" ref={dialogRef}>
-            <button className="trial-close" type="button" aria-label={t("Закрыть")} onClick={() => setDialogOpen(false)}>×</button>
-            {sent ? (
-              <div className="trial-success"><span>✓</span><h2 id="trial-title">{language === "ru" ? "Письмо подготовлено" : "Email prepared"}</h2><p>{language === "ru" ? `Отправьте подготовленное письмо на ${legalDetails.email} — мы ответим и поможем запустить тест.` : `Send the prepared email to ${legalDetails.email}, and we will help you start the trial.`}</p><button type="button" onClick={() => setDialogOpen(false)}>{t("Готово")}</button></div>
-            ) : (
-              <form onSubmit={submit}>
-                <span className="trial-kicker">{t("14 дней бесплатно")}</span>
-                <h2 id="trial-title">{t("Посмотрите Сэйлон на своих обращениях")}</h2>
-                <p>{t("Оставьте контакты — поможем подключить первый канал и настроить тест.")}</p>
-                <label>{t("Ваше имя")}<input required name="name" autoComplete="name" /></label>
-                <label>{t("Телефон или почта")}<input required name="contact" autoComplete="email" /></label>
-                <label className="trial-consent">
-                  <input required type="checkbox" name="personal-data-consent" />
-                  <span>{language === "ru" ? "Согласен на " : "I agree to the "}<Link href="/legal/consent" target="_blank" rel="noopener noreferrer">{language === "ru" ? "обработку персональных данных" : "processing of personal data"}</Link></span>
-                </label>
-                <button type="submit">{t("Начать бесплатный тест")}</button>
-                <small>{language === "ru" ? "Условия использования данных приведены в политике и отдельном согласии." : "Data-use terms are described in the policy and separate consent."}</small>
-              </form>
-            )}
-          </div>
-        </div>
-      ), document.body)}
     </>
   );
 }

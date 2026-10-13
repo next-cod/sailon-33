@@ -180,7 +180,7 @@ export function SavingsCalculatorPopup({ onCreateBot }: SavingsCalculatorPopupPr
   const createBot = () => {
     popupQueue.current = [];
     setActivePopup(null);
-    window.setTimeout(onCreateBot, 120);
+    onCreateBot();
   };
 
   if (!activePopup) return null;

@@ -10,6 +10,8 @@ export const legalDetails = {
   phoneHref: "tel:+79113377755",
   email: "ulanova-ts@yandex.ru",
   emailHref: "mailto:ulanova-ts@yandex.ru",
+  telegram: "@UlanovaTatyana",
+  telegramHref: "https://t.me/UlanovaTatyana",
   taxNotice: "Без НДС",
   effectiveDate: "25 сентября 2026 г.",
 } as const;

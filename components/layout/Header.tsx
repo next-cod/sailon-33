@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import { TrackedLink } from "@/components/ui/TrackedLink";
-import { siteLinks } from "@/config/links";
+import { ContactPopover } from "@/components/layout/ContactPopover";
 
 const nav = [
   ["Как отвечает", "how"],
@@ -35,19 +34,18 @@ export function Header() {
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Основная навигация">
           {nav.map(([label, id]) => <button key={id} type="button" className="text-[15px] font-bold transition-colors hover:text-[var(--leaf)]" onClick={() => navigateTo(id)}>{label}</button>)}
         </nav>
-        <div className="hidden items-center gap-3 md:flex">
-          <TrackedLink href={siteLinks.signup} event="hero_signup_click" className="!min-h-[50px] !rounded-[11px] !px-6">Попробовать бесплатно</TrackedLink>
+        <div className="flex items-center gap-2">
+          <ContactPopover onOpen={() => setOpen(false)} />
+          <button className="grid size-11 place-items-center rounded-full border border-[var(--line)] bg-white lg:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Закрыть меню" : "Открыть меню"} aria-expanded={open}>
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
-        <button className="grid size-11 place-items-center rounded-full border border-[var(--line)] bg-white lg:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Закрыть меню" : "Открыть меню"} aria-expanded={open}>
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
       </div>
       {open && (
         <div className="container-shell border-t border-[var(--line)] py-5 lg:hidden">
           <nav className="grid gap-1" aria-label="Мобильная навигация">
             {nav.map(([label, id]) => <button key={id} type="button" onClick={() => navigateTo(id)} className="rounded-xl px-3 py-3 text-left text-lg font-semibold hover:bg-white">{label}</button>)}
           </nav>
-          <TrackedLink href={siteLinks.signup} event="hero_signup_click" className="mt-4 w-full">Попробовать бесплатно</TrackedLink>
         </div>
       )}
     </header>

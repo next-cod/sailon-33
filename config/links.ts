@@ -1,9 +1,5 @@
-import { legalDetails } from "@/config/legal-details";
-
-const trialEmailSubject = encodeURIComponent("Заявка на бесплатный тест Сэйлона");
-
 export const siteLinks = {
-  signup: `${legalDetails.emailHref}?subject=${trialEmailSubject}`,
+  signup: "https://crm.saleonbot.ru/",
   login: "#pricing",
   contact: "/contacts",
   support: "/support",

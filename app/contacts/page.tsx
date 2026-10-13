@@ -15,7 +15,7 @@ export default function ContactsPage() {
       <article>
         <h1>{en ? "Contacts" : "Контакты"}</h1>
         <p className="legal-intro">{en ? "Contact us about the product, implementation, or partnerships." : "Связаться по вопросам продукта, внедрения и сотрудничества."}</p>
-        <section><h2>{en ? "Contact us" : "Как связаться"}</h2><p><a href={legalDetails.emailHref}>{legalDetails.email}</a><br /><a href={legalDetails.phoneHref}>{legalDetails.phone}</a></p></section>
+        <section><h2>{en ? "Contact us" : "Как связаться"}</h2><p><a href={legalDetails.emailHref}>{legalDetails.email}</a><br /><a href={legalDetails.phoneHref}>{legalDetails.phone}</a><br /><a href={legalDetails.telegramHref} target="_blank" rel="noopener noreferrer">Telegram: {legalDetails.telegram}</a></p></section>
         <section><h2>{en ? "Company details" : "Реквизиты"}</h2><p>{legalDetails.fullName}<br />{legalRegistrationLine}</p></section>
         <section><h2>{en ? "Addresses" : "Адреса"}</h2><p>{en ? "Registered address" : "Адрес регистрации"}: {legalDetails.registrationAddress}<br />{en ? "Postal address" : "Почтовый адрес"}: {legalDetails.postalAddress}</p></section>
       </article>

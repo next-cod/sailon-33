@@ -105,7 +105,8 @@ button { font: inherit; }
 .responsive-footer-column a:hover,
 .responsive-footer-column button:hover { color: #fff; }
 .responsive-footer-bottom { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.13); color: rgba(255,255,255,.42); font-size: 12px; }
-.responsive-footer-bottom a { margin-left: auto; color: rgba(255,255,255,.68); }
+.responsive-footer-contacts { display: flex; gap: 14px; margin-left: auto; }
+.responsive-footer-contacts a { color: rgba(255,255,255,.68); }
 
 .responsive-chat-trigger {
   position: fixed;
@@ -307,6 +308,78 @@ button { font: inherit; }
 
 .sticky-site-header__cta:hover { background: #68ca4b; }
 .sticky-site-header.is-compact .sticky-site-header__cta { height: 44px; }
+
+.contact-popover {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.contact-popover__trigger--responsive {
+  display: inline-flex;
+  min-width: 138px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 11px;
+  background: #77d65b;
+  color: #fff;
+  font: 700 15px/1 "Tilda Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.contact-popover__trigger:hover { background: #68ca4b; }
+.contact-popover__trigger:focus-visible,
+.contact-popover__panel a:focus-visible {
+  outline: 3px solid rgba(38,119,94,.42);
+  outline-offset: 3px;
+}
+
+.contact-popover__panel {
+  position: absolute;
+  z-index: 510;
+  top: calc(100% + 12px);
+  right: 0;
+  width: min(340px, calc(100vw - 24px));
+  padding: 18px;
+  border: 1px solid #dce3df;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 20px 55px rgba(10,36,29,.16);
+  color: #0a241d;
+  animation: contactPopoverIn 180ms cubic-bezier(.22,1,.36,1) both;
+}
+
+.contact-popover__title {
+  display: block;
+  margin: 0 0 10px 4px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.contact-popover__panel a {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  gap: 13px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.contact-popover__panel a:hover { background: #f1f7f2; }
+.contact-popover__panel a svg { flex: 0 0 auto; color: #26775e; }
+.contact-popover__panel a span { display: grid; min-width: 0; gap: 3px; }
+.contact-popover__panel a small { color: #626d68; font-size: 12px; line-height: 1.1; }
+.contact-popover__panel a strong { overflow-wrap: anywhere; font-size: 15px; line-height: 1.2; }
+
+@keyframes contactPopoverIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 .figma-page-canvas [data-node-id="2013:171"],
 .figma-page-canvas [data-node-id="2007:291"],
@@ -1270,50 +1343,10 @@ html[data-language="en"] .cta-hit--custom {
 
 @keyframes botChatIn { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
 
-.trial-dialog-backdrop {
-  position: fixed;
-  z-index: 9999;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 12px;
-  background: rgba(10,36,29,.58);
-  backdrop-filter: blur(10px);
-  animation: fadeIn 200ms ease both;
-}
-
-.trial-dialog {
-  position: relative;
-  width: min(560px, 100%);
-  max-height: calc(100vh - 48px);
-  overflow: auto;
-  padding: 24px 44px;
-  border-radius: 28px;
-  background: #fff;
-  box-shadow: 0 30px 90px rgba(10,36,29,.28);
-  animation: dialogIn 360ms cubic-bezier(.22,1,.36,1) both;
-}
-.trial-close { position: absolute; right: 20px; top: 16px; width: 40px; height: 40px; border: 0; border-radius: 50%; background: #edf2ee; color: #0a241d; font-size: 26px; cursor: pointer; }
-.trial-kicker { display: inline-block; margin-bottom: 18px; color: #26775e; font-size: 14px; font-weight: 800; }
-.trial-dialog h2 { margin: 0; color: #151917; font-size: 42px; line-height: 1.02; letter-spacing: -.035em; }
-.trial-dialog form > p, .trial-success > p { margin: 18px 0 28px; color: #626d68; font-size: 18px; line-height: 1.45; }
-.trial-dialog label { display: grid; gap: 8px; margin-top: 16px; color: #151917; font-size: 14px; font-weight: 700; }
-.trial-dialog input { width: 100%; height: 52px; padding: 0 16px; border: 1px solid #dce3df; border-radius: 12px; background: #f9fffa; color: #151917; font: 500 17px/1 "Tilda Sans", Arial, sans-serif; outline: none; }
-.trial-dialog input:focus { border-color: #26775e; box-shadow: 0 0 0 3px rgba(119,214,91,.25); }
-.trial-dialog .trial-consent { display: flex; align-items: flex-start; gap: 10px; color: #626d68; font-weight: 500; line-height: 1.4; }
-.trial-dialog .trial-consent input { width: 18px; height: 18px; flex: 0 0 auto; margin: 1px 0 0; padding: 0; accent-color: #26775e; box-shadow: none; }
-.trial-dialog .trial-consent a { color: #26775e; text-decoration: underline; text-underline-offset: 3px; }
-.trial-dialog form > button, .trial-success button { width: 100%; height: 54px; margin-top: 22px; border: 0; border-radius: 12px; background: #77d65b; color: #0a241d; font: 800 17px/1 "Tilda Sans", Arial, sans-serif; cursor: pointer; }
-.trial-dialog form > button:hover, .trial-success button:hover { background: #69cc4d; }
-.trial-dialog small { display: block; margin-top: 14px; color: #87908c; font-size: 12px; line-height: 1.35; }
-.trial-success { text-align: center; }
-.trial-success > span { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 24px; border-radius: 50%; background: #e1ffd8; color: #26775e; font-size: 30px; font-weight: 800; }
-
 @keyframes chatMessageIn { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
 @keyframes scenarioMessageIn { from { opacity: 0; transform: translateY(7px) scale(.99); } to { opacity: 1; transform: none; } }
 @keyframes scenarioPanelIn { from { opacity: .72; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } }
-@keyframes dialogIn { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } }
 
 .footer-brand-row {
   display: flex;
@@ -1404,6 +1437,7 @@ html[data-language="en"] .cta-hit--custom {
   color: rgba(255, 255, 255, 0.72);
   text-decoration: none;
 }
+.footer-contact-links { display: flex; align-items: flex-end; gap: 18px; }
 
 .legal-page {
   min-height: 100vh;
@@ -1638,12 +1672,18 @@ html[data-language="en"] .cta-hit--custom {
 @media (max-width: 560px) {
   .sticky-site-header__inner { width: calc(100vw - 24px); }
   .sticky-site-header__cta { min-width: 0; padding-inline: 13px; font-size: 12px; }
+  .contact-popover__trigger--responsive { min-width: 104px; height: 44px; padding-inline: 14px; font-size: 13px; }
+  .contact-popover__panel { position: fixed; top: 76px; right: 12px; left: 12px; width: auto; }
   .floating-chat { right: 16px; bottom: 16px; }
   .floating-chat-nudge { right: 94px; bottom: 13px; max-width: 182px; min-height: 50px; padding: 0 16px; font-size: 14px; }
   .floating-chat-button { width: 82px; height: 82px; }
   .floating-chat-icon { width: 82px; height: 82px; }
   .floating-chat-icon img { width: 54px; height: 54px; }
   .bot-chat-popover { right: 16px; bottom: 116px; height: min(450px, calc(100vh - 140px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-popover__panel { animation: none; }
 }
 
 /* Timed savings calculator */
@@ -1947,7 +1987,7 @@ html[data-language="en"] .cta-hit--custom {
   .responsive-channel-grid { grid-template-columns: repeat(4, 38px); gap: 7px; margin: 0 0 14px; }
   .responsive-channel-grid span { width: 38px; height: 38px; }
   .responsive-footer-bottom { display: grid; }
-  .responsive-footer-bottom a { margin-left: 0; }
+  .responsive-footer-contacts { display: grid; margin-left: 0; }
   .responsive-footer-column a,
   .responsive-footer-column button {
     display: flex;
