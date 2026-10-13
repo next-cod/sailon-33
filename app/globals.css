@@ -331,7 +331,8 @@ button { font: inherit; }
 
 .contact-popover__trigger:hover { background: #68ca4b; }
 .contact-popover__trigger:focus-visible,
-.contact-popover__panel a:focus-visible {
+.contact-popover__panel a:focus-visible,
+.contact-popover__item:focus-visible {
   outline: 3px solid rgba(38,119,94,.42);
   outline-offset: 3px;
 }
@@ -358,8 +359,10 @@ button { font: inherit; }
   line-height: 1.2;
 }
 
-.contact-popover__panel a {
+.contact-popover__panel a,
+.contact-popover__item {
   display: flex;
+  width: 100%;
   min-height: 58px;
   align-items: center;
   gap: 13px;
@@ -370,11 +373,19 @@ button { font: inherit; }
   transition: background-color 160ms ease;
 }
 
-.contact-popover__panel a:hover { background: #f1f7f2; }
-.contact-popover__panel a svg { flex: 0 0 auto; color: #26775e; }
-.contact-popover__panel a span { display: grid; min-width: 0; gap: 3px; }
-.contact-popover__panel a small { color: #626d68; font-size: 12px; line-height: 1.1; }
-.contact-popover__panel a strong { overflow-wrap: anywhere; font-size: 15px; line-height: 1.2; }
+.contact-popover__item { border: 0; background: transparent; text-align: left; font: inherit; cursor: pointer; }
+.contact-popover__panel a:hover,
+.contact-popover__item:hover { background: #f1f7f2; }
+.contact-popover__panel a svg,
+.contact-popover__item svg { flex: 0 0 auto; color: #26775e; }
+.contact-popover__panel a span,
+.contact-popover__item span { display: grid; min-width: 0; gap: 3px; }
+.contact-popover__panel a small,
+.contact-popover__item small { color: #626d68; font-size: 12px; line-height: 1.1; }
+.contact-popover__item small.is-copied { color: #26775e; }
+.contact-popover__item small.is-error { color: #a3483b; }
+.contact-popover__panel a strong,
+.contact-popover__item strong { overflow-wrap: anywhere; font-size: 15px; line-height: 1.2; }
 
 @keyframes contactPopoverIn {
   from { opacity: 0; transform: translateY(-6px); }
