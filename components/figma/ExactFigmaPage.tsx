@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { Globe2 } from "lucide-react";
+import { HeroChatHint } from "@/components/ui/HeroChatHint";
 const assetPathPrefix = "/figma-exact";
-const imgIconColor0A241D = `${assetPathPrefix}/7cf98.png`;
 const imgColor77D65B = `${assetPathPrefix}/f3747.png`;
 const img5Fc646 = `${assetPathPrefix}/671ca.png`;
 const img5Fc647 = `${assetPathPrefix}/e67bd.png`;
@@ -121,7 +121,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         <p className="leading-[28px]">Отвечает клиентам 24/7 по базе вашего бизнеса, помогает разобраться и переводит к следующему шагу</p>
       </div>
       <div className="absolute bg-[#77d65b] h-[59px] left-[210px] rounded-[12px] top-[597px] w-[299px]" data-node-id="2013:11" data-name="Link · фон" />
-      <div className="absolute bg-white border-2 border-[#0a241d] border-solid left-[551px] rounded-[81px] size-[77px] top-[588.97px]" data-node-id="2070:3" data-name="Link · фон" />
+      <HeroChatHint className="absolute left-[551px] top-[591px] w-[300px]" />
       <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[17px] justify-center leading-[0] left-[340.33px] not-italic text-[18px] text-center text-white top-[627.47px] w-[243.669px]" data-node-id="2007:5">
         <p className="leading-[23.25px]">Попробовать бесплатно</p>
       </div>
@@ -135,12 +135,6 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
       </div>
       <div className="absolute bg-[#26775e] h-[775px] left-0 top-[1902.03px] w-[1700px]" data-node-id="2076:27" data-name="Section · фон" />
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[45px] justify-center leading-[0] left-[648px] not-italic text-[#151917] text-[17px] top-[628.5px] w-[145px]" data-node-id="2007:6">
-        <p className="leading-[23.25px]">Поразговаривать с ботом</p>
-      </div>
-      <div className="absolute contents left-[571px] top-[607.97px]" data-node-id="2079:5" data-name="free-icon-speech-bubble-3884256 1 · #0A241D">
-        <div className="absolute bg-[#0a241d] left-[571px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[38px_38px] size-[38px] top-[607.97px]" data-node-id="2079:4" style={{ maskImage: `url("${imgIconColor0A241D}")` }} data-name="Icon color · #0A241D" />
-      </div>
       <div className="absolute bg-white h-[783px] left-0 top-[1140.03px] w-[1699px]" data-node-id="2013:19" data-name="Section · фон" />
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[190px] justify-center leading-[0] left-[210px] not-italic text-[#151917] text-[64px] top-[1241px] tracking-[-2.88px] w-[453px]" data-node-id="2007:37">
         <p className="leading-[65.28px]">Понимает что нужно клиенту</p>

@@ -89,6 +89,18 @@ button { font: inherit; }
 .responsive-brand img { width: 44px; height: 44px; object-fit: contain; }
 .responsive-brand strong { font-size: 22px; letter-spacing: -.04em; }
 .responsive-header nav button { border: 0; background: transparent; color: inherit; cursor: pointer; }
+.hero-chat-hint {
+  max-width: 290px;
+  padding-left: 16px;
+  border-left: 2px solid var(--leaf);
+  color: var(--forest-deep);
+  font-family: "Tilda Sans", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.hero-chat-hint > span { display: block; margin-bottom: 4px; color: var(--muted); font-size: 16px; font-weight: 500; }
+.hero-chat-hint > strong { display: block; font-weight: 700; }
+.hero-chat-hint svg { display: inline-block; margin-left: 4px; color: var(--leaf); vertical-align: -4px; }
 .responsive-channel-grid { display: grid; grid-template-columns: repeat(2, 42px); gap: 8px; width: max-content; margin: 0 14px 14px auto; }
 .responsive-channel-grid span { display: grid; width: 42px; height: 42px; padding: 4px; place-items: center; overflow: hidden; border-radius: 50%; box-shadow: 0 8px 22px rgba(10,36,29,.1); }
 .responsive-channel-grid span:nth-child(1) { background: #3273f5; }
@@ -460,18 +472,6 @@ button { font: inherit; }
 .figma-page-canvas [data-node-id].is-interacting {
   filter: brightness(0.96) saturate(1.08);
   transition: filter 180ms ease, opacity 180ms ease;
-}
-
-.figma-page-canvas [data-node-id="2070:3"],
-.figma-page-canvas [data-node-id="2079:4"] {
-  transition: background-color 420ms cubic-bezier(.22,1,.36,1), border-color 420ms cubic-bezier(.22,1,.36,1);
-}
-
-.figma-page-canvas [data-node-id="2070:3"].talk-hit-active {
-  background-color: #f1faee;
-  border-color: #26775e;
-  box-shadow: none;
-  transform: none;
 }
 
 .figma-page-canvas [data-node-id="2120:5"],
@@ -1136,23 +1136,6 @@ html[data-language="en"] .cta-hit--custom {
   background: linear-gradient(105deg, transparent 20%, rgba(119,214,91,.16) 36%, rgba(222,255,214,.62) 50%, rgba(119,214,91,.28) 64%, transparent 80%);
 }
 .cta-hit--light:hover { background: transparent; box-shadow: none; }
-.cta-hit--chat { border-radius: 48px; }
-.cta-hit--chat::after { display: none; }
-.cta-hit--chat:hover { background: transparent; box-shadow: none; }
-.cta-hit--chat:active { opacity: 1; }
-
-/* The hero chat entry is calm and stable; hover gives only a soft colour cue. */
-.figma-page-canvas [data-node-id="2070:3"] {
-  transition: background-color 420ms cubic-bezier(.22,1,.36,1), border-color 420ms cubic-bezier(.22,1,.36,1);
-}
-.figma-page-canvas:has(.cta-hit--chat:hover) [data-node-id="2070:3"],
-.figma-page-canvas:has(.cta-hit--chat:focus-visible) [data-node-id="2070:3"] {
-  background-color: #f1faee !important;
-  border-color: #26775e !important;
-  box-shadow: none;
-  transform: none;
-}
-
 .floating-chat {
   position: fixed;
   z-index: 500;
@@ -1641,8 +1624,7 @@ html[data-language="en"] .cta-hit--custom {
   .floating-chat-button::before,
   .floating-chat-icon,
   .floating-chat-icon::after,
-  .floating-chat-nudge,
-  .figma-page-canvas [data-node-id="2070:3"] {
+  .floating-chat-nudge {
     animation: none !important;
     transition: none !important;
   }
@@ -2006,7 +1988,8 @@ html[data-language="en"] .cta-hit--custom {
     width: 100%;
     align-items: center;
   }
-  .responsive-chat-trigger { right: 14px; bottom: 78px; width: 54px; height: 54px; }
+  .responsive-chat-trigger { right: 14px; bottom: 16px; width: 54px; height: 54px; }
+  .responsive-chat-trigger.is-above-cta { bottom: 78px; }
   .responsive-chat-panel { inset: 84px 10px 10px; width: auto; height: auto; border-radius: 20px; }
   .responsive-landing .section-angle-top { margin-block: -8px; padding-block: 86px; clip-path: polygon(0 1.5%, 100% 0, 100% 98.5%, 0 100%); }
   .responsive-landing details summary { font-size: 18px; }

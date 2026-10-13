@@ -37,7 +37,6 @@ const links = [
   { label: "Вопросы", href: "#faq", x: 1007, y: 17, w: 74, h: 56 },
   { label: "Попробовать бесплатно", href: siteLinks.signup, x: 1267, y: 20, w: 222, h: 50, targetId: "2013:175" },
   { label: "Попробовать бесплатно", href: siteLinks.signup, x: 210, y: 597, w: 299, h: 59, targetId: "2013:11" },
-  { label: "Поразговаривать с ботом", href: "#demo", x: 551, y: 589, w: 248, h: 77, targetId: "2070:3" },
   { label: "Попробовать бесплатно", href: siteLinks.signup, x: 516, y: 850, w: 273, h: 73, targetId: "2158:2" },
   { label: "Попробовать бесплатно", href: siteLinks.signup, x: 212, y: 12820, w: 290, h: 54, targetId: "2013:10" },
 ];

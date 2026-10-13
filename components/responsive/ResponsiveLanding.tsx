@@ -78,22 +78,17 @@ export function ResponsiveLanding() {
 
 function ResponsiveChat() {
   const [open, setOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [raised, setRaised] = useState(false);
   const [value, setValue] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([
     { author: "bot", text: "Привет! Я Сэйлон. Расскажу, как AI-бот может работать с обращениями вашего бизнеса." },
   ]);
 
   useEffect(() => {
-    const update = () => setVisible(window.scrollY > 520);
-    const openChat = () => setOpen(true);
+    const update = () => setRaised(window.scrollY > 520);
     update();
     window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("saleon:open-chat", openChat);
-    return () => {
-      window.removeEventListener("scroll", update);
-      window.removeEventListener("saleon:open-chat", openChat);
-    };
+    return () => window.removeEventListener("scroll", update);
   }, []);
 
   useEffect(() => {
@@ -122,7 +117,7 @@ function ResponsiveChat() {
 
   return (
     <>
-      {visible && !open && <button type="button" className="responsive-chat-trigger is-visible" aria-label="Поразговаривать с ботом" onClick={() => setOpen(true)}>
+      {!open && <button type="button" className={`responsive-chat-trigger is-visible${raised ? " is-above-cta" : ""}`} aria-label="Поразговаривать с ботом" onClick={() => setOpen(true)}>
         <MessageCircle size={22} aria-hidden="true" />
       </button>}
       {open && (

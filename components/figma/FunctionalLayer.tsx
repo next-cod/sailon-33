@@ -134,7 +134,6 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
   const [heroLive, setHeroLive] = useState(false);
   const [controlCard, setControlCard] = useState<number | null>(null);
   const [teamHover, setTeamHover] = useState<number | null>(null);
-  const [chatHovered, setChatHovered] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [botChatOpen, setBotChatOpen] = useState(false);
   const [botChatInput, setBotChatInput] = useState("");
@@ -206,11 +205,6 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
         ?.classList.toggle("control-card-active", controlCard === groupIndex);
     }));
   }, [controlCard, rootRef]);
-
-  useEffect(() => {
-    const root = rootRef.current;
-    ["2070:3", "2079:4"].forEach((id) => root?.querySelector<HTMLElement>(`[data-node-id="${id}"]`)?.classList.toggle("talk-hit-active", chatHovered));
-  }, [chatHovered, rootRef]);
 
   useEffect(() => {
     ["2016:1003", "2016:1014", "2016:1025", "2016:1036"].forEach((id, index) => {
@@ -371,7 +365,6 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
       {ctaAreas.map(({ radius, tone, ...area }, index) => (
         <a key={index} href={siteLinks.signup} className={`cta-hit cta-hit--${tone}`} style={{ ...area, borderRadius: radius }} aria-label={tone === "hero" || tone === "final" ? "Попробовать бесплатно" : "Начать бесплатный тест"} />
       ))}
-      <button type="button" className="cta-hit cta-hit--chat" style={{ left: 541, top: 579, width: 252, height: 96 }} aria-label={t("Поразговаривать с ботом")} onMouseEnter={() => setChatHovered(true)} onMouseLeave={() => setChatHovered(false)} onFocus={() => setChatHovered(true)} onBlur={() => setChatHovered(false)} onClick={() => setBotChatOpen(true)} />
       <a className="cta-hit cta-hit--light cta-hit--custom" style={{ left: 864, top: 9389, width: 256, height: 50, borderRadius: 999 }} href="/contacts" aria-label={t("Обсудить доработку")} />
 
       {mounted && createPortal((

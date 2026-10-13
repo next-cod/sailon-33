@@ -1,8 +1,9 @@
 "use client";
 
-import { ArrowRight, Globe2, MessageCircle } from "lucide-react";
+import { ArrowRight, Globe2 } from "lucide-react";
 import { HeroConsole } from "@/components/product/HeroConsole";
 import { TrackedLink } from "@/components/ui/TrackedLink";
+import { HeroChatHint } from "@/components/ui/HeroChatHint";
 import { siteLinks } from "@/config/links";
 import Image from "next/image";
 
@@ -28,7 +29,7 @@ export function HeroSection() {
           <p className="mt-8 max-w-[570px] text-xl leading-[1.45] text-[var(--muted)]">Отвечает клиентам 24/7 по базе вашего бизнеса, помогает разобраться и переводит к следующему шагу</p>
           <div className="mt-10 flex flex-wrap items-center gap-5">
             <TrackedLink href={siteLinks.signup} event="hero_signup_click" arrow className="w-full !bg-[var(--signal)] !text-white sm:w-auto sm:min-w-[300px]">Попробовать бесплатно</TrackedLink>
-            <button type="button" aria-label="Поразговаривать с ботом" onClick={() => window.dispatchEvent(new Event("saleon:open-chat"))} className="group inline-flex items-center gap-4 border-0 bg-transparent p-0 text-left font-bold"><span className="grid size-[58px] place-items-center rounded-full border-2 border-[var(--forest-deep)] bg-white transition group-hover:bg-[var(--cream)]"><MessageCircle size={24}/></span>Поразговаривать с ботом</button>
+            <HeroChatHint />
           </div>
         </div>
         <div className="relative">
